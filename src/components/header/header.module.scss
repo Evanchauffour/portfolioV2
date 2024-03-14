@@ -1,0 +1,18 @@
+.navItem{
+    position: relative;
+    transition: all 0.3s ease;
+    &::before{
+        content: '';
+        position: absolute;
+        right: 0;
+        top: calc(100% + 8px);
+        width: 0;
+        height: 2px;
+        background-color: #083134;
+        transition: all 0.5s ease;
+    }
+    &:hover::before{
+        left: 0;
+        width: 100%;
+    }
+}
