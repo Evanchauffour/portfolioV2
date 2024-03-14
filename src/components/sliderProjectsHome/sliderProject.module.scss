@@ -1,0 +1,33 @@
+.projectHome{
+    position: relative;
+    z-index: 2;
+    h2{
+        font-weight: 400;
+        transition: all .5s ease-in-out;
+        text-align: center;
+    }
+    &:hover{
+        color: #c93535;
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        transform: scaleY(0);
+        transform-origin: top;
+        background-color: #083134;
+        transition: all .5s ease-in-out;
+        z-index: -1;
+    }
+    &:hover::after{
+        transform: scaleY(1);
+        transform-origin: top;
+        left: 0;
+    }
+    &:hover h2 {
+        font-weight: 800;
+    }
+}

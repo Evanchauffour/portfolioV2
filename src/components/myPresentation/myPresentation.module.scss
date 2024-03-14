@@ -1,0 +1,42 @@
+.homePres{
+    position: relative;
+    z-index: 2;
+    color: #020E03;
+    h1{
+        font-weight: 400;
+        transition: all .5s li;
+        text-align: center;
+    }
+    h2{
+        font-weight: 400;
+        transition: all .5s ease-in-out;
+        text-align: center;
+    }
+    &:hover{
+        color: #083134;
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        transform: scaleX(0);
+        transform-origin: left;
+        background-color: #c93535;
+        transition: all .5s ease-in-out;
+        z-index: -1;
+    }
+    &:hover::after{
+        transform: scaleX(1);
+        transform-origin: left;
+        left: 0;
+    }
+    &:hover h2 {
+        font-weight: 800;
+    }
+    &:hover h1 {
+        font-weight: 800;
+    }
+}
