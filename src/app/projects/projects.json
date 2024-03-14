@@ -1,0 +1,70 @@
+{
+    "portfolio": [
+      {
+        "id": "1",
+        "name": "Page produit",
+        "description": "Ce site web est un concept de page produit que j'ai réalisé dans le cadre d'un concours organisé par un youtuber. J'ai donc créé cette page en m'inspirant d'un design déjà existant auquel j'ai ajouté un menu burger ainsi qu'un mode sombre. Cette page est réalisée en HTML, Css et Vanilla js.",
+        "website_link": "https://evanchauffour.github.io/Concours-Product-page/",
+        "images": {
+          "desktop": [
+            "/projectsImg/productLight.svg",
+            "/projectsImg/productPageDark.svg",
+            "path/project1-image3-desktop.jpg"
+          ],
+          "mobile": [
+            "path/project1-image1-mobile.jpg",
+            "path/project1-image2-mobile.jpg",
+            "path/project1-image3-mobile.jpg"
+          ]
+        },
+        "technologies": [
+            "https://img.icons8.com/color/48/html-5--v1.png",
+            "https://img.icons8.com/color/48/css3.png",
+            "https://img.icons8.com/color/48/javascript--v1.png"
+        ]
+      },
+      {
+        "id": "2",
+        "name": "Patricia Revollat",
+        "description": "J'ai eu l'opportunité de concevoir un site web personnel pour une kinésiologue magnétiseur. Ce projet a été réalisé en utilisant WordPress pour créer une vitrine en ligne attrayante et informative. Le site comprend des sections informatives essentielles, notamment une présentation détaillée de la kinésiologue magnétiseur, son approche, ses méthodes, les services proposés... Pour dynamiser l'expérience utilisateur, j'ai intégré des animations subtiles à l'aide de JavaScript. Ces animations ajoutent une touche d'interactivité au site tout en maintenant une ambiance professionnelle. Enfin, un formulaire de contact personnalisé a été inclus pour faciliter la communication entre la kinésiologue magnétiseur et les visiteurs du site. Cela permet aux clients potentiels de poser des questions, de demander des informations complémentaires ou de prendre rendez-vous directement.",
+        "website_link": "https://patriciarevollat.fr/",
+        "images": {
+          "desktop": [
+            "/projectsImg/patricia1.svg",
+            "/projectsImg/patricia2.svg",
+            "path/project2-image3-desktop.jpg"
+          ],
+          "mobile": [
+            "path/project2-image1-mobile.jpg",
+            "path/project2-image2-mobile.jpg",
+            "path/project2-image3-mobile.jpg"
+          ]
+        },
+        "technologies": [
+          "https://img.icons8.com/fluency/48/wordpress.png"
+        ]
+      },
+      {
+        "id": "4",
+        "name": "Lucile Marjollet",
+        "description": "J'ai réalisé un site vitrine sous WordPress pour une psychopraticienne relationnelle, un projet personnel visant à présenter son activité de manière professionnelle et attrayante. Le site est basé sur WordPress pour sa facilité d'utilisation et sa gestion de contenu, permettant ainsi à la psychopraticienne de mettre à jour le contenu elle-même. J'ai intégré des animations JavaScript pour donner vie au site, renforçant ainsi son attrait visuel tout en maintenant un environnement calme et professionnel. Ce projet a permis de créer une présence en ligne engageante et professionnelle pour la psychopraticienne, en mettant en valeur son expertise tout en captivant l'attention des visiteurs grâce aux animations subtiles.",
+        "website_link": "https://lucilemarjollet.com/",
+        "images": {
+          "desktop": [
+            "/projectsImg/lucile1.svg",
+            "/projectsImg/lucile2.svg",
+            "path/project2-image3-desktop.jpg"
+          ],
+          "mobile": [
+            "path/project2-image1-mobile.jpg",
+            "path/project2-image2-mobile.jpg",
+            "path/project2-image3-mobile.jpg"
+          ]
+        },
+        "technologies": [
+          "https://img.icons8.com/fluency/48/wordpress.png"
+        ]
+      }
+    ]
+  }
+  

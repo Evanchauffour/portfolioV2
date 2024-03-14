@@ -1,0 +1,19 @@
+.navButton{
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+    &:hover{
+        border-radius: 2rem;
+        font-weight: bold;
+    }
+}
+
+.projectName{
+    font-variation-settings: 'wght' 800; 
+    background-color: #f3ec78;
+    background-image: linear-gradient(45deg, #27DC2E, #5E75E5);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+}

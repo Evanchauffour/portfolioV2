@@ -1,0 +1,41 @@
+.linkItem{
+    position: relative;
+    color: #020E03;
+    z-index: 2;
+    h2{
+        font-weight: 400;
+        transition: all .5s ease-in-out;
+    }
+    &:hover{
+        color: #FAFEFA;
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        transform: scaleX(0);
+        transform-origin: left;
+        background-color: #c93535;
+        transition: all .5s ease-in-out;
+        z-index: -1;
+    }
+    &:hover::after{
+        transform: scaleX(1);
+        transform-origin: left;
+        left: 0;
+    }
+    &:hover h2 {
+        font-weight: 800;
+    }
+    &:hover .icon{
+        opacity: 1;
+    }
+    .icon{
+        opacity: 0;
+        transition: all .5s ease-in-out;
+        border-radius: 50%;
+    }
+}
