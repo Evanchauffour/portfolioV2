@@ -3,7 +3,7 @@
 import { React, useEffect, useState } from 'react';
 import Footer from "@/components/footer/Footer";
 import Transition from "./transition";
-import styles from './home.module.scss'
+import styles from '@/app/home.module.scss'
 import 'swiper/swiper-bundle.css';
 import SliderProjectsHome from '@/components/sliderProjectsHome/sliderProjectsHome';
 import MyPresnetation from '@/components/myPresentation/myPresnetation';
