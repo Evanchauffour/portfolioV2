@@ -7,11 +7,11 @@ export default function Header({color}) {
 
   return (
     <>
-    <header className={`relative w-full h-20 flex flex-rom items-center z-10 bg-${color}`}>
-        <nav className='flex flex-row gap-x-16 ml-8'>
-            <Link href="/" className={`${styles.navItem} text-text font-normal`}>Accueil</Link>
-            <Link href="/about" className={`${styles.navItem} text-text font-normal`}>À propos</Link>
-            <Link href="/projects" className={`${styles.navItem} text-text font-normal`}>Projets</Link>
+    <header className={`relative z-10 flex h-20 w-full flex-row items-center bg-background`}>
+        <nav className='ml-8 flex flex-row gap-x-16'>
+            <Link href="/" className={`${styles.navItem} font-normal text-text`}>Accueil</Link>
+            <Link href="/about" className={`${styles.navItem} font-normal text-text`}>À propos</Link>
+            <Link href="/projects" className={`${styles.navItem} font-normal text-text`}>Projets</Link>
         </nav>
     </header>
     </>

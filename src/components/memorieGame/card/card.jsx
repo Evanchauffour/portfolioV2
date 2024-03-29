@@ -7,7 +7,7 @@ export default function Card({ handleClick, skill, id }) {
   return (
     <motion.div
       initial={{ opacity: 0 }} animate={{opacity: 1 }} transition={{duration: .3, delay: id / 15}}
-      className={`rounded-lg flex justify-center items-center cursor-pointer text-primary border border-primary ${styles.card} ${
+      className={`flex cursor-pointer items-center justify-center rounded-lg border border-primary text-primary ${styles.card} ${
         skill.status === 'active' ? styles.active : ''
       } ${
         skill.status === 'matched' ? styles.matched : ''
@@ -15,7 +15,7 @@ export default function Card({ handleClick, skill, id }) {
       onClick={() => handleClick(id)}
     >
       <div className={`${styles.front} text-2xl font-extrabold`}>?</div>
-      <div className={`${styles.back} flex flex-col items-center`}>
+      <div className={`${styles.back} flex flex-col items-center bg-white`}>
         <Image src={skill.linkImg} alt='skillsImg' layout='fill' className="object-contain p-2"/>
       </div>
     </motion.div>

@@ -1,24 +1,20 @@
 'use client'
 
 import { React, useEffect, useState } from 'react';
-import Footer from "@/components/footer/Footer";
-import Transition from "./transition";
 import styles from '@/app/home.module.scss'
 import 'swiper/swiper-bundle.css';
 import SliderProjectsHome from '@/components/sliderProjectsHome/sliderProjectsHome';
 import MyPresnetation from '@/components/myPresentation/myPresnetation';
 import Game from '@/components/memorieGame/game';
 import { AnimatePresence, motion } from 'framer-motion';
+import GrowLetters from '@/components/growLetterAnim/GrowLetters';
 
 
 export default function Home() {
 
   const [isOpen, setIsOpen] = useState(true)
-  const [isVisible, setIsVisible] = useState(true)
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [isHoveredLeft, setIsHoveredLeft] = useState(false)
-  const [isHoveredRight, setIsHoveredRight] = useState(false)
-  const [isHoveredText, setIsHoveredText] = useState(false)
+  const [hovered, setHovered] = useState(false);
 
   useEffect(() => {
     window.addEventListener('mousemove', (e) => {
@@ -26,63 +22,148 @@ export default function Home() {
     });
   }, [mousePos]);
 
-  const variants = {
-    open: { opacity: 1, y: 0 },
-    closed: { opacity: 0, y: -20 },
+  const h1Anim = {
+    open: { opacity: 1, y: 0,
+      transition: {
+        duration: 0.5,
+        delay: 1,
+        ease: "easeInOut",
+      },
+    },
+    closed: { opacity: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeInOut",
+      },
+    },
+  }  
+
+  const h2Anim = {
+    open: { opacity: 1, y: 0,
+      transition: {
+        duration: 0.5,
+        delay: 1,
+        ease: "easeInOut",
+      },
+    },
+    closed: { opacity: 0, y: -20, 
+      transition: {
+        delay: .2,
+        duration: 0.5,
+        ease: "easeInOut",
+      },
+    },
   }  
 
   const variantsSlide = {
-    open: { scaleX: 1 },
-    closed: { scaleX: 0},
+    open: { scaleX: 1.5, scaleY: 1.5,
+      transition: {
+        duration: 1,
+        delay: .2,
+        ease: "easeInOut",
+      },
+    },
+    closed: { scaleX: 1.5, scaleY: 1.5, opacity: 0,
+      transition: {
+        delay: .5,
+        duration: 1,
+        ease: "easeInOut",
+      },
+    },
   }
 
   const variantsCursor = {
-    open: { opacity: 1 },
-    closed: { opacity: 0},
+    open: { opacity: 1,
+      transition: {
+        duration: 0.5,
+        delay: 1.5,
+        ease: "easeInOut",
+      },
+    },
+    closed: { opacity: 0, 
+      transition: {
+        delay: 0,
+        duration: 0.5,
+        ease: "easeInOut",
+      },
+    },
   }
 
   const handleClick = () => {
     setIsOpen(false)
-    setTimeout(() => {
-      setIsVisible(false)
-    }, 2000)
   }
 
   return (
     <>
-        {isVisible && (
-        <motion.div className={`absolute z-10 flex flex-row w-screen h-screen ${styles.beforeHome}`} onClick={handleClick} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-          <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2`}>
-            <motion.h1 variants={variants} initial={{ opacity: 0, y: 20 }} animate={ isOpen ? "open" : "closed" } transition={{duration: 0.5, delay: isOpen ? 1 : .5 }} onMouseEnter={() => setIsHoveredText(true)} onMouseLeave={() => setIsHoveredText(false)} className={`text-9xl font-extrabold text-text z-10`}>Evan</motion.h1>
-            <motion.h2 variants={variants} initial={{ opacity: 0, y: 20 }} animate={ isOpen ? "open" : "closed" } transition={{duration: 0.5, delay: isOpen ? 1.2 : .5 }} onMouseEnter={() => setIsHoveredText(true)} onMouseLeave={() => setIsHoveredText(false)} className={`text-7xl font-extrabold text-text uppercase z-10`}>Developpeur web</motion.h2>
-            <div className='absolute flex flex-row w-full origin-bottom'>
-              <motion.div variants={variantsSlide} initial={{ scaleX: 0 }} animate={ isOpen ? "open" : "closed"} transition={{ duration: .5,  delay: isOpen ? 1.7 : 0, ease: "linear" }} className={`flex-1 h-1 bg-primary mt-4 origin-right`}></motion.div>
-              <motion.div variants={variantsSlide} initial={{ scaleX: 0 }} animate={ isOpen ? "open" : "closed"} transition={{ duration: .5, delay: isOpen ? 1.7 : 0, ease: "linear" }} className={`flex-1 h-1 bg-secondary mt-4 origin-left ease-in`}></motion.div>
-            </div>
-          </div>
-          <motion.div variants={variantsSlide} initial={{ scaleX: 0 }} animate={ isOpen ? "open" : "closed"} transition={{ duration: 1, delay: isOpen ? 0 : 1 }} onMouseEnter={() => setIsHoveredLeft(true)} onMouseLeave={() => setIsHoveredLeft(false)} className={`w-1/2 h-full bg-secondary origin-left -z-10`}></motion.div>
-          <motion.div variants={variantsSlide} initial={{ scaleX: 0 }} animate={isOpen ? "open" : "closed"} transition={{ duration: 1, delay: isOpen ? 0 : 1 }} onMouseEnter={() => setIsHoveredRight(true)} onMouseLeave={() => setIsHoveredRight(false)} className={`w-1/2 h-full bg-primary origin-right -z-10`}></motion.div>
-          <motion.div style={{ transform: `translate(${mousePos.x - 91}px, ${mousePos.y - 91}px)` }} 
-               className={`absolute w-48 h-48 rounded-full text-background flex justify-center items-center text-xl text-center 
-               ${isHoveredLeft && 'bg-primary text-background'}  ${isHoveredRight && 'bg-secondary text-background'}  
-               ${isHoveredText && 'bg-background text-text'} 
-               ${styles.cursor}`}
-               variants={variantsCursor}
-               initial={{ opacity: 0 }} animate={ isOpen ? "open" : "closed" } transition={{ duration: 0.5, delay: isOpen ? 1.5 : 0 }}
+      <AnimatePresence>
+      {isOpen && (
+        <motion.div className={`absolute z-10 flex h-screen w-screen flex-row overflow-hidden ${styles.beforeHome}`} onClick={handleClick} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{duration: .5}}>
+        <div className={`absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center`}>
+          <GrowLetters text='Evan' delay={1.2} weightEnd='800'>
+            <motion.h1 
+              className={`z-10 text-[30vw] font-light text-text`}
+              variants={h1Anim}
+              initial={"closed"}
+              animate={ "open" }
+              exit={"closed"}
+              onMouseEnter={() => setHovered(true)}
+              onMouseLeave={() => setHovered(false)}
+            >
+            </motion.h1>
+          </GrowLetters>
+          <GrowLetters text='Developpeur full stack' delay={1.8} isAnimated={true} weightEnd='100'>
+            <motion.h2 
+              className={`z-10 text-[3vw] font-extrabold uppercase text-text`}
+              variants={h2Anim}
+              initial={"closed"}
+              animate={ "open" }
+              exit={"closed"}
+              >
+              </motion.h2>
+          </GrowLetters>
+        </div>
+        <div className='flex size-full flex-row items-center justify-center'>
+          <motion.div 
+            className={`-z-10 size-[100vw] flex-1 rounded-full border-4 border-primary bg-background`}
+            variants={variantsSlide}
+            initial={{ scaleX: 0, scaleY: 0, opacity: 1 }}
+            animate={ "open"}
+            exit={"closed"}
           >
-            Cliquer pour continuer
           </motion.div>
+        </div>
+        <motion.div 
+          style={{ transform: `translate(${mousePos.x - 56}px, ${mousePos.y - 56}px)` }} 
+          className={`absolute flex size-28 items-center justify-center rounded-full border-2 text-center text-xl capitalize transition-all duration-100 ${!hovered ? 'border-primary text-text' : 'bg-text text-background'} ${styles.cursor}`}
+          variants={variantsCursor}
+          initial={"closed"} animate={ "open" } exit={"closed"}
+        >
+          Cliquer
         </motion.div>
-        )}
+      </motion.div>
+      )}
+      </AnimatePresence>
       {!isOpen && (
-        <div className={`w-full grid ${styles.homeContainer}`} style={{minHeight: '100vh'}}>
-        <div className={`bg-background relative border-r-4 border-primary ${styles.widget}`} style={{gridArea: 'me'}}>
+      <div 
+      className={`grid w-full ${styles.homeContainer}`} 
+      style={{minHeight: '100vh'}}
+      >
+        <div 
+          className={`relative border-r-2 border-text bg-background ${styles.widget}`} 
+          style={{gridArea: 'me'}}
+        >
           <MyPresnetation />
         </div>
-        <div className={`bg-background flex flex-col items-center border-b-4 border-secondary ${styles.widget}`} style={{gridArea: 'projects'}}>
+        <div 
+          className={`flex flex-col items-center border-b-2 border-text bg-background ${styles.widget}`} 
+          style={{gridArea: 'projects'}}
+        >
           <SliderProjectsHome />
         </div>
-        <div className={`bg-background flex flex-col justify-center items-center gap-10 ${styles.widget}`} style={{gridArea: 'game'}}>
+        <div 
+          className={`flex flex-col items-center justify-center gap-10 bg-background ${styles.widget}`} 
+          style={{gridArea: 'game'}}
+        >
           <Game />
         </div>
       </div>

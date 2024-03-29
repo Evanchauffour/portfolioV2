@@ -1,13 +1,13 @@
 .linkItem{
     position: relative;
-    color: #020E03;
+    color: #DDF9EF;
     z-index: 2;
     h2{
         font-weight: 400;
         transition: all .5s ease-in-out;
     }
     &:hover{
-        color: #FAFEFA;
+        color: #010403;
     }
     &::after{
         content: '';
@@ -18,7 +18,7 @@
         width: 100%;
         transform: scaleX(0);
         transform-origin: left;
-        background-color: #c93535;
+        background-color: #29D196;
         transition: all .5s ease-in-out;
         z-index: -1;
     }

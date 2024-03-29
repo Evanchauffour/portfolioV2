@@ -11,7 +11,7 @@ import Tags from '../tags/tags';
 export default function SliderProjectsHome() {
   return (
     <>
-        <Link href="/projects" className={`flex-1 flex justify-center items-center w-full relative ${styles.projectHome}`}>
+        <Link href="/projects" className={`relative flex w-full flex-1 items-center justify-center ${styles.projectHome}`}>
             <h2 className='text-8xl'>Mes projets</h2>
         </Link>
     </>

@@ -1,7 +1,7 @@
 .homePres{
     position: relative;
     z-index: 2;
-    color: #020E03;
+    color: #DDF9EF;
     h1{
         font-weight: 400;
         transition: all .5s li;
@@ -12,9 +12,6 @@
         transition: all .5s ease-in-out;
         text-align: center;
     }
-    &:hover{
-        color: #083134;
-    }
     &::after{
         content: '';
         position: absolute;
@@ -24,7 +21,8 @@
         width: 100%;
         transform: scaleX(0);
         transform-origin: left;
-        background-color: #c93535;
+        background-color: #184F7C;
+        opacity: .5;
         transition: all .5s ease-in-out;
         z-index: -1;
     }

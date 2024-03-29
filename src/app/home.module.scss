@@ -1,37 +1,24 @@
 .beforeHome{
+    cursor: pointer;
     h1{
         position: relative;
-        font-size: 15rem;
-        color: #FAFEFA;
-        &::after{
-            content: "Evan";
-            position: absolute;
-            text-transform: capitalize;
-            z-index: -1;
-            color: #020E03;
-            top: -5px;
-            left: -5px;
-            font-size: 15rem;
-            opacity: .8;
+        line-height: 30vw;
+        background-image: linear-gradient(45deg, #2DD69B, #1F439E);
+        background-size: 100%;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        -moz-text-fill-color: transparent;
+        overflow: hidden;
+        span{
+            line-height: 0px;
         }
     }
 
     h2{
         position: relative;
         text-wrap: nowrap;
-        color: #FAFEFA;
-        &::after{
-            content: "Developpeur web";
-            position: absolute;
-            text-transform: uppercase;
-            text-wrap: nowrap;
-            z-index: -1;
-            color: #020E03;
-            top: -5px;
-            left: -5px;
-            font-size: 4.5rem;
-            opacity: .8;
-        }
+        line-height: 3vw;
     }
 }
 
@@ -44,11 +31,6 @@
     transform-origin: center;
 }
 
-.cursor {
-    pointer-events: none;
-    transition: background .3s;
-}
-
 .end{
     animation: end .1s .8s forwards;
     @keyframes end {
@@ -59,6 +41,9 @@
             display: none;
         }
     }
+}
+.cursor {
+    pointer-events: none;
 }
 
 .homeContainer{

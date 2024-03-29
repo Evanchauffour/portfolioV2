@@ -14,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
-      <body className={`overflowX-hidden ${sora.className}`}>
+      <body className={`overflow-x-hidden bg-background ${sora.className}`}>
           <div className='flex flex-col' style={{ minHeight: 'calc(100vh)' }}>
             {children}
           </div>

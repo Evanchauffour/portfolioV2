@@ -8,19 +8,26 @@
         "images": {
           "desktop": [
             "/projectsImg/productLight.svg",
-            "/projectsImg/productPageDark.svg",
-            "path/project1-image3-desktop.jpg"
+            "/projectsImg/productPageDark.svg"
           ],
           "mobile": [
-            "path/project1-image1-mobile.jpg",
-            "path/project1-image2-mobile.jpg",
-            "path/project1-image3-mobile.jpg"
+            "/projectsImg/productMobile1.svg",
+            "/projectsImg/productMobile2.svg"
           ]
         },
         "technologies": [
-            "https://img.icons8.com/color/48/html-5--v1.png",
-            "https://img.icons8.com/color/48/css3.png",
-            "https://img.icons8.com/color/48/javascript--v1.png"
+            {
+              "img": "https://img.icons8.com/color/48/html-5--v1.png",
+              "label": "HTML"
+            },
+            {
+              "img": "https://img.icons8.com/color/48/css3.png",
+              "label": "CSS"
+            },
+            {
+              "img": "https://img.icons8.com/color/48/javascript--v1.png",
+              "label": "JavaScript"
+            }
         ]
       },
       {
@@ -35,13 +42,16 @@
             "path/project2-image3-desktop.jpg"
           ],
           "mobile": [
-            "path/project2-image1-mobile.jpg",
-            "path/project2-image2-mobile.jpg",
-            "path/project2-image3-mobile.jpg"
+            "/projectsImg/patriciaMobile1.svg",
+            "/projectsImg/patriciaMobile2.svg",
+            "/projectsImg/patriciaMobile3.svg"
           ]
         },
         "technologies": [
-          "https://img.icons8.com/fluency/48/wordpress.png"
+          {
+            "label": "WordPress",
+            "img":"https://img.icons8.com/fluency/48/wordpress.png"
+          }
         ]
       },
       {
@@ -56,13 +66,37 @@
             "path/project2-image3-desktop.jpg"
           ],
           "mobile": [
-            "path/project2-image1-mobile.jpg",
-            "path/project2-image2-mobile.jpg",
-            "path/project2-image3-mobile.jpg"
+            "/projectsImg/lucileMobile1.svg",
+            "/projectsImg/lucileMobile2.svg",
+            "/projectsImg/lucileMobile3.svg"
           ]
         },
         "technologies": [
-          "https://img.icons8.com/fluency/48/wordpress.png"
+          {
+            "label": "WordPress",
+            "img":"https://img.icons8.com/fluency/48/wordpress.png"
+          }
+        ]
+      },
+      {
+        "id": "5",
+        "name": "ShareSpend",
+        "description": "ShareSpend est une application mobile que je développe actuellement en utilisant React Native pendant mon temps libre. Elle simplifie le suivi et la gestion des dépenses partagées entre amis, familles ou collègues. Avec une interface conviviale, ShareSpend rend la gestion financière facile et efficace. Une fois terminée, elle sera peut-être disponible sur les plateformes de téléchargement, concrétisant ainsi mon projet de A à Z.",
+        "images": {
+          "desktop": [
+          ],
+          "mobile": [
+            "/projectsImg/sharespend1.svg",
+            "/projectsImg/sharespend2.svg",
+            "/projectsImg/sharespend3.svg",
+            "/projectsImg/sharespend4.svg"
+          ]
+        },
+        "technologies": [
+          {
+            "label": "React Native",
+            "img":"https://img.icons8.com/color/96/react-native.png"
+          }
         ]
       }
     ]

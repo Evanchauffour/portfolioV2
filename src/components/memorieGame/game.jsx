@@ -127,15 +127,15 @@ useEffect(() => {
   
 
   return (
-    <div className={`relative flex flex-col w-full h-full`}>
+    <div className={`relative flex size-full flex-col`}>
         {!loadGame && !endGame && (
-            <div className='w-full flex-1 flex-col gap-8 bg-background flex justify-center items-center'>
-                <h3 className='text-2xl text-center'>{isClient ? 'Découvrez mes compétences !' : ''}</h3>
-                <button className='p-3 bg-primary text-background rounded-lg text-2xl' onClick={handleStart}>Jouer</button>
+            <div className='flex w-full flex-1 flex-col items-center justify-center gap-8 bg-background'>
+                <h3 className='text-center text-2xl text-text'>{isClient ? 'Découvrez mes compétences !' : ''}</h3>
+                <button className='rounded-lg bg-primary p-3 text-2xl text-background' onClick={handleStart}>Jouer</button>
             </div>
         )} 
         {loadGame && !startGame && (
-            <div className='absolute w-full h-full flex-col gap-8 flex justify-center items-center z-10' style={{background: 'rgba(250,254,250,0.6)'}}>
+            <div className='absolute z-10 flex size-full flex-col items-center justify-center gap-8' style={{background: 'rgba(1,4,3,0.6)'}}>
                 <h3 className='text-2xl text-text'>Préparez-vous !</h3>
                 <p className='text-2xl text-text'>{timerToStartGame}s</p>
             </div>
@@ -143,7 +143,7 @@ useEffect(() => {
         {loadGame && !endGame && (
             <>
             <motion.div 
-                className={`${styles.grid} w-full flex-1 p-4 flex`} 
+                className={`${styles.grid} flex w-full flex-1 p-4`} 
                 style={{ gridTemplateColumns: `repeat(4, 1fr)`, gridTemplateRows: `repeat(4, 1fr)` }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -154,29 +154,29 @@ useEffect(() => {
 
                 ))}
             </motion.div>
-            <motion.div className='flex justify-center items-center p2'>
+            <motion.div className='flex items-center justify-center p-2 text-text'>
                 {timer}s
             </motion.div>
             </>
         )}
         {endGame && (
-            <div className='w-full flex-1 bg-background flex flex-col justify-center items-center gap-5'>
-                <div className='flex-1 flex flex-col justify-center items-center'>
-                    <h3 className='text-center text-primary text-3xl mb-6'>Bravo !</h3>
-                    <p className='text-lg text-center mb-6'>Vous avez découvert toutes mes compétences en {timer}s</p>
-                    <ul className='flex flex-row mx-4 flex-wrap gap-2 justify-center self-end'>
+            <div className='flex w-full flex-1 flex-col items-center justify-center gap-5 bg-background'>
+                <div className='flex flex-1 flex-col items-center justify-center'>
+                    <h3 className='mb-6 text-center text-3xl text-primary'>Bravo !</h3>
+                    <p className='mb-6 text-center text-lg'>Vous avez découvert toutes mes compétences en {timer}s</p>
+                    <ul className='mx-4 flex flex-row flex-wrap justify-center gap-2 self-end'>
                     {endGameSkills.map((skill, index) => (
-                        <li className='border border-primary rounded-lg w-16 h-16 relative' key={index} onMouseEnter={() => setIsSkillHovered(index)} onMouseLeave={() => setIsSkillHovered(null)}>
-                            <div className={`${isSkillHovered === index ? 'flex' : 'hidden'} flex-col items-center absolute left-1/2 -translate-x-1/2 -translate-y-full`}>
-                                <span className='bg-primary text-background p-2 rounded-lg z-10 text-nowrap'>{skill.name}</span>
-                                <div className='w-4 h-4 rotate-45 -translate-y-1/2 bg-primary'></div>
+                        <li className='relative size-16 rounded-lg bg-white' key={index} onMouseEnter={() => setIsSkillHovered(index)} onMouseLeave={() => setIsSkillHovered(null)}>
+                            <div className={`${isSkillHovered === index ? 'flex' : 'hidden'} absolute left-1/2 -translate-x-1/2 -translate-y-full flex-col items-center`}>
+                                <span className='z-10 text-nowrap rounded-lg bg-primary p-2 text-background'>{skill.name}</span>
+                                <div className='size-4 -translate-y-1/2 rotate-45 bg-primary'></div>
                             </div>
                             <Image src={skill.linkImg} layout='fill' alt='Logo' className='p-2'/>
                         </li>
                     ))}
                     </ul>
                 </div>
-                <button className='p-3 bg-primary text-background rounded-lg mb-4' onClick={handleRestart}>Rejouer</button>
+                <button className='mb-4 rounded-lg bg-primary p-3 text-background' onClick={handleRestart}>Rejouer</button>
             </div>
         )}
     </div>
