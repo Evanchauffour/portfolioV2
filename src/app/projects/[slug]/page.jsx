@@ -3,8 +3,9 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion"
-import desktop from '../../../../public/desktop.svg'
+import desktop from '../../../../public/desktop.png'
 import mobile from '../../../../public/mobile.svg'
+import arrowRight from '../../../../public/arrowRight.png'
 import projects from '@/app/projects/projects.json'
 import styles from '../[slug]/projet.module.scss'
 import Header from "@/components/header/Header";
@@ -30,8 +31,7 @@ export default function Project( {params} ) {
       <Header />
       {project && project.images && (
         <>
-          <div className="flex w-full flex-1 flex-col justify-between gap-10 overflow-y-auto p-6 xl:flex-row xl:gap-20">
-            <div className="flex flex-col gap-5 border-b border-primary pb-10 xl:w-1/2 xl:self-end xl:border-0 xl:pb-0">
+          <div className="mx-40 my-20 flex flex-1 flex-col items-center overflow-y-auto">
               <motion.h1 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -40,65 +40,43 @@ export default function Project( {params} ) {
               >
                 {project.name}
               </motion.h1>
-              <ul className="flex flex-row gap-4">
+              <ul className="mb-5 mt-2 flex flex-row gap-4">
                 {project.technologies.map((techno, index) => (
                     <Tags technoImg={techno.img} index={index} label={techno.label} key={index}/>
-                  ))}
-                </ul>
+                ))}
+              </ul>
               <motion.p 
-                className="text-justify font-thin text-text sm:w-3/4 xl:w-full"
+                className="mb-5 w-3/4 text-justify font-normal text-text"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: .5, delay: .7}}
               >
                 {project.description}
               </motion.p>
-              {project.website_link && (
-              <motion.a                 
-                className={`relative z-10 w-fit shrink-0 rounded-lg bg-gradient-to-r from-secondary to-primary p-3 text-text`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: .5, delay: .9}} href={project.website_link} target="_blank" rel="noopener noreferrer"
-              >
-              Visiter le site
-              </motion.a>
-              )}
-            </div>
-            <div className="flex h-2/6 w-full flex-col-reverse items-center justify-center gap-5 self-center xl:w-1/2 xl:flex-col xl:self-end">
-              <div className="relative flex items-center justify-center">
-                <motion.div 
-                  key={device}
-                  className="relative mb-10 w-full"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: .5 }}
+              <div className="flex flex-row items-center gap-5">
+                {project.website_link && (
+                <motion.a                 
+                  className={`relative z-10 flex w-fit shrink-0 cursor-pointer flex-row items-center gap-2 rounded-lg border border-text p-3 text-text transition-all duration-100 hover:gap-4 hover:border-primary`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: .5, delay: .9}} href={project.website_link} target="_blank" rel="noopener noreferrer"
                 >
-                  <Image src={device === 'desktop' ? desktop : mobile} alt="device" width={device === 'desktop' ? '' : 350} style={{maxHeight:'600px'}}/>
-                  {device === 'desktop' ? (
-                  <motion.div 
-                    key="desktop"
-                    className="absolute left-1/2 -translate-x-1/2" 
-                    style={{width:'80%', height:'85%', top:'5%'}}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                  >
-                    <Image src={project.images.desktop[0]} alt="project" className="size-full" layout="fill" objectFit="cover"/>
-                  </motion.div>
-                  ) : (
-                  <motion.div 
-                    key="mobile"
-                    className="absolute left-1/2 -translate-x-1/2 overflow-hidden" 
-                    style={{width:'70%', height:'94%', top:'3%', borderRadius:"30px"}}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                  >
-                    <Image src={project.images.mobile[0]} alt="project" className="size-full" layout="fill" objectFit="cover"/>
-                  </motion.div>
-                  )}
-                </motion.div>
+                  Visiter le site
+                  <Image src={arrowRight} width={20} height={20} alt="arrow right"/>
+                </motion.a>
+                )}
+                <motion.a                 
+                  className={`relative z-10 flex w-fit shrink-0 cursor-pointer flex-row items-center gap-2 rounded-lg border border-text p-3 text-text transition-all duration-100 hover:gap-4 hover:border-primary`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: .5, delay: .9}} href={project.website_link} target="_blank" rel="noopener noreferrer"
+                >
+                Github
+                <Image src={arrowRight} width={20} height={20} alt="arrow right"/>
+                </motion.a>
               </div>
               <motion.div 
-                className="relative flex flex-row items-center gap-8 rounded-lg"
+                className="relative mb-5 mt-20 flex flex-row items-center gap-8 rounded-lg"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: .5, delay: .9}}
@@ -116,7 +94,38 @@ export default function Project( {params} ) {
                   }                
                   </div>
               </motion.div>
-            </div>
+              <div className="flex h-2/6 w-full flex-col items-center justify-center gap-5 self-center">
+                <motion.div 
+                  key={device}
+                  className="relative mb-10 flex w-full flex-row items-center justify-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: .5 }}
+                >
+                  <Image src={device === 'desktop' ? desktop : mobile} alt="device" className={`${device === 'desktop' ? 'w-full' : 'w-1/3'}`}/>
+                  {device === 'desktop' ? (
+                  <motion.div 
+                    key="desktop"
+                    className="absolute left-1/2 -z-10 -translate-x-1/2" 
+                    style={{width:'80%', height:'85%', top:'5%'}}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                  >
+                    <Image src={project.images.desktop[0]} alt="project" className="size-full" layout="fill" objectFit="cover"/>
+                  </motion.div>
+                  ) : (
+                  <motion.div 
+                    key="mobile"
+                    className="absolute left-1/2 -z-10 -translate-x-1/2 overflow-hidden" 
+                    style={{width:'30%', height:'95%', top:'3%', borderRadius:"30px"}}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                  >
+                    <Image src={project.images.mobile[0]} alt="project" className="size-full" layout="fill" objectFit="cover"/>
+                  </motion.div>
+                  )}
+                </motion.div>
+              </div>
           </div>
         </>
       )}
