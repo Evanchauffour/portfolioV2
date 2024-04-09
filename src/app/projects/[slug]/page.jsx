@@ -46,7 +46,7 @@ export default function Project( {params} ) {
                   ))}
                 </ul>
               <motion.p 
-                className="text-justify text-text sm:w-3/4 xl:w-full"
+                className="text-justify font-thin text-text sm:w-3/4 xl:w-full"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: .5, delay: .7}}

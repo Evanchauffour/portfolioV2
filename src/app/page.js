@@ -8,6 +8,8 @@ import MyPresnetation from '@/components/myPresentation/myPresnetation';
 import Game from '@/components/memorieGame/game';
 import { AnimatePresence, motion } from 'framer-motion';
 import GrowLetters from '@/components/growLetterAnim/GrowLetters';
+import Widget from '@/components/widget/Widget';
+import Image from 'next/image';
 
 
 export default function Home() {
@@ -63,7 +65,24 @@ export default function Home() {
         ease: "easeInOut",
       },
     },
-    closed: { scaleX: 1.5, scaleY: 1.5, opacity: 0,
+    closed: { scaleX: 0, scaleY: 0,
+      transition: {
+        delay: .7,
+        duration: 1,
+        ease: "easeInOut",
+      },
+    },
+  }
+
+  const variantsSlide2 = {
+    open: { scaleX: 1.5, scaleY: 1.5,
+      transition: {
+        duration: 1,
+        delay: .4,
+        ease: "easeInOut",
+      },
+    },
+    closed: { scaleX: 0, scaleY: 0,
       transition: {
         delay: .5,
         duration: 1,
@@ -124,48 +143,55 @@ export default function Home() {
         </div>
         <div className='flex size-full flex-row items-center justify-center'>
           <motion.div 
-            className={`-z-10 size-[100vw] flex-1 rounded-full border-4 border-primary bg-background`}
+            className={`absolute -z-10 size-[100vw] flex-1 rounded-full bg-text`}
             variants={variantsSlide}
             initial={{ scaleX: 0, scaleY: 0, opacity: 1 }}
             animate={ "open"}
             exit={"closed"}
           >
           </motion.div>
+          <motion.div 
+            className={`absolute -z-10 size-[100vw] flex-1 rounded-full bg-background`}
+            variants={variantsSlide2}
+            initial={{ scaleX: 0, scaleY: 0, opacity: 1 }}
+            animate={ "open"}
+            exit={"closed"}
+          >
+          </motion.div>
         </div>
-        <motion.div 
+        {/* <motion.div 
           style={{ transform: `translate(${mousePos.x - 56}px, ${mousePos.y - 56}px)` }} 
           className={`absolute flex size-28 items-center justify-center rounded-full border-2 text-center text-xl capitalize transition-all duration-100 ${!hovered ? 'border-primary text-text' : 'bg-text text-background'} ${styles.cursor}`}
           variants={variantsCursor}
           initial={"closed"} animate={ "open" } exit={"closed"}
         >
           Cliquer
-        </motion.div>
+        </motion.div> */}
       </motion.div>
       )}
       </AnimatePresence>
       {!isOpen && (
       <div 
-      className={`grid w-full ${styles.homeContainer}`} 
-      style={{minHeight: '100vh'}}
+      className={`grid ${styles.homeContainer}`} 
+      style={{minHeight: 'calc(100vh - 40px)'}}
       >
-        <div 
-          className={`relative border-r-2 border-text bg-background ${styles.widget}`} 
-          style={{gridArea: 'me'}}
-        >
+        <Widget gridArea='me'>
           <MyPresnetation />
-        </div>
-        <div 
-          className={`flex flex-col items-center border-b-2 border-text bg-background ${styles.widget}`} 
-          style={{gridArea: 'projects'}}
-        >
+        </Widget>
+        <Widget gridArea='projects'>
           <SliderProjectsHome />
-        </div>
-        <div 
-          className={`flex flex-col items-center justify-center gap-10 bg-background ${styles.widget}`} 
-          style={{gridArea: 'game'}}
-        >
+        </Widget>
+        <Widget gridArea='game'>
           <Game />
-        </div>
+        </Widget>
+        <Widget gridArea='themeColor'>
+          <button className='size-20 rounded-full bg-gradient-to-l from-primary to-accent'></button>
+        </Widget>
+        <Widget gridArea='darkMode'>
+          <button className='relative size-20 rounded-full'>
+            <Image src='https://img.icons8.com/ios/100/FFFFFF/sun--v1.png' alt='sun' layout='fill' />
+          </button>
+        </Widget>
       </div>
       )}
     </>

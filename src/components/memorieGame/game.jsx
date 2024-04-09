@@ -127,7 +127,7 @@ useEffect(() => {
   
 
   return (
-    <div className={`relative flex size-full flex-col`}>
+    <div className={`relative flex size-full flex-col overflow-hidden rounded-lg`}>
         {!loadGame && !endGame && (
             <div className='flex w-full flex-1 flex-col items-center justify-center gap-8 bg-background'>
                 <h3 className='text-center text-2xl text-text'>{isClient ? 'Découvrez mes compétences !' : ''}</h3>

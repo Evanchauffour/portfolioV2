@@ -47,11 +47,14 @@
 }
 
 .homeContainer{
-    grid-template-columns: 1.5fr 1fr; 
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 20px;
     grid-template-areas: 
-    "me projects"
-    "me game";
+    "me me me projects projects"
+    "game game game projects projects"
+    "game game game themeColor darkMode";
+    margin: 20px;
     .widget{
         overflow: hidden;
         &:first-child{
