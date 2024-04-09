@@ -31,7 +31,8 @@ export default function Project( {params} ) {
       <Header />
       {project && project.images && (
         <>
-          <div className="mx-40 my-20 flex flex-1 flex-col items-center overflow-y-auto">
+          <div className="my-20">
+            <div className="mx-32 flex flex-1 flex-col items-center">
               <motion.h1 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -75,8 +76,10 @@ export default function Project( {params} ) {
                 <Image src={arrowRight} width={20} height={20} alt="arrow right"/>
                 </motion.a>
               </div>
+            </div>
+            <div className="mt-5 flex flex-1 flex-col items-center">
               <motion.div 
-                className="relative mb-5 mt-20 flex flex-row items-center gap-8 rounded-lg"
+                className="relative mb-5 mt-10 flex flex-row items-center gap-8 rounded-lg"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: .5, delay: .9}}
@@ -94,7 +97,7 @@ export default function Project( {params} ) {
                   }                
                   </div>
               </motion.div>
-              <div className="flex h-2/6 w-full flex-col items-center justify-center gap-5 self-center">
+              <div className="w-full">
                 <motion.div 
                   key={device}
                   className="relative mb-10 flex w-full flex-row items-center justify-center"
@@ -102,30 +105,29 @@ export default function Project( {params} ) {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: .5 }}
                 >
-                  <Image src={device === 'desktop' ? desktop : mobile} alt="device" className={`${device === 'desktop' ? 'w-full' : 'w-1/3'}`}/>
                   {device === 'desktop' ? (
-                  <motion.div 
-                    key="desktop"
-                    className="absolute left-1/2 -z-10 -translate-x-1/2" 
-                    style={{width:'80%', height:'85%', top:'5%'}}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                  >
-                    <Image src={project.images.desktop[0]} alt="project" className="size-full" layout="fill" objectFit="cover"/>
-                  </motion.div>
+                  <div className="relative h-[616px] w-[1000px] overflow-hidden" style={{border: 'solid 8px grey', borderRadius: '48px'}}>
+                    <div className="size-full overflow-hidden" style={{border: 'solid 16px black', borderRadius: '40px'}}>
+                      <Image src={project.images.desktop[0]} alt="projectImageDesktop" width={1000} height={616} className="-z-10"/>
+                    </div>
+                  </div>
                   ) : (
+                  <>
+                  <Image src={mobile} alt="device" className='w-1/5'/>
                   <motion.div 
                     key="mobile"
                     className="absolute left-1/2 -z-10 -translate-x-1/2 overflow-hidden" 
-                    style={{width:'30%', height:'95%', top:'3%', borderRadius:"30px"}}
+                    style={{width:'18%', height:'95%', top:'2%', borderRadius:"30px"}}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                   >
                     <Image src={project.images.mobile[0]} alt="project" className="size-full" layout="fill" objectFit="cover"/>
                   </motion.div>
+                  </>
                   )}
                 </motion.div>
               </div>
+            </div>
           </div>
         </>
       )}

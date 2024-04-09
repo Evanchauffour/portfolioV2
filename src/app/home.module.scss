@@ -48,12 +48,13 @@
 
 .homeContainer{
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr, 1fr;
     gap: 20px;
     grid-template-areas: 
-    "me me me projects projects"
-    "game game game projects projects"
-    "game game game themeColor darkMode";
+    "me me me game game"
+    "me me me game game"
+    "projects projects projects game game"
+    "projects projects projects themeColor darkMode";
     margin: 20px;
     .widget{
         overflow: hidden;
