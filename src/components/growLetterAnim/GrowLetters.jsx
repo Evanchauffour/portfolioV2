@@ -6,7 +6,6 @@ export default function GrowLetters({ children, text, delay, isAnimated = false,
   const [textFormated, setTextFormated] = useState([]);
 
   useEffect(() => {
-    console.log(weightEnd);
     const formattedText = text.split('').map((letter, index) => (
       <motion.span 
         key={index}

@@ -7,7 +7,7 @@ export default function Transition({ children }) {
   return (
     <AnimatePresence>
       <motion.div 
-        className='w-screen bg-secondary origin-top'
+        className='w-screen origin-top bg-darkSecondary'
         initial={{ scaleY: 0, scaleX: 1}}
         animate={{ scaleY: 1, scaleX: 1}}
         transition={{ duration: .5 }}

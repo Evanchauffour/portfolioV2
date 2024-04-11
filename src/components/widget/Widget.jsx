@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 
-export default function Widget({ children, gridArea }) {
+export default function Widget({ children, gridArea, delay, x = 0, y = 0}) {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [hovered, setHovered] = useState(false);
   const widgetRef = useRef(null);
@@ -23,13 +24,22 @@ export default function Widget({ children, gridArea }) {
   }, []);
 
   return (
-    <div className='relative overflow-hidden rounded-lg bg-text p-px' style={{ gridArea: gridArea }} ref={widgetRef} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
-        <div className='flex size-full items-center justify-center rounded-lg bg-background'>
+    <motion.div 
+      className='relative overflow-hidden rounded-lg p-px light:bg-darkBackground dark:bg-lightBackground'
+      style={{ gridArea: gridArea }} 
+      ref={widgetRef} 
+      onMouseEnter={() => setHovered(true)} 
+      onMouseLeave={() => setHovered(false)}
+      initial={{ x: x, y: y, opacity: 0 }}
+      animate={{ x: 0, y: 0, opacity: 1 }}
+      transition={{ duration: .5, delay: delay}}
+    >
+        <div className='flex size-full items-center justify-center rounded-lg light:bg-lightBackground dark:bg-darkBackground'>
           {hovered && (
-          <div style={{ transform: `translate(${mousePos.x - 140}px, ${mousePos.y - 140}px)`, boxShadow: '5px 5px 50px 50px #29D196', filter: 'blur(100px)' }} className='absolute left-0 top-0 size-60 origin-center bg-primary opacity-20'></div>
+          <div style={{ transform: `translate(${mousePos.x - 140}px, ${mousePos.y - 140}px)`, boxShadow: '5px 5px 50px 50px #29D196', filter: 'blur(100px)' }} className='absolute left-0 top-0 size-80 origin-center bg-darkPrimary opacity-20'></div>
           )}
           {children}
         </div>
-    </div>
+    </motion.div>
   );
 }

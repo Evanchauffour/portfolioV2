@@ -129,15 +129,15 @@ useEffect(() => {
   return (
     <div className={`relative flex size-full flex-col overflow-hidden rounded-lg`}>
         {!loadGame && !endGame && (
-            <div className='flex w-full flex-1 flex-col items-center justify-center gap-8 bg-background'>
-                <h3 className='text-center text-2xl text-text'>{isClient ? 'Découvrez mes compétences !' : ''}</h3>
-                <button className='rounded-lg bg-primary p-3 text-2xl text-background' onClick={handleStart}>Jouer</button>
+            <div className='flex w-full flex-1 flex-col items-center justify-center gap-8'>
+                <h3 className='text-center text-2xl light:text-lightText dark:text-darkText'>{isClient ? 'Découvrez mes compétences !' : ''}</h3>
+                <button className='rounded-lg  bg-darkPrimary p-3 text-2xl light:text-lightText dark:text-darkText' onClick={handleStart}>Jouer</button>
             </div>
         )} 
         {loadGame && !startGame && (
             <div className='absolute z-10 flex size-full flex-col items-center justify-center gap-8' style={{background: 'rgba(1,4,3,0.6)'}}>
-                <h3 className='text-2xl text-text'>Préparez-vous !</h3>
-                <p className='text-2xl text-text'>{timerToStartGame}s</p>
+                <h3 className='text-2xl light:text-lightText dark:text-darkText'>Préparez-vous !</h3>
+                <p className='text-2xl light:text-lightText dark:text-darkText'>{timerToStartGame}s</p>
             </div>
         )}
         {loadGame && !endGame && (
@@ -154,29 +154,29 @@ useEffect(() => {
 
                 ))}
             </motion.div>
-            <motion.div className='flex items-center justify-center p-2 text-text'>
+            <motion.div className='flex items-center justify-center p-2 light:text-lightText dark:text-darkText'>
                 {timer}s
             </motion.div>
             </>
         )}
         {endGame && (
-            <div className='flex w-full flex-1 flex-col items-center justify-center gap-5 bg-background'>
+            <div className='flex w-full flex-1 flex-col items-center justify-center gap-5'>
                 <div className='flex flex-1 flex-col items-center justify-center'>
-                    <h3 className='mb-6 text-center text-3xl text-primary'>Bravo !</h3>
-                    <p className='mb-6 text-center text-lg'>Vous avez découvert toutes mes compétences en {timer}s</p>
+                    <h3 className='mb-6 text-center text-3xl text-darkPrimary'>Bravo !</h3>
+                    <p className='mb-6 text-center text-lg light:text-lightText dark:text-darkText'>Vous avez découvert toutes mes compétences en {timer}s</p>
                     <ul className='mx-4 flex flex-row flex-wrap justify-center gap-2 self-end'>
                     {endGameSkills.map((skill, index) => (
                         <li className='relative size-16 rounded-lg bg-white' key={index} onMouseEnter={() => setIsSkillHovered(index)} onMouseLeave={() => setIsSkillHovered(null)}>
                             <div className={`${isSkillHovered === index ? 'flex' : 'hidden'} absolute left-1/2 -translate-x-1/2 -translate-y-full flex-col items-center`}>
-                                <span className='z-10 text-nowrap rounded-lg bg-primary p-2 text-background'>{skill.name}</span>
-                                <div className='size-4 -translate-y-1/2 rotate-45 bg-primary'></div>
+                                <span className='z-10 text-nowrap rounded-lg bg-darkPrimary p-2 light:text-lightText dark:text-darkText'>{skill.name}</span>
+                                <div className='size-4 -translate-y-1/2 rotate-45 bg-darkPrimary'></div>
                             </div>
                             <Image src={skill.linkImg} layout='fill' alt='Logo' className='p-2'/>
                         </li>
                     ))}
                     </ul>
                 </div>
-                <button className='mb-4 rounded-lg bg-primary p-3 text-background' onClick={handleRestart}>Rejouer</button>
+                <button className='mb-4 rounded-lg bg-darkPrimary p-3 light:text-lightText dark:text-darkText' onClick={handleRestart}>Rejouer</button>
             </div>
         )}
     </div>

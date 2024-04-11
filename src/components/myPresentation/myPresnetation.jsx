@@ -13,8 +13,8 @@ export default function MyPresnetation() {
   }, [])
 
   return (
-    <div onClick={() => router.push('/about')} className={`flex size-full flex-col items-center justify-center ${styles.homePres}`}>
-      <h2 className='text-8xl'>{isClient ? 'Me découvrir' : ''}</h2>
+    <div onClick={() => router.push('/about')} className={`flex size-full cursor-pointer flex-col items-center justify-center ${styles.homePres}`}>
+      <h2 className='text-8xl light:text-lightText dark:text-darkText'>{isClient ? 'Me découvrir' : ''}</h2>
     </div>
   )
 }

@@ -47,7 +47,7 @@ export default function Project( {params} ) {
                 ))}
               </ul>
               <motion.p 
-                className="mb-5 w-3/4 text-justify font-normal text-text"
+                className="mb-5 w-3/4 text-justify font-normal light:text-lightText dark:text-darkText"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: .5, delay: .7}}
@@ -57,7 +57,7 @@ export default function Project( {params} ) {
               <div className="flex flex-row items-center gap-5">
                 {project.website_link && (
                 <motion.a                 
-                  className={`relative z-10 flex w-fit shrink-0 cursor-pointer flex-row items-center gap-2 rounded-lg border border-text p-3 text-text transition-all duration-100 hover:gap-4 hover:border-primary`}
+                  className={`relative z-10 flex w-fit shrink-0 cursor-pointer flex-row items-center gap-2 rounded-lg border p-3 transition-all duration-100 hover:gap-4 hover:border-darkPrimary light:border-darkBackground light:text-lightText dark:border-lightBackground dark:text-darkText`}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: .5, delay: .9}} href={project.website_link} target="_blank" rel="noopener noreferrer"
@@ -67,7 +67,7 @@ export default function Project( {params} ) {
                 </motion.a>
                 )}
                 <motion.a                 
-                  className={`relative z-10 flex w-fit shrink-0 cursor-pointer flex-row items-center gap-2 rounded-lg border border-text p-3 text-text transition-all duration-100 hover:gap-4 hover:border-primary`}
+                  className={`relative z-10 flex w-fit shrink-0 cursor-pointer flex-row items-center gap-2 rounded-lg border p-3 transition-all duration-100 hover:gap-4 hover:border-darkPrimary light:border-darkBackground light:text-lightText dark:border-lightBackground dark:text-darkText`}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: .5, delay: .9}} href={project.website_link} target="_blank" rel="noopener noreferrer"
@@ -87,12 +87,12 @@ export default function Project( {params} ) {
                 <div className="relative">
                   {
                     project.images.desktop.length > 0 && (
-                      <button className={`relative z-10 rounded-lg p-3 ${device === 'desktop' ? 'bg-gradient-to-r from-secondary to-primary p-3 text-text' : 'text-text'}`} onClick={() => setDevice('desktop')}>Desktop</button>
+                      <button className={`relative z-10 rounded-lg p-3 ${device === 'desktop' ? 'bg-gradient-to-r from-darkSecondary to-darkPrimary p-3 text-darkText' : 'light:text-lightText dark:text-darkText'}`} onClick={() => setDevice('desktop')}>Desktop</button>
                     )
                   }
                   {
                     project.images.mobile.length > 0 && (
-                      <button className={`relative z-10 rounded-lg p-3 ${device === 'mobile' ? 'bg-gradient-to-r from-secondary to-primary p-3 text-text' : 'text-text'}`} onClick={() => setDevice('mobile')}>Mobile</button>
+                      <button className={`relative z-10 rounded-lg p-3 ${device === 'mobile' ? 'bg-gradient-to-r from-darkSecondary to-darkPrimary p-3 text-darkText' : 'light:text-lightText dark:text-darkText'}`} onClick={() => setDevice('mobile')}>Mobile</button>
                     )
                   }                
                   </div>

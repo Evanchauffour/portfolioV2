@@ -1,5 +1,8 @@
+const { themeVariants } = require("tailwindcss-theme-variants");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,16 +11,32 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'text': '#DDF9EF',
-        'primary': '#29D196',
-        'secondary': '#184F7C',
-        'background': '#010403',
-        'accent': '#1F439E'
+        'darkText': '#DDF9EF',
+        'darkPrimary': '#29D196',
+        'darkSecondary': '#184F7C',
+        'darkBackground': '#010403',
+        'darkAccent': '#1F439E',
+        'lightBackground': '#FBFEFD',
+        'lightText': '#062319',
+        'lightPrimary': '#2ED69B',
+        'lightSecondary': '#83BAE7',
+        'lightAccent': '#6185E0'
       }
     },
     fontFamily: {
       'sora': ['var(--sora)', 'sans-serif'],
     }
   },
-  plugins: [],
+  plugins: [
+    themeVariants({
+        themes: {
+            light: {
+                selector: ".light",
+            },
+            dark: {
+                selector: ".dark",
+            },
+        },
+    }),
+],
 };

@@ -10,13 +10,14 @@ import { AnimatePresence, motion } from 'framer-motion';
 import GrowLetters from '@/components/growLetterAnim/GrowLetters';
 import Widget from '@/components/widget/Widget';
 import Image from 'next/image';
-
+import { useTheme } from "next-themes";
 
 export default function Home() {
 
   const [isOpen, setIsOpen] = useState(true)
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [hovered, setHovered] = useState(false);
+  const { systemTheme, theme, setTheme } = useTheme();
+  const currentTheme = theme === 'system' ? systemTheme : theme;
 
   useEffect(() => {
     window.addEventListener('mousemove', (e) => {
@@ -91,23 +92,6 @@ export default function Home() {
     },
   }
 
-  const variantsCursor = {
-    open: { opacity: 1,
-      transition: {
-        duration: 0.5,
-        delay: 1.5,
-        ease: "easeInOut",
-      },
-    },
-    closed: { opacity: 0, 
-      transition: {
-        delay: 0,
-        duration: 0.5,
-        ease: "easeInOut",
-      },
-    },
-  }
-
   const handleClick = () => {
     setIsOpen(false)
   }
@@ -120,19 +104,17 @@ export default function Home() {
         <div className={`absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center`}>
           <GrowLetters text='Evan' delay={1.2} weightEnd='800'>
             <motion.h1 
-              className={`z-10 text-[30vw] font-light text-text`}
+              className={`z-10 text-[30vw] font-light light:text-lightText dark:text-darkText`}
               variants={h1Anim}
               initial={"closed"}
               animate={ "open" }
               exit={"closed"}
-              onMouseEnter={() => setHovered(true)}
-              onMouseLeave={() => setHovered(false)}
             >
             </motion.h1>
           </GrowLetters>
           <GrowLetters text='Developpeur full stack' delay={1.8} isAnimated={true} weightEnd='100'>
             <motion.h2 
-              className={`z-10 text-[3vw] font-extrabold uppercase text-text`}
+              className={`z-10 text-[3vw] font-extrabold uppercase light:text-lightText dark:text-darkText`}
               variants={h2Anim}
               initial={"closed"}
               animate={ "open" }
@@ -143,7 +125,7 @@ export default function Home() {
         </div>
         <div className='flex size-full flex-row items-center justify-center'>
           <motion.div 
-            className={`absolute -z-10 size-[100vw] flex-1 rounded-full bg-text`}
+            className={`absolute -z-10 size-[100vw] flex-1 rounded-full light:bg-darkBackground dark:bg-lightBackground`}
             variants={variantsSlide}
             initial={{ scaleX: 0, scaleY: 0, opacity: 1 }}
             animate={ "open"}
@@ -151,7 +133,7 @@ export default function Home() {
           >
           </motion.div>
           <motion.div 
-            className={`absolute -z-10 size-[100vw] flex-1 rounded-full bg-background`}
+            className={`absolute -z-10 size-[100vw] flex-1 rounded-full light:bg-lightBackground dark:bg-darkBackground`}
             variants={variantsSlide2}
             initial={{ scaleX: 0, scaleY: 0, opacity: 1 }}
             animate={ "open"}
@@ -159,40 +141,40 @@ export default function Home() {
           >
           </motion.div>
         </div>
-        {/* <motion.div 
-          style={{ transform: `translate(${mousePos.x - 56}px, ${mousePos.y - 56}px)` }} 
-          className={`absolute flex size-28 items-center justify-center rounded-full border-2 text-center text-xl capitalize transition-all duration-100 ${!hovered ? 'border-primary text-text' : 'bg-text text-background'} ${styles.cursor}`}
-          variants={variantsCursor}
-          initial={"closed"} animate={ "open" } exit={"closed"}
-        >
-          Cliquer
-        </motion.div> */}
       </motion.div>
       )}
       </AnimatePresence>
       {!isOpen && (
-      <div 
+      <motion.div 
+      initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{duration: .5, delay: 1}}
       className={`grid ${styles.homeContainer}`} 
       style={{minHeight: 'calc(100vh - 40px)'}}
       >
-        <Widget gridArea='me'>
+        <Widget gridArea='me' delay={1.5} x={-40}>
           <MyPresnetation />
         </Widget>
-        <Widget gridArea='projects'>
+        <Widget gridArea='projects' delay={1.7} y={40}>
           <SliderProjectsHome />
         </Widget>
-        <Widget gridArea='game'>
+        <Widget gridArea='game' delay={1.9} x={40}>
           <Game />
         </Widget>
-        <Widget gridArea='themeColor'>
-          <button className='size-20 rounded-full bg-gradient-to-l from-primary to-accent'></button>
-        </Widget>
-        <Widget gridArea='darkMode'>
-          <button className='relative size-20 rounded-full'>
-            <Image src='https://img.icons8.com/ios/100/FFFFFF/sun--v1.png' alt='sun' layout='fill' />
+        <Widget gridArea='themeColor' delay={2.1} y={-40}>
+          <button 
+            className='size-20 rounded-full bg-gradient-to-l from-darkPrimary to-lightAccent'
+          >
           </button>
         </Widget>
-      </div>
+        <Widget gridArea='darkMode' delay={2.2} y={-40}>
+          <button className='relative size-20 rounded-full' onClick={() => theme == "dark" ? setTheme('light') : setTheme("dark")}>
+            {theme === 'light' ? (
+              <Image src='https://img.icons8.com/ios-filled/100/crescent-moon.png' alt='moon' width={80} height={80} />
+            ) : (
+              <Image src='https://img.icons8.com/ios/100/FFFFFF/sun--v1.png' alt='sun' width={80} height={80} />
+            )}
+          </button>
+        </Widget>
+      </motion.div>
       )}
     </>
   );

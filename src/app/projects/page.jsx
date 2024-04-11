@@ -29,7 +29,7 @@ export default function Projects() {
                 href={`/projects/${project.id}`} key={index}         
               >
                 <motion.div 
-                  className={`${styles.linkItem} flex flex-row justify-between p-5`}
+                  className={`${styles.linkItem} flex flex-row justify-between p-5 light:text-lightText light:hover:text-lightText dark:text-darkText dark:hover:text-darkText`}
                   whileHover="visible"
                 >
                   <h2 

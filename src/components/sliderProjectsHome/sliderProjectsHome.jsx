@@ -6,7 +6,7 @@ export default function SliderProjectsHome() {
   return (
     <>
         <Link href="/projects" className={`relative flex size-full flex-1 items-center justify-center ${styles.projectHome}`}>
-            <h2 className='text-8xl'>Mes projets</h2>
+            <h2 className='text-8xl light:text-lightText dark:text-darkText'>Mes projets</h2>
         </Link>
     </>
   )
