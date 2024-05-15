@@ -24,7 +24,7 @@ export default function Title({title, otherStyle = '', multiplier = 1.6, color})
     })
     
     return (
-        <h1 className={`${styles.title} ${otherStyle}`} style={{scale: (scroll / 600 + 1, scroll / 600 + 1)}}>
+        <h1 className={`${styles.title} ${otherStyle} inline-block bg-gradient-to-r from-darkPrimary to-darkAccent bg-clip-text text-transparent theme2:from-theme2-primary theme2:to-theme2-accent theme3:from-theme3-primary theme3:to-theme3-accent`} style={{scale: (scroll / 600 + 1, scroll / 600 + 1)}}>
         {lettersHead.length === 0 
         ? `${title}`
         : (

@@ -17,7 +17,6 @@ body{
   bottom: 50px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1000000000;
   border: solid 1px white;
   width: 40px;
   height: 60px;
@@ -48,16 +47,29 @@ body{
   }
 }
 
-.test{
-  animation: test 2s ease-in forwards;
-  opacity: 0;
-  @keyframes test{
-    0%{
-      opacity: 0;
-    }
-    100%{
-      opacity: 1;
-    }
-    
-  }
+.theme1 .navItem::before{
+  background-color: #29D196;
+}
+
+.theme2 .navItem::before{
+  background-color: #B438FE;
+}
+
+.theme3 .navItem::before{
+  background-color: #1BB4EE;
+}
+
+.theme1 .linkItem::after{
+  background-color: #29D196;
+  opacity: .2;
+}
+
+.theme2 .linkItem::after{
+  background-color: #B438FE;
+  opacity: .1;
+}
+
+.theme3 .linkItem::after{
+  background-color: #1BB4EE;
+  opacity: .2;
 }

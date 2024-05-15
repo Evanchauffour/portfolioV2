@@ -11,13 +11,13 @@ import GrowLetters from '@/components/growLetterAnim/GrowLetters';
 import Widget from '@/components/widget/Widget';
 import Image from 'next/image';
 import { useTheme } from "next-themes";
+import ThemeSelector from '@/components/themeSelector';
 
 export default function Home() {
 
   const [isOpen, setIsOpen] = useState(true)
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const { systemTheme, theme, setTheme } = useTheme();
-  const currentTheme = theme === 'system' ? systemTheme : theme;
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     window.addEventListener('mousemove', (e) => {
@@ -96,6 +96,12 @@ export default function Home() {
     setIsOpen(false)
   }
 
+  const handleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark')
+  };
+  
+  
+  
   return (
     <>
       <AnimatePresence>
@@ -104,7 +110,7 @@ export default function Home() {
         <div className={`absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center`}>
           <GrowLetters text='Evan' delay={1.2} weightEnd='800'>
             <motion.h1 
-              className={`z-10 text-[30vw] font-light light:text-lightText dark:text-darkText`}
+              className={`z-10 inline-block bg-gradient-to-r bg-clip-text text-[30vw] font-light text-transparent theme1:from-lightPrimary theme1:to-lightAccent theme2:from-theme2-primary theme2:to-theme2-accent theme3:from-theme3-primary theme3:to-theme3-accent`}
               variants={h1Anim}
               initial={"closed"}
               animate={ "open" }
@@ -114,7 +120,7 @@ export default function Home() {
           </GrowLetters>
           <GrowLetters text='Developpeur full stack' delay={1.8} isAnimated={true} weightEnd='100'>
             <motion.h2 
-              className={`z-10 text-[3vw] font-extrabold uppercase light:text-lightText dark:text-darkText`}
+              className={`z-10 text-[3vw] font-extrabold uppercase light:text-lightText darkTheme:text-darkText`}
               variants={h2Anim}
               initial={"closed"}
               animate={ "open" }
@@ -125,7 +131,7 @@ export default function Home() {
         </div>
         <div className='flex size-full flex-row items-center justify-center'>
           <motion.div 
-            className={`absolute -z-10 size-[100vw] flex-1 rounded-full light:bg-darkBackground dark:bg-lightBackground`}
+            className={`absolute -z-10 size-[100vw] flex-1 rounded-full light:bg-darkBackground darkTheme:bg-lightBackground`}
             variants={variantsSlide}
             initial={{ scaleX: 0, scaleY: 0, opacity: 1 }}
             animate={ "open"}
@@ -133,7 +139,7 @@ export default function Home() {
           >
           </motion.div>
           <motion.div 
-            className={`absolute -z-10 size-[100vw] flex-1 rounded-full light:bg-lightBackground dark:bg-darkBackground`}
+            className={`absolute -z-10 size-[100vw] flex-1 rounded-full light:bg-lightBackground darkTheme:bg-darkBackground`}
             variants={variantsSlide2}
             initial={{ scaleX: 0, scaleY: 0, opacity: 1 }}
             animate={ "open"}
@@ -160,19 +166,18 @@ export default function Home() {
           <Game />
         </Widget>
         <Widget gridArea='themeColor' delay={2.1} y={-40}>
-          <button 
-            className='size-20 rounded-full bg-gradient-to-l from-darkPrimary to-lightAccent'
-          >
-          </button>
+          <ThemeSelector customClass="size-20"/>
         </Widget>
         <Widget gridArea='darkMode' delay={2.2} y={-40}>
-          <button className='relative size-20 rounded-full' onClick={() => theme == "dark" ? setTheme('light') : setTheme("dark")}>
+          {theme && (
+            <button className='relative size-20 rounded-full' onClick={() => handleTheme()}>
             {theme === 'light' ? (
               <Image src='https://img.icons8.com/ios-filled/100/crescent-moon.png' alt='moon' width={80} height={80} />
             ) : (
               <Image src='https://img.icons8.com/ios/100/FFFFFF/sun--v1.png' alt='sun' width={80} height={80} />
             )}
-          </button>
+            </button>
+          )}
         </Widget>
       </motion.div>
       )}

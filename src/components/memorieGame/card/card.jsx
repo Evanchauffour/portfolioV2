@@ -7,7 +7,7 @@ export default function Card({ handleClick, skill, id }) {
   return (
     <motion.div
       initial={{ opacity: 0 }} animate={{opacity: 1 }} transition={{duration: .3, delay: id / 15}}
-      className={`flex cursor-pointer items-center justify-center rounded-lg border border-darkPrimary text-darkPrimary ${styles.card} ${
+      className={`flex cursor-pointer items-center justify-center rounded-lg theme2:text-theme2-accent theme1:text-darkPrimary theme3:text-theme3-primary border-darkText light:bg-white darkTheme:bg-black ${styles.card} ${
         skill.status === 'active' ? styles.active : ''
       } ${
         skill.status === 'matched' ? styles.matched : ''

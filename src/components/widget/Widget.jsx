@@ -25,7 +25,7 @@ export default function Widget({ children, gridArea, delay, x = 0, y = 0}) {
 
   return (
     <motion.div 
-      className='relative overflow-hidden rounded-lg p-px light:bg-darkBackground dark:bg-lightBackground'
+      className='relative overflow-hidden rounded-lg p-px light:bg-darkBackground darkTheme:bg-lightBackground'
       style={{ gridArea: gridArea }} 
       ref={widgetRef} 
       onMouseEnter={() => setHovered(true)} 
@@ -34,9 +34,9 @@ export default function Widget({ children, gridArea, delay, x = 0, y = 0}) {
       animate={{ x: 0, y: 0, opacity: 1 }}
       transition={{ duration: .5, delay: delay}}
     >
-        <div className='flex size-full items-center justify-center rounded-lg light:bg-lightBackground dark:bg-darkBackground'>
+        <div className='flex size-full items-center justify-center rounded-lg light:bg-lightBackground darkTheme:bg-darkBackground'>
           {hovered && (
-          <div style={{ transform: `translate(${mousePos.x - 140}px, ${mousePos.y - 140}px)`, boxShadow: '5px 5px 50px 50px #29D196', filter: 'blur(100px)' }} className='absolute left-0 top-0 size-80 origin-center bg-darkPrimary opacity-20'></div>
+          <div style={{ transform: `translate(${mousePos.x - 140}px, ${mousePos.y - 140}px)`, boxShadow: '5px 5px 50px 50px #29D196', filter: 'blur(100px)' }} className='absolute left-0 top-0 size-80 origin-center opacity-20 light:opacity-40 theme1:bg-darkPrimary theme2:bg-theme2-accent theme3:bg-theme3-primary'></div>
           )}
           {children}
         </div>

@@ -1,43 +1,156 @@
 'use client';
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion"
 import desktop from '../../../../public/desktop.png'
 import mobile from '../../../../public/mobile.svg'
-import arrowRight from '../../../../public/arrowRight.png'
 import projects from '@/app/projects/projects.json'
 import styles from '../[slug]/projet.module.scss'
 import Header from "@/components/header/Header";
 import Tags from "@/components/tags/tags";
+import { useTheme } from "next-themes";
+import { useRouter } from 'next/navigation'
 
 export default function Project( {params} ) {
   const [project, setProject] = useState();
   const [device, setDevice] = useState('desktop');
+  const [nextProjectId, setNextProjectId] = useState(0);
+  const [previousProjectId, setPreviousProjectId] = useState(0);
+  const { theme } = useTheme();
+  const router = useRouter()
+  const nextButton = useRef(null);
+  const previousButton = useRef(null);
+  const windowWidth = useRef(window.innerWidth);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    console.log(projects.portfolio);
     const project = projects.portfolio.find((project) => project.id === params.slug);
+    setNextProjectId(parseInt(params.slug));
+    setPreviousProjectId(parseInt(params.slug));
     setProject(project);
-
     if(project.images.desktop.length === 0) {
       setDevice('mobile');
     }
   }, [params.slug]);
+
+  const handleKeyup = (event) => {
+    const theme = localStorage.getItem('themeColor');
+    if (event.key === 's') {
+      changeProject(true, false);
+      if(theme === '0') {
+        nextButton.current.classList.remove('bg-darkPrimary');
+      } else if(theme === '1') {
+        nextButton.current.classList.remove('bg-theme2-primary');
+      } else if(theme === '2') {
+        nextButton.current.classList.remove('bg-theme3-primary');
+      }
+    }
+    if (event.key === 'p') {
+      changeProject(false, true);
+      if(theme === '0') {
+        previousButton.current.classList.remove('bg-darkPrimary');
+      } else if(theme === '1') {
+        previousButton.current.classList.remove('bg-theme2-primary');
+      } else if(theme === '2') {
+        previousButton.current.classList.remove('bg-theme3-primary');
+      }
+    }
+  }
+
+  const handleKeyDown = (event) => {
+    const theme = localStorage.getItem('themeColor');
+    if (event.key === 's') {
+      if(theme === '0') {
+        nextButton.current.classList.add('bg-darkPrimary');
+      } else if(theme === '1') {
+        nextButton.current.classList.add('bg-theme2-primary');
+      } else if(theme === '2') {
+        nextButton.current.classList.add('bg-theme3-primary');
+      }
+    }
+    if (event.key === 'p') {
+      if(theme === '0') {
+        previousButton.current.classList.add('bg-darkPrimary');
+      } else if(theme === '1') {
+        previousButton.current.classList.add('bg-theme2-primary');
+      } else if(theme === '2') {
+        previousButton.current.classList.add('bg-theme3-primary');
+      }
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener('keyup', handleKeyup);
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+        document.removeEventListener('keydown', handleKeyup);
+        document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
+const changeProject = (next = false, previous = false) => {
+  if(next) {
+    setNextProjectId(prevId => {
+      if(prevId + 1 > projects.portfolio.length) {
+        var newId = 1;
+      } else {
+        var newId = prevId + 1;
+      }
+      router.push(`/projects/${newId}`);
+    });
+  } else if(previous) {
+    setPreviousProjectId(prevId => {
+      if(prevId - 1 === 0) {
+        var newId = projects.portfolio.length;
+      } else {
+        var newId = prevId - 1;
+      }
+      router.push(`/projects/${newId}`);
+    });
+  }
+}
+
+const deviceAnim = {
+  open: { opacity: 1, 
+    transition: {
+      duration: .3
+    },
+  },
+}  
 
   return (
     <>
       {/* <Transition /> */}
       <Header />
       {project && project.images && (
-        <>
-          <div className="my-20">
-            <div className="mx-32 flex flex-1 flex-col items-center">
+        <div className="my-20">
+            <div className="xl:mx-32 sm:mx-10 mx-5 flex flex-1 flex-col items-center">
+              <div className="flex items-center gap-5 mb-5">
+                <motion.button               
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: .5, delay: 1}} 
+                  className="sm:p-4 p-3 rounded-lg dark:text-darkText light:text-lightText md:border-none border sm:text-base text-sm" 
+                  onClick={() => changeProject(false, true)}>
+                  <span ref={previousButton} className="md:inline hidden text-bold py-2 px-3 mr-3 rounded-lg underline border dark:text-darkText light:text-lightText">P</span>Projet précédent
+                </motion.button>
+                <motion.button                   
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: .5, delay: 1.1}} 
+                  className="sm:p-4 p-3 rounded-lg dark:text-darkText light:text-lightText md:border-none border sm:text-base text-sm" 
+                  onClick={() => changeProject(true, false)}> 
+                  <span ref={nextButton} className="md:inline hidden text-bold py-2 px-3 mr-3 rounded-lg underline border dark:text-darkText light:text-lightText">S</span>Projet suivant
+                  </motion.button>
+              </div>
               <motion.h1 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: .5, delay: .5}}
-                className={`text-9xl font-extrabold ${styles.projectName}`}
+                className={`xl:text-9xl lg:text-8xl md:text-7xl sm:text-6xl text-4xl text-nowrap font-extrabold  bg-gradient-to-r from-darkPrimary to-darkAccent bg-clip-text text-transparent theme2:from-theme2-primary theme2:to-theme2-accent theme3:from-theme3-primary theme3:to-theme3-accent ${styles.projectName}`}
               >
                 {project.name}
               </motion.h1>
@@ -47,7 +160,7 @@ export default function Project( {params} ) {
                 ))}
               </ul>
               <motion.p 
-                className="mb-5 w-3/4 text-justify font-normal light:text-lightText dark:text-darkText"
+                className="mb-5 w-full 2xl:w-3/4 text-sm xl:text-base text-justify font-normal light:text-lightText darkTheme:text-darkText"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: .5, delay: .7}}
@@ -57,23 +170,27 @@ export default function Project( {params} ) {
               <div className="flex flex-row items-center gap-5">
                 {project.website_link && (
                 <motion.a                 
-                  className={`relative z-10 flex w-fit shrink-0 cursor-pointer flex-row items-center gap-2 rounded-lg border p-3 transition-all duration-100 hover:gap-4 hover:border-darkPrimary light:border-darkBackground light:text-lightText dark:border-lightBackground dark:text-darkText`}
+                  className={`relative z-10 flex w-fit shrink-0 cursor-pointer flex-row items-center gap-2 rounded-lg border p-3 transition-all duration-100 hover:gap-4 hover:border-darkPrimary light:border-darkBackground light:text-lightText darkTheme:border-lightBackground darkTheme:text-darkText`}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: .5, delay: .9}} href={project.website_link} target="_blank" rel="noopener noreferrer"
                 >
                   Visiter le site
-                  <Image src={arrowRight} width={20} height={20} alt="arrow right"/>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke={`${theme === 'dark' ? 'white' : 'black'}`} className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                  </svg>
                 </motion.a>
                 )}
                 <motion.a                 
-                  className={`relative z-10 flex w-fit shrink-0 cursor-pointer flex-row items-center gap-2 rounded-lg border p-3 transition-all duration-100 hover:gap-4 hover:border-darkPrimary light:border-darkBackground light:text-lightText dark:border-lightBackground dark:text-darkText`}
+                  className={`relative z-10 flex w-fit shrink-0 cursor-pointer flex-row items-center gap-2 rounded-lg border p-3 transition-all duration-100 hover:gap-4 hover:border-darkPrimary light:border-darkBackground light:text-lightText darkTheme:border-lightBackground darkTheme:text-darkText`}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: .5, delay: .9}} href={project.website_link} target="_blank" rel="noopener noreferrer"
                 >
                 Github
-                <Image src={arrowRight} width={20} height={20} alt="arrow right"/>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                  </svg>
                 </motion.a>
               </div>
             </div>
@@ -87,41 +204,51 @@ export default function Project( {params} ) {
                 <div className="relative">
                   {
                     project.images.desktop.length > 0 && (
-                      <button className={`relative z-10 rounded-lg p-3 ${device === 'desktop' ? 'bg-gradient-to-r from-darkSecondary to-darkPrimary p-3 text-darkText' : 'light:text-lightText dark:text-darkText'}`} onClick={() => setDevice('desktop')}>Desktop</button>
+                      <button className={`relative z-10 rounded-lg p-3 ${device === 'desktop' ? 'bg-gradient-to-r from-darkSecondary to-darkPrimary p-3 theme2:to-theme2-accent theme3:from-theme3-primary theme3:to-theme3-accent text-darkText' : 'light:text-lightText darkTheme:text-darkText'}`} onClick={() => setDevice('desktop')}>Desktop</button>
                     )
                   }
                   {
                     project.images.mobile.length > 0 && (
-                      <button className={`relative z-10 rounded-lg p-3 ${device === 'mobile' ? 'bg-gradient-to-r from-darkSecondary to-darkPrimary p-3 text-darkText' : 'light:text-lightText dark:text-darkText'}`} onClick={() => setDevice('mobile')}>Mobile</button>
+                      <button className={`relative z-10 rounded-lg p-3 ${device === 'mobile' ? 'bg-gradient-to-r from-darkSecondary to-darkPrimary theme2:to-theme2-accent theme3:from-theme3-primary theme3:to-theme3-accent p-3 text-darkText' : 'light:text-lightText darkTheme:text-darkText'}`} onClick={() => setDevice('mobile')}>Mobile</button>
                     )
                   }                
                   </div>
               </motion.div>
               <div className="w-full">
                 <motion.div 
-                  key={device}
                   className="relative mb-10 flex w-full flex-row items-center justify-center"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: .5 }}
+                  transition={{ duration: .5, delay: 1 }}
                 >
                   {device === 'desktop' ? (
-                  <div className="relative h-[616px] w-[1000px] overflow-hidden" style={{border: 'solid 8px grey', borderRadius: '48px'}}>
-                    <div className="size-full overflow-hidden" style={{border: 'solid 16px black', borderRadius: '40px'}}>
-                      <Image src={project.images.desktop[0]} alt="projectImageDesktop" width={1000} height={616} className="-z-10"/>
+                  <motion.div          
+                    key="desktop"           
+                    variants={deviceAnim}
+                    initial={{ opacity: 0 }}
+                    animate={'open'}
+                    transition={{ duration: .2 }}
+                    className="relative h-[250px] w-[350px] sm:h-[500px] sm:w-[750px] lg:h-[550px] xl:h-[616px] lg:w-[900px] xl:w-[1000px] overflow-hidden" 
+                    style={{border: 'solid 2px grey', borderRadius: '20px'}}
+                  >
+                    <div className="size-full overflow-hidden relative" style={{border: 'solid 5px black', borderRadius: '18px'}}>
+                      <Image src={project.images.desktop[0]} alt="projectImageDesktop" className="size-full" layout="fill" objectFit="cover"/>
                     </div>
-                  </div>
+                  </motion.div>
                   ) : (
                   <>
-                  <Image src={mobile} alt="device" className='w-1/5'/>
-                  <motion.div 
-                    key="mobile"
-                    className="absolute left-1/2 -z-10 -translate-x-1/2 overflow-hidden" 
-                    style={{width:'18%', height:'95%', top:'2%', borderRadius:"30px"}}
+                  <motion.div          
+                    key="mobile"           
+                    variants={deviceAnim}
                     initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                    animate={'open'}
+                    transition={{ duration: .2 }}
+                    className="relative w-[250px] h-[500px] md:h-[616px] md:w-[300px] overflow-hidden" 
+                    style={{border: 'solid 4px grey', borderRadius: '48px'}}
                   >
-                    <Image src={project.images.mobile[0]} alt="project" className="size-full" layout="fill" objectFit="cover"/>
+                    <div className="size-full overflow-hidden relative" style={{border: 'solid 8px black', borderRadius: '40px'}}>
+                      <Image src={project.images.mobile[0]} alt="project" className="size-full" layout="fill" objectFit="cover"/>
+                    </div>
                   </motion.div>
                   </>
                   )}
@@ -129,7 +256,6 @@ export default function Project( {params} ) {
               </div>
             </div>
           </div>
-        </>
       )}
     </>
   );

@@ -5,7 +5,7 @@ export default function ScrollIcon() {
   const { scrollYProgress } = useScroll();
 
   return (
-    <motion.div className='scrollInfoIcon'>
+    <motion.div className='scrollInfoIcon -z-10'>
     </motion.div>
   );
 }

@@ -2,7 +2,6 @@ const { themeVariants } = require("tailwindcss-theme-variants");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class',
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -14,13 +13,21 @@ module.exports = {
         'darkText': '#DDF9EF',
         'darkPrimary': '#29D196',
         'darkSecondary': '#184F7C',
-        'darkBackground': '#010403',
+        'darkBackground': '#1E1E1E',
         'darkAccent': '#1F439E',
-        'lightBackground': '#FBFEFD',
+        'lightBackground': '#F1F1F1',
         'lightText': '#062319',
         'lightPrimary': '#2ED69B',
         'lightSecondary': '#83BAE7',
-        'lightAccent': '#6185E0'
+        'lightAccent': '#6185E0',
+        theme2: {
+          'primary': '#127DFE',
+          'accent': '#B438FE',
+        },
+        theme3: {
+          'primary': '#1BB4EE',
+          'accent': '#2C0EB4',
+        },
       }
     },
     fontFamily: {
@@ -31,10 +38,19 @@ module.exports = {
     themeVariants({
         themes: {
             light: {
-                selector: ".light",
+              selector: ".light",
             },
-            dark: {
-                selector: ".dark",
+            darkTheme: {
+              selector: ".dark",
+            },
+            theme1: {
+                selector: ".theme1",
+            },
+            theme2: {
+              selector: ".theme2",
+            },
+            theme3: {
+              selector: ".theme3",
             },
         },
     }),

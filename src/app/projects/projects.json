@@ -53,7 +53,7 @@
         ]
       },
       {
-        "id": "4",
+        "id": "3",
         "name": "Lucile Marjollet",
         "description": "J'ai réalisé un site vitrine sous WordPress pour une psychopraticienne relationnelle, un projet personnel visant à présenter son activité de manière professionnelle et attrayante. Le site est basé sur WordPress pour sa facilité d'utilisation et sa gestion de contenu, permettant ainsi à la psychopraticienne de mettre à jour le contenu elle-même. J'ai intégré des animations JavaScript pour donner vie au site, renforçant ainsi son attrait visuel tout en maintenant un environnement calme et professionnel. Ce projet a permis de créer une présence en ligne engageante et professionnelle pour la psychopraticienne, en mettant en valeur son expertise tout en captivant l'attention des visiteurs grâce aux animations subtiles.",
         "website_link": "https://lucilemarjollet.com/",
@@ -77,7 +77,7 @@
         ]
       },
       {
-        "id": "5",
+        "id": "4",
         "name": "ShareSpend",
         "description": "ShareSpend est une application mobile que je développe actuellement en utilisant React Native pendant mon temps libre. Elle simplifie le suivi et la gestion des dépenses partagées entre amis, familles ou collègues. Avec une interface conviviale, ShareSpend rend la gestion financière facile et efficace. Une fois terminée, elle sera peut-être disponible sur les plateformes de téléchargement, concrétisant ainsi mon projet de A à Z.",
         "images": {
