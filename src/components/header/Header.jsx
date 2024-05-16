@@ -11,14 +11,21 @@ export default function Header() {
 
   const { theme, setTheme } = useTheme();
   const [menuVisible, setMenuVisible] = useState(false);
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true);
+
     if(menuVisible){
       document.body.style.overflowY = 'hidden';
     } else {
       document.body.style.overflowY = 'auto';
     }
   }, [menuVisible])
+
+  if (!mounted) {
+    return null
+  }
 
   return (
     <header className={`relative z-10 flex h-20 w-full flex-row items-center justify-between light:bg-lightBackground darkTheme:bg-darkBackground`}>

@@ -3,8 +3,6 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion"
-import desktop from '../../../../public/desktop.png'
-import mobile from '../../../../public/mobile.svg'
 import projects from '@/app/projects/projects.json'
 import styles from '../[slug]/projet.module.scss'
 import Header from "@/components/header/Header";
@@ -18,6 +16,7 @@ export default function Project( {params} ) {
   const [nextProjectId, setNextProjectId] = useState(0);
   const [previousProjectId, setPreviousProjectId] = useState(0);
   const { theme } = useTheme();
+  const [themeColor, setThemeColor] = useState();
   const router = useRouter()
   const nextButton = useRef(null);
   const previousButton = useRef(null);
@@ -25,18 +24,19 @@ export default function Project( {params} ) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    console.log(projects.portfolio);
     const project = projects.portfolio.find((project) => project.id === params.slug);
     setNextProjectId(parseInt(params.slug));
     setPreviousProjectId(parseInt(params.slug));
     setProject(project);
+    if (typeof localStorage !== 'undefined') {
+      setThemeColor(localStorage.getItem('themeColor'))
+    }
     if(project.images.desktop.length === 0) {
       setDevice('mobile');
     }
   }, [params.slug]);
 
   const handleKeyup = (event) => {
-    const theme = localStorage.getItem('themeColor');
     if (event.key === 's') {
       changeProject(true, false);
       if(theme === '0') {
@@ -60,7 +60,6 @@ export default function Project( {params} ) {
   }
 
   const handleKeyDown = (event) => {
-    const theme = localStorage.getItem('themeColor');
     if (event.key === 's') {
       if(theme === '0') {
         nextButton.current.classList.add('bg-darkPrimary');

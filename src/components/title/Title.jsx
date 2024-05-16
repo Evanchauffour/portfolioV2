@@ -8,13 +8,30 @@ export default function Title({title, otherStyle = '', multiplier = 1.6, color})
     const [lettersHead, setLettersHead] = useState([]);
     const [scroll, setScroll] = useState(null);
     const [size, setSize] = useState(null);
-    const windowWidth = useRef(window.innerWidth);
   
     useEffect(() => {
     const textHead = title;
     const letterArrayHead = textHead.split("");
     setLettersHead(letterArrayHead);
-    setSize(windowWidth.current / letterArrayHead.length);
+
+    const handleResize = () => {
+      setSize(window.innerWidth / letterArrayHead.length);
+    };
+  
+    
+    if (typeof window !== 'undefined') {
+      handleResize();
+
+      window.addEventListener('onload', handleResize);
+      window.addEventListener('resize', handleResize);
+    }
+  
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('onload', handleResize);
+        window.removeEventListener('resize', handleResize);
+      }
+    };
   
     }, [title, size, windowWidth]);
     const { scrollY } = useScroll()

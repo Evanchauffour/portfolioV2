@@ -6,7 +6,6 @@ import Image from 'next/image'
 import pp from '../../../public/pp.JPG'
 import ScrollIcon from "@/components/ScrollIcon";
 import Header from "@/components/header/Header";
-import TransitionAbout from "../transitionAbout";
 import { motion } from 'framer-motion';
 
 

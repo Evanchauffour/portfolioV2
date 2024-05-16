@@ -9,10 +9,6 @@ const sora = Sora({
   subsets: ["latin"] ,
   variable: '--sora'
 });
-// export const metadata = {
-//   title: "Evan Chauffour",
-//   description: "Evan Chauffour, développeur web",
-// };
 
 export default function RootLayout({ children }) {
 
@@ -29,16 +25,14 @@ export default function RootLayout({ children }) {
       color: 'from-theme3-primary to-theme3-accent',
       theme: 'theme3'
     }
-  ]
-
-  // useEffect(() => {
-  //   localStorage.clear();
-  // }, [])
+  ];
 
   useEffect(() => {
-    localStorage.getItem('themeColor')
-    document.documentElement.classList.remove('theme1', 'theme2', 'theme3');
-    document.documentElement.classList.add(themeColor[localStorage.getItem('themeColor') ? localStorage.getItem('themeColor') : 0].theme); 
+    if (typeof localStorage !== 'undefined') {
+      localStorage.getItem('themeColor')
+      document.documentElement.classList.remove('theme1', 'theme2', 'theme3');
+      document.documentElement.classList.add(themeColor[localStorage.getItem('themeColor') ? localStorage.getItem('themeColor') : 0].theme); 
+    }
   }, []);
 
   return (
