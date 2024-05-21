@@ -5,6 +5,7 @@
     h2{
         font-weight: 400;
         transition: all .5s ease-in-out;
+        font-size: 6vw;
     }
     &:hover{
         color: #010403;
@@ -37,5 +38,13 @@
         opacity: 0;
         transition: all .5s ease-in-out;
         border-radius: 50%;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .linkItem{
+        h2{
+            font-size: 8vw;
+        }
     }
 }

@@ -26,17 +26,16 @@ export default function Projects() {
                 href={`/projects/${project.id}`} key={index}         
               >
                 <motion.div 
-                  className={`${styles.linkItem} linkItem flex flex-row justify-between p-5 light:text-lightText light:hover:text-lightText darkTheme:text-darkText darkTheme:hover:text-darkText`}
+                  className={`${styles.linkItem} lg-border-none border-b theme1:border-darkPrimary theme2:border-theme2-accent theme3:border-theme3-primary linkItem flex lg:flex-row flex-col justify-between p-5 light:text-lightText light:hover:text-lightText darkTheme:text-darkText darkTheme:hover:text-darkText`}
                   whileHover="visible"
                 >
                   <h2 
                       className={`px-2 font-normal transition-all duration-300`}
-                      style={{fontSize: '6vw'}}
                     >
                     <span style={{fontSize: '4vw'}}>{index + 1} -
                     </span>{project.name}
                   </h2>
-                  <ul className="flex flex-row gap-2 self-end">
+                  <ul className="flex flex-row gap-2 self-start lg:self-end">
                     {project.technologies.map((techno, index) => (
                       <Tags technoImg={techno.img} index={index} label={techno.label} key={index}/>
                     ))}

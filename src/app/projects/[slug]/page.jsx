@@ -20,7 +20,6 @@ export default function Project( {params} ) {
   const router = useRouter()
   const nextButton = useRef(null);
   const previousButton = useRef(null);
-  const windowWidth = useRef(window.innerWidth);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -39,21 +38,21 @@ export default function Project( {params} ) {
   const handleKeyup = (event) => {
     if (event.key === 's') {
       changeProject(true, false);
-      if(theme === '0') {
+      if(localStorage.getItem('themeColor') === '0') {
         nextButton.current.classList.remove('bg-darkPrimary');
-      } else if(theme === '1') {
+      } else if(localStorage.getItem('themeColor') === '1') {
         nextButton.current.classList.remove('bg-theme2-primary');
-      } else if(theme === '2') {
+      } else if(localStorage.getItem('themeColor') === '2') {
         nextButton.current.classList.remove('bg-theme3-primary');
       }
     }
     if (event.key === 'p') {
       changeProject(false, true);
-      if(theme === '0') {
+      if(localStorage.getItem('themeColor') === '0') {
         previousButton.current.classList.remove('bg-darkPrimary');
-      } else if(theme === '1') {
+      } else if(localStorage.getItem('themeColor') === '1') {
         previousButton.current.classList.remove('bg-theme2-primary');
-      } else if(theme === '2') {
+      } else if(localStorage.getItem('themeColor') === '2') {
         previousButton.current.classList.remove('bg-theme3-primary');
       }
     }
@@ -61,20 +60,20 @@ export default function Project( {params} ) {
 
   const handleKeyDown = (event) => {
     if (event.key === 's') {
-      if(theme === '0') {
+      if(localStorage.getItem('themeColor') === '0') {
         nextButton.current.classList.add('bg-darkPrimary');
-      } else if(theme === '1') {
+      } else if(localStorage.getItem('themeColor') === '1') {
         nextButton.current.classList.add('bg-theme2-primary');
-      } else if(theme === '2') {
+      } else if(localStorage.getItem('themeColor') === '2') {
         nextButton.current.classList.add('bg-theme3-primary');
       }
     }
     if (event.key === 'p') {
-      if(theme === '0') {
+      if(localStorage.getItem('themeColor') === '0') {
         previousButton.current.classList.add('bg-darkPrimary');
-      } else if(theme === '1') {
+      } else if(localStorage.getItem('themeColor') === '1') {
         previousButton.current.classList.add('bg-theme2-primary');
-      } else if(theme === '2') {
+      } else if(localStorage.getItem('themeColor') === '2') {
         previousButton.current.classList.add('bg-theme3-primary');
       }
     }
@@ -132,17 +131,17 @@ const deviceAnim = {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: .5, delay: 1}} 
-                  className="sm:p-4 p-3 rounded-lg dark:text-darkText light:text-lightText md:border-none border sm:text-base text-sm" 
+                  className="sm:p-4 p-3 rounded-lg dark:text-darkText dark:border-lightBackground light:border-darkBackground light:text-lightText md:border-none border sm:text-base text-sm" 
                   onClick={() => changeProject(false, true)}>
-                  <span ref={previousButton} className="md:inline hidden text-bold py-2 px-3 mr-3 rounded-lg underline border dark:text-darkText light:text-lightText">P</span>Projet précédent
+                  <span ref={previousButton} className="md:inline hidden text-bold py-2 px-3 mr-3 rounded-lg underline light:border-darkBackground dark:border-lightBackground border dark:text-darkText light:text-lightText">P</span>Projet précédent
                 </motion.button>
                 <motion.button                   
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: .5, delay: 1.1}} 
-                  className="sm:p-4 p-3 rounded-lg dark:text-darkText light:text-lightText md:border-none border sm:text-base text-sm" 
+                  className="sm:p-4 p-3 rounded-lg dark:text-darkText light:text-lightText dark:border-lightBackground light:border-darkBackground md:border-none border sm:text-base text-sm" 
                   onClick={() => changeProject(true, false)}> 
-                  <span ref={nextButton} className="md:inline hidden text-bold py-2 px-3 mr-3 rounded-lg underline border dark:text-darkText light:text-lightText">S</span>Projet suivant
+                  <span ref={nextButton} className="md:inline hidden text-bold py-2 px-3 mr-3 rounded-lg underline light:border-darkBackground dark:border-lightBackground border dark:text-darkText light:text-lightText">S</span>Projet suivant
                   </motion.button>
               </div>
               <motion.h1 
@@ -227,7 +226,7 @@ const deviceAnim = {
                     initial={{ opacity: 0 }}
                     animate={'open'}
                     transition={{ duration: .2 }}
-                    className="relative h-[250px] w-[350px] sm:h-[500px] sm:w-[750px] lg:h-[550px] xl:h-[616px] lg:w-[900px] xl:w-[1000px] overflow-hidden" 
+                    className="relative h-[230px] w-[350px] sm:h-[500px] sm:w-[750px] lg:h-[550px] xl:h-[616px] lg:w-[900px] xl:w-[1000px] overflow-hidden" 
                     style={{border: 'solid 2px grey', borderRadius: '20px'}}
                   >
                     <div className="size-full overflow-hidden relative" style={{border: 'solid 5px black', borderRadius: '18px'}}>
@@ -235,7 +234,6 @@ const deviceAnim = {
                     </div>
                   </motion.div>
                   ) : (
-                  <>
                   <motion.div          
                     key="mobile"           
                     variants={deviceAnim}
@@ -249,7 +247,6 @@ const deviceAnim = {
                       <Image src={project.images.mobile[0]} alt="project" className="size-full" layout="fill" objectFit="cover"/>
                     </div>
                   </motion.div>
-                  </>
                   )}
                 </motion.div>
               </div>
