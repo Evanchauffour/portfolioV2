@@ -131,7 +131,7 @@ const deviceAnim = {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: .5, delay: 1}} 
-                  className="sm:p-4 p-3 rounded-lg dark:text-darkText dark:border-lightBackground light:border-darkBackground light:text-lightText md:border-none border sm:text-base text-sm" 
+                  className="sm:p-4 p-3 rounded-lg dark:text-darkText dark:border-lightBackground underline sm:text-base text-sm" 
                   onClick={() => changeProject(false, true)}>
                   <span ref={previousButton} className="md:inline hidden text-bold py-2 px-3 mr-3 rounded-lg underline light:border-darkBackground dark:border-lightBackground border dark:text-darkText light:text-lightText">P</span>Projet précédent
                 </motion.button>
@@ -139,7 +139,7 @@ const deviceAnim = {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: .5, delay: 1.1}} 
-                  className="sm:p-4 p-3 rounded-lg dark:text-darkText light:text-lightText dark:border-lightBackground light:border-darkBackground md:border-none border sm:text-base text-sm" 
+                  className="sm:p-4 p-3 rounded-lg dark:text-darkText light:text-lightText dark:border-lightBackground light:border-darkBackground underline sm:text-base text-sm" 
                   onClick={() => changeProject(true, false)}> 
                   <span ref={nextButton} className="md:inline hidden text-bold py-2 px-3 mr-3 rounded-lg underline light:border-darkBackground dark:border-lightBackground border dark:text-darkText light:text-lightText">S</span>Projet suivant
                   </motion.button>

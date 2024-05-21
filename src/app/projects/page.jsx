@@ -17,7 +17,6 @@ export default function Projects() {
       <Header/>
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: .5, delay: .5 }} className='flex w-full flex-row items-center justify-center overflow-x-hidden' style={{height: 'calc(100vh - 80px)'}}>
           <Title title='Mes projets'/>
-          <ScrollIcon />
         </motion.div>
         <motion.div initial={{ display: 'none' }} animate={{ display: 'block' }} transition={{delay: .5}} className='w-full'>
           {projects.portfolio.map((project, index) => (
