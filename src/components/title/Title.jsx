@@ -2,7 +2,7 @@
 
 import styles from './title.module.scss'
 import {useScroll, useMotionValueEvent} from "framer-motion"
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Title({title, otherStyle = '', multiplier = 1.6, color}) {
     const [lettersHead, setLettersHead] = useState([]);
@@ -33,7 +33,7 @@ export default function Title({title, otherStyle = '', multiplier = 1.6, color})
       }
     };
   
-    }, [title, size, windowWidth]);
+    }, [title, size]);
     const { scrollY } = useScroll()
   
     useMotionValueEvent(scrollY, "change", (latest) => {
