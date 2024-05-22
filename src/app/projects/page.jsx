@@ -25,7 +25,7 @@ export default function Projects() {
                 href={`/projects/${project.id}`} key={index}         
               >
                 <motion.div 
-                  className={`${styles.linkItem} lg-border-none border-b theme1:border-darkPrimary theme2:border-theme2-accent theme3:border-theme3-primary linkItem flex lg:flex-row flex-col justify-between p-5 light:text-lightText light:hover:text-lightText darkTheme:text-darkText darkTheme:hover:text-darkText`}
+                  className={`${styles.linkItem} lg:border-none border-b theme1:border-darkPrimary theme2:border-theme2-accent theme3:border-theme3-primary linkItem flex lg:flex-row flex-col justify-between p-5 light:text-lightText light:hover:text-lightText darkTheme:text-darkText darkTheme:hover:text-darkText`}
                   whileHover="visible"
                 >
                   <h2 

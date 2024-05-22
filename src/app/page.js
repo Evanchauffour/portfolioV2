@@ -12,6 +12,9 @@ import Widget from '@/components/widget/Widget';
 import Image from 'next/image';
 import { useTheme } from "next-themes";
 import ThemeSelector from '@/components/themeSelector';
+import Lottie from "lottie-react";
+import clickEffectWhite from "../../public/lottie/clickEffectWhite.json";
+import clickEffectBlack from "../../public/lottie/clickEffectDark.json";
 
 export default function Home() {
 
@@ -20,10 +23,16 @@ export default function Home() {
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
-    window.addEventListener('mousemove', (e) => {
+    const handleMouseMove = (e) => {
       setMousePos({ x: e.clientX, y: e.clientY });
-    });
-  }, [mousePos]);
+    };
+  
+    window.addEventListener('mousemove', handleMouseMove);
+  
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
 
   const h1Anim = {
     open: { opacity: 1, y: 0,
@@ -57,6 +66,23 @@ export default function Home() {
       },
     },
   }  
+
+  const cursorAnim = {
+    open: { opacity: 1,
+      transition: {
+        duration: 0.5,
+        delay: 1.6,
+        ease: "easeInOut",
+      },
+    },
+    closed: { opacity: 0, 
+      transition: {
+        delay: .2,
+        duration: .5,
+        ease: "easeInOut",
+      },
+    },
+  } 
 
   const variantsSlide = {
     open: { scaleX: 1.5, scaleY: 1.5,
@@ -120,7 +146,7 @@ export default function Home() {
           </GrowLetters>
           <GrowLetters text='Developpeur full stack' delay={1.8} isAnimated={true} weightEnd='100'>
             <motion.h2 
-              className={`z-10 text-[3vw] font-extrabold uppercase light:text-lightText darkTheme:text-darkText`}
+              className={`z-10 sm:text-[3vw] text-[4vw] font-extrabold uppercase light:text-lightText darkTheme:text-darkText`}
               variants={h2Anim}
               initial={"closed"}
               animate={ "open" }
@@ -128,10 +154,19 @@ export default function Home() {
               >
               </motion.h2>
           </GrowLetters>
+          <motion.div 
+            className='relative size-20 sm:size-40 z-50'
+            variants={cursorAnim}
+            initial={"closed"}
+            animate={ "open" }
+            exit={"closed"}
+          >
+          {theme === 'dark' ? <Lottie animationData={clickEffectWhite} /> : <Lottie animationData={clickEffectBlack} />}
+          </motion.div>
         </div>
         <div className='flex size-full flex-row items-center justify-center'>
           <motion.div 
-            className={`absolute -z-10 size-[100vw] flex-1 rounded-full light:bg-darkBackground darkTheme:bg-lightBackground`}
+            className={`absolute -z-10 size-[100vh] sm:size-[100vw] flex-1 rounded-full light:bg-darkBackground darkTheme:bg-lightBackground`}
             variants={variantsSlide}
             initial={{ scaleX: 0, scaleY: 0, opacity: 1 }}
             animate={ "open"}
@@ -139,7 +174,7 @@ export default function Home() {
           >
           </motion.div>
           <motion.div 
-            className={`absolute -z-10 size-[100vw] flex-1 rounded-full light:bg-lightBackground darkTheme:bg-darkBackground`}
+            className={`absolute -z-10 size-[100vh] sm:size-[100vw] flex-1 rounded-full light:bg-lightBackground darkTheme:bg-darkBackground`}
             variants={variantsSlide2}
             initial={{ scaleX: 0, scaleY: 0, opacity: 1 }}
             animate={ "open"}
@@ -154,7 +189,6 @@ export default function Home() {
       <motion.div 
       initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{duration: .5, delay: 1}}
       className={`grid ${styles.homeContainer}`} 
-      style={{minHeight: 'calc(100vh - 40px)'}}
       >
         <Widget gridArea='me' delay={1.5} x={-40}>
           <MyPresnetation />

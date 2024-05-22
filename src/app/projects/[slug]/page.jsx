@@ -131,7 +131,7 @@ const deviceAnim = {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: .5, delay: 1}} 
-                  className="sm:p-4 p-3 rounded-lg dark:text-darkText dark:border-lightBackground underline sm:text-base text-sm" 
+                  className="sm:p-4 p-3 rounded-lg dark:text-darkText light:text-lightText dark:border-lightBackground underline sm:text-base text-sm" 
                   onClick={() => changeProject(false, true)}>
                   <span ref={previousButton} className="md:inline hidden text-bold py-2 px-3 mr-3 rounded-lg underline light:border-darkBackground dark:border-lightBackground border dark:text-darkText light:text-lightText">P</span>Projet précédent
                 </motion.button>
@@ -244,7 +244,7 @@ const deviceAnim = {
                     style={{border: 'solid 4px grey', borderRadius: '48px'}}
                   >
                     <div className="size-full overflow-hidden relative" style={{border: 'solid 8px black', borderRadius: '40px'}}>
-                      <Image src={project.images.mobile[0]} alt="project" className="size-full" layout="fill" objectFit="cover"/>
+                      <Image src={project.images.mobile[0]} alt="project" layout="fill" objectFit="cover"/>
                     </div>
                   </motion.div>
                   )}
