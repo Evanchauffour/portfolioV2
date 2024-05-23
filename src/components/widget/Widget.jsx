@@ -1,12 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { useTheme } from "next-themes";
 
 export default function Widget({ children, gridArea, delay, x = 0, y = 0}) {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [hovered, setHovered] = useState(false);
   const widgetRef = useRef(null);
-  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -40,7 +38,7 @@ export default function Widget({ children, gridArea, delay, x = 0, y = 0}) {
     >
         <div className='flex size-full items-center justify-center rounded-lg'>
           {hovered && (
-          <div style={{ transform: `translate(${mousePos.x - 140}px, ${mousePos.y - 140}px)`, boxShadow: '5px 5px 50px 50px #29D196', filter: 'blur(100px)' }} className='absolute left-0 top-0 size-80 origin-center opacity-20 light:opacity-40 theme1:bg-darkPrimary theme2:bg-theme2-accent theme3:bg-theme3-primary'></div>
+          <div style={{ transform: `translate(${mousePos.x - 140}px, ${mousePos.y - 140}px)`, boxShadow: '5px 5px 50px 50px #29D196', filter: 'blur(100px)' }} className='absolute left-0 top-0 size-80 origin-center opacity-20 light:opacity-40 theme1:bg-darkPrimary theme2:bg-theme2-accent theme3:bg-theme3-primary md:block hidden'></div>
           )}
           {children}
         </div>

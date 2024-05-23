@@ -19,7 +19,6 @@
         width: 100%;
         transform: scaleX(0);
         transform-origin: left;
-        background-color: #29D196;
         transition: all .5s ease-in-out;
         z-index: -1;
     }
@@ -45,6 +44,14 @@
     .linkItem{
         h2{
             font-size: 8vw;
+        }
+    }
+}
+
+@media screen and (max-width: 768px){
+    .linkItem{
+        &:hover h2 {
+            font-weight: 400;
         }
     }
 }

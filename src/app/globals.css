@@ -58,18 +58,3 @@ body{
 .theme3 .navItem::before{
   background-color: #1BB4EE;
 }
-
-.theme1 .linkItem::after{
-  background-color: #29D196;
-  opacity: .2;
-}
-
-.theme2 .linkItem::after{
-  background-color: #B438FE;
-  opacity: .1;
-}
-
-.theme3 .linkItem::after{
-  background-color: #1BB4EE;
-  opacity: .2;
-}

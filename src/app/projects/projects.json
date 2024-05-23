@@ -48,7 +48,7 @@
         "technologies": [
           {
             "label": "WordPress",
-            "img":"https://img.icons8.com/fluency/48/wordpress.png"
+            "img":"/wordpress.svg"
           }
         ]
       },
@@ -72,7 +72,7 @@
         "technologies": [
           {
             "label": "WordPress",
-            "img":"https://img.icons8.com/fluency/48/wordpress.png"
+            "img":"/wordpress.svg"
           }
         ]
       },
@@ -93,7 +93,15 @@
         "technologies": [
           {
             "label": "React Native",
-            "img":"https://img.icons8.com/color/96/react-native.png"
+            "img":"/reactNative.svg"
+          },
+          {
+            "label": "NodeJs",
+            "img":"/nodejs.svg"
+          },
+          {
+            "label": "MongoDb",
+            "img":"/mongodb.svg"
           }
         ]
       }

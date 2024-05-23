@@ -11,20 +11,6 @@
         transition: all .5s ease-in-out;
         text-align: center;
     }
-    // &::after{
-    //     content: '';
-    //     position: absolute;
-    //     left: 0;
-    //     top: 0;
-    //     height: 100%;
-    //     width: 100%;
-    //     transform: scaleX(0);
-    //     transform-origin: left;
-    //     background-color: #184F7C;
-    //     opacity: .5;
-    //     transition: all .5s ease-in-out;
-    //     z-index: -1;
-    // }
     &:hover::after{
         transform: scaleX(1);
         transform-origin: left;
@@ -35,5 +21,11 @@
     }
     &:hover h1 {
         font-weight: 800;
+    }
+
+    @media screen and (max-width: 768px){
+        &:hover h2 {
+            font-weight: 400;
+        }
     }
 }
