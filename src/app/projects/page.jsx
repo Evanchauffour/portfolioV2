@@ -5,7 +5,6 @@ import Title from '@/components/title/Title'
 import Link from 'next/link'
 import { motion } from "framer-motion";
 import styles from '@/app/projects/projects.module.scss'
-import ScrollIcon from "@/components/ScrollIcon";
 import projects from '@/app/projects/projects.json'
 import Header from "@/components/header/Header";
 import Tags from "@/components/tags/tags";

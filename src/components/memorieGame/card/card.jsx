@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './card.module.scss';
 import Image from 'next/image';
 import { motion } from 'framer-motion'
-import Icon from '@/components/icon';
 
 export default function Card({ handleClick, skill, id }) {
   return (

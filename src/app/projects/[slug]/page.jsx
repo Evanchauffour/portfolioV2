@@ -16,7 +16,6 @@ export default function Project( {params} ) {
   const [nextProjectId, setNextProjectId] = useState(0);
   const [previousProjectId, setPreviousProjectId] = useState(0);
   const { theme } = useTheme();
-  const [themeColor, setThemeColor] = useState();
   const router = useRouter()
   const nextButton = useRef(null);
   const previousButton = useRef(null);
@@ -27,9 +26,6 @@ export default function Project( {params} ) {
     setNextProjectId(parseInt(params.slug));
     setPreviousProjectId(parseInt(params.slug));
     setProject(project);
-    if (typeof localStorage !== 'undefined') {
-      setThemeColor(localStorage.getItem('themeColor'))
-    }
     if(project.images.desktop.length === 0) {
       setDevice('mobile');
     }

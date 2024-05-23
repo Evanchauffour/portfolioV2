@@ -29,8 +29,7 @@ export default function Widget({ children, gridArea, delay, x = 0, y = 0}) {
     <motion.div 
       className='relative overflow-hidden rounded-lg p-px light:bg-lightBackground darkTheme:bg-darkBackground shadow-lg darkTheme:shadow-black'
       style={{ 
-        gridArea: gridArea, 
-        // boxShadow: theme === 'light' ? '20px 20px 60px #cdcdcd, -20px -20px 60px #ffffff'  : '20px 20px 60px #1a1a1a,-20px -20px 60px #232323'
+        gridArea: gridArea,
       }}      
       ref={widgetRef} 
       onMouseEnter={() => setHovered(true)} 

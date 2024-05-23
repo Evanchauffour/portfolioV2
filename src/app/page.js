@@ -20,20 +20,7 @@ import Icon from '@/components/icon';
 export default function Home() {
 
   const [isOpen, setIsOpen] = useState(true)
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const { theme, setTheme } = useTheme();
-
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePos({ x: e.clientX, y: e.clientY });
-    };
-  
-    window.addEventListener('mousemove', handleMouseMove);
-  
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
 
   const h1Anim = {
     open: { opacity: 1, y: 0,
@@ -126,9 +113,7 @@ export default function Home() {
   const handleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark')
   };
-  
-  
-  
+
   return (
     <>
       <AnimatePresence>
