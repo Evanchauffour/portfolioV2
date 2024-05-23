@@ -175,6 +175,7 @@ const deviceAnim = {
                   </svg>
                 </motion.a>
                 )}
+                {project.github_link && (
                 <motion.a                 
                   className={`relative z-10 flex w-fit shrink-0 cursor-pointer flex-row items-center gap-2 rounded-lg border p-3 transition-all duration-100 hover:gap-4 hover:border-darkPrimary light:border-darkBackground light:text-lightText darkTheme:border-lightBackground darkTheme:text-darkText`}
                   initial={{ opacity: 0 }}
@@ -186,6 +187,7 @@ const deviceAnim = {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                   </svg>
                 </motion.a>
+                )}
               </div>
             </div>
             <div className="mt-5 flex flex-1 flex-col items-center">
@@ -226,7 +228,7 @@ const deviceAnim = {
                     style={{border: 'solid 2px grey', borderRadius: '20px'}}
                   >
                     <div className="size-full overflow-hidden relative" style={{border: 'solid 5px black', borderRadius: '18px'}}>
-                      <Image src={project.images.desktop[0]} alt="projectImageDesktop" className="size-full" layout="fill" objectFit="cover"/>
+                      <Image src={project.images.desktop[0]} alt="projectImageDesktop" width={1000} height={600} className="size-full"/>
                     </div>
                   </motion.div>
                   ) : (
@@ -240,7 +242,7 @@ const deviceAnim = {
                     style={{border: 'solid 4px grey', borderRadius: '48px'}}
                   >
                     <div className="size-full overflow-hidden relative" style={{border: 'solid 8px black', borderRadius: '40px'}}>
-                      <Image src={project.images.mobile[0]} alt="project" layout="fill" objectFit="cover"/>
+                      <Image src={project.images.mobile[0]} alt="project" width={1000} height={600} className="size-full"/>
                     </div>
                   </motion.div>
                   )}
