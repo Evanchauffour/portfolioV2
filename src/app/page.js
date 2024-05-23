@@ -15,6 +15,7 @@ import ThemeSelector from '@/components/themeSelector';
 import Lottie from "lottie-react";
 import clickEffectWhite from "../../public/lottie/clickEffectWhite.json";
 import clickEffectBlack from "../../public/lottie/clickEffectDark.json";
+import Icon from '@/components/icon';
 
 export default function Home() {
 
@@ -212,6 +213,16 @@ export default function Home() {
             )}
             </button>
           )}
+        </Widget>
+        <Widget gridArea='github' delay={2.3} x={40}>
+          <a href='https://github.com/Evanchauffour' target='_blank' className='size-full flex items-center justify-center z-10'>
+            <Icon src='/github.svg' width={80} height={80} />
+          </a>
+        </Widget>
+        <Widget gridArea='linkedin' delay={2.3} x={40}>
+          <a href='https://www.linkedin.com/in/evan-chauffour/' target='_blank' className='size-full flex items-center justify-center z-10'>
+            <Icon src='/linkedin.svg' width={80} height={80} />
+          </a>
         </Widget>
       </motion.div>
       )}

@@ -24,32 +24,32 @@ export default function Game() {
 
   const [skills, setSkills] = useState([
     {name: 'React', id: 4, linkImg:'/react.svg', status: ''},
-    {name: 'Vue', id: 5, linkImg:'https://img.icons8.com/color/96/vue-js.png', status: 'active'},
-    {name: 'Node', id: 6, linkImg:'https://img.icons8.com/color/96/nodejs.png', status: 'active'},
-    {name: 'React native', linkImg:'https://img.icons8.com/color/96/react-native.png', id: 9, status: 'active'},
-    {name: 'Cypress', id: 10, linkImg:'https://asset.brandfetch.io/idIq_kF0rb/idZxkJkFIi.svg', status: 'active'},
-    {name: 'MongoDB', id: 11, linkImg:'https://img.icons8.com/external-tal-revivo-color-tal-revivo/96/external-mongodb-a-cross-platform-document-oriented-database-program-logo-color-tal-revivo.png', status: 'active'},
-    {name: 'NextJs', id: 12, linkImg:'https://img.icons8.com/color/96/nextjs.png', status: 'active'},
-    {name: 'Wordpress', id: 13, linkImg:'https://img.icons8.com/color/96/wordpress.png', status: 'active'},
-    {name: 'React', id: 4, linkImg:'https://img.icons8.com/office/80/react.png', status: ''},
-    {name: 'Vue', id: 5, linkImg:'https://img.icons8.com/color/96/vue-js.png', status: ''},
-    {name: 'Node', id: 6, linkImg:'https://img.icons8.com/color/96/nodejs.png', status: ''},
-    {name: 'React native', linkImg:'https://img.icons8.com/color/96/react-native.png', id: 9, status: ''},
-    {name: 'Cypress', id: 10, linkImg:'https://asset.brandfetch.io/idIq_kF0rb/idZxkJkFIi.svg', status: ''},
-    {name: 'MongoDB', id: 11, linkImg:'https://img.icons8.com/external-tal-revivo-color-tal-revivo/96/external-mongodb-a-cross-platform-document-oriented-database-program-logo-color-tal-revivo.png', status: ''},
-    {name: 'NextJs', id: 12, linkImg:'https://img.icons8.com/color/96/nextjs.png', status: ''},
-    {name: 'Wordpress', id: 13, linkImg:'https://img.icons8.com/color/96/wordpress.png', status: ''},
+    {name: 'Vue', id: 5, linkImg:'/vuejs.svg', status: ''},
+    {name: 'Node', id: 6, linkImg:'/nodejs.svg', status: ''},
+    {name: 'React native', linkImg:'/reactNative.svg', id: 9, status: ''},
+    {name: 'Cypress', id: 10, linkImg:'/cypress.svg', status: ''},
+    {name: 'Tailwind', id: 11, linkImg:'/tailwind.svg', status: ''},
+    {name: 'NextJs', id: 12, linkImg:'/nextjs.svg', status: ''},
+    {name: 'Wordpress', id: 13, linkImg:'/wordpress.svg', status: ''},
+    {name: 'React', id: 4, linkImg:'/react.svg', status: ''},
+    {name: 'Vue', id: 5, linkImg:'/vuejs.svg', status: ''},
+    {name: 'Node', id: 6, linkImg:'/nodejs.svg', status: ''},
+    {name: 'React native', linkImg:'/reactNative.svg', id: 9, status: ''},
+    {name: 'Cypress', id: 10, linkImg:'/cypress.svg', status: ''},
+    {name: 'Tailwind', id: 11, linkImg:'/tailwind.svg', status: ''},
+    {name: 'NextJs', id: 12, linkImg:'/nextjs.svg', status: ''},
+    {name: 'Wordpress', id: 13, linkImg:'/wordpress.svg', status: ''},
   ].sort(() => Math.random() - .5));
 
   const endGameSkills = [
-    {name: 'React', id: 4, linkImg:'https://img.icons8.com/office/80/react.png', status: ''},
-    {name: 'Vue', id: 5, linkImg:'https://img.icons8.com/color/96/vue-js.png', status: ''},
-    {name: 'Node', id: 6, linkImg:'https://img.icons8.com/color/96/nodejs.png', status: ''},
-    {name: 'React native', linkImg:'https://img.icons8.com/color/96/react-native.png', id: 9, status: ''},
-    {name: 'Cypress', id: 10, linkImg:'https://asset.brandfetch.io/idIq_kF0rb/idZxkJkFIi.svg', status: ''},
-    {name: 'MongoDB', id: 11, linkImg:'https://img.icons8.com/external-tal-revivo-color-tal-revivo/96/external-mongodb-a-cross-platform-document-oriented-database-program-logo-color-tal-revivo.png', status: ''},
-    {name: 'NextJs', id: 12, linkImg:'https://img.icons8.com/color/96/nextjs.png', status: ''},
-    {name: 'Wordpress', id: 13, linkImg:'https://img.icons8.com/color/96/wordpress.png', status: ''}
+    {name: 'React', id: 4, linkImg:'/react.svg', status: ''},
+    {name: 'Vue', id: 5, linkImg:'/vuejs.svg', status: ''},
+    {name: 'Node', id: 6, linkImg:'/nodejs.svg', status: ''},
+    {name: 'React native', linkImg:'/reactNative.svg', id: 9, status: ''},
+    {name: 'Cypress', id: 10, linkImg:'/cypress.svg', status: ''},
+    {name: 'Tailwind', id: 11, linkImg:'/tailwind.svg', status: ''},
+    {name: 'NextJs', id: 12, linkImg:'/nextjs.svg', status: ''},
+    {name: 'Wordpress', id: 13, linkImg:'/wordpress.svg', status: ''},
   ];
   
   const handleReturn = (selectedSkillId) => {
@@ -128,11 +128,12 @@ useEffect(() => {
   
 
   return (
-    <div className={`relative flex size-full flex-col overflow-hidden rounded-lg min-h-[500px]`}>
+    <div className={`relative flex size-full flex-col overflow-hidden rounded-lg min-h-[400px]`}>
         {!loadGame && !endGame && (
-            <div className='flex w-full flex-1 flex-col items-center justify-center gap-8'>
+            <div className='flex w-full flex-1 flex-col items-center justify-center sm:gap-8 gap-4'>
                 <h3 className='text-center text-2xl light:text-lightText darkTheme:text-darkText'>{isClient ? 'Découvrez mes compétences !' : ''}</h3>
-                <button className='rounded-lg p-3 text-2xl text-darkText theme1:bg-darkPrimary theme2:bg-theme2-accent theme3:bg-theme3-primary transition-all duration-200' onClick={handleStart}>Jouer</button>
+                <p className='text-center mx-5 sm:mx-20 opacity-50 text-xs sm:text-base'>Mes compétences sont cachées derrière des cartes. Essayez de retourner toutes les paires le plus rapidement possible afin de découvrir l'ensemble de mes compétences.</p>
+                <button className='rounded-lg p-3 sm:text-2xl text-base light:text-lightText darkTheme:text-darkText border theme1:border-darkPrimary theme2:border-theme2-accent theme3:border-theme3-primary transition-all duration-200' onClick={handleStart}>Jouer !</button>
             </div>
         )} 
         {loadGame && !startGame && (
@@ -162,21 +163,21 @@ useEffect(() => {
         {endGame && (
             <div className='flex w-full flex-1 flex-col items-center justify-center gap-5'>
                 <div className='flex flex-1 flex-col items-center justify-center'>
-                    <h3 className='mb-6 text-center text-3xl theme1:text-darkPrimary theme2:text-theme2-primary theme3:text-theme3-primary'>Bravo !</h3>
-                    <p className='mb-6 text-center text-lg light:text-lightText darkTheme:text-darkText'>Vous avez découvert toutes mes compétences en {timer}s</p>
+                    <h3 className='mb-6 text-center text-3xl theme1:text-darkPrimary theme2:text-theme2-accent theme3:text-theme3-primary'>Bravo !</h3>
+                    <p className='mb-6 text-center text-xs sm:text-base light:text-lightText darkTheme:text-darkText'>Vous avez découvert toutes mes compétences en {timer}s</p>
                     <ul className='mx-4 flex flex-row flex-wrap justify-center gap-2 self-end'>
                     {endGameSkills.map((skill, index) => (
-                        <li className='relative size-16 rounded-lg bg-white' key={index} onMouseEnter={() => setIsSkillHovered(index)} onMouseLeave={() => setIsSkillHovered(null)}>
+                        <li className='relative size-10 sm:size-16 rounded-lg bg-white' key={index} onMouseEnter={() => setIsSkillHovered(index)} onMouseLeave={() => setIsSkillHovered(null)}>
                             <div className={`${isSkillHovered === index ? 'flex' : 'hidden'} absolute left-1/2 -translate-x-1/2 -translate-y-full flex-col items-center`}>
-                                <span className='z-10 text-nowrap rounded-lg theme1:bg-darkPrimary theme2:bg-theme2-primary theme3:bg-theme3-primary p-2 light:text-lightText darkTheme:text-darkText'>{skill.name}</span>
-                                <div className='size-4 -translate-y-1/2 rotate-45 theme1:bg-darkPrimary theme2:bg-theme2-primary theme3:bg-theme3-primary'></div>
+                                <span className='z-10 text-nowrap rounded-lg theme1:bg-darkPrimary theme2:bg-theme2-accent theme3:bg-theme3-primary p-2 light:text-lightText darkTheme:text-darkText'>{skill.name}</span>
+                                <div className='size-4 -translate-y-1/2 rotate-45 theme1:bg-darkPrimary theme2:bg-theme2-accent theme3:bg-theme3-primary'></div>
                             </div>
                             <Image src={skill.linkImg} layout='fill' alt='Logo' className='p-2'/>
                         </li>
                     ))}
                     </ul>
                 </div>
-                <button className='mb-4 rounded-lg theme1:bg-darkPrimary theme2:bg-theme2-primary theme3:bg-theme3-primary p-3 light:text-lightText darkTheme:text-darkText' onClick={handleRestart}>Rejouer</button>
+                <button className='mb-4 sm:text-2xl p-3 text-base rounded-lg light:text-lightText darkTheme:text-darkText border theme1:border-darkPrimary theme2:border-theme2-accent theme3:border-theme3-primary' onClick={handleRestart}>Rejouer</button>
             </div>
         )}
     </div>

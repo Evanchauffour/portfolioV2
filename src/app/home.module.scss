@@ -42,14 +42,14 @@
 
 .homeContainer{
     min-height: calc(100vh - 40px);
-    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
     grid-template-rows: 1fr 1fr 1fr 1fr;
     gap: 20px;
     grid-template-areas: 
-    "me me game game"
-    "me me game game"
-    "projects projects game game"
-    "projects projects themeColor darkMode";
+    "me me me me game game game game"
+    "me me me me game game game game"
+    "projects projects projects projects game game game game"
+    "projects projects projects projects themeColor darkMode github linkedin";
     margin: 20px;
     .widget{
         overflow: hidden;
@@ -58,21 +58,25 @@
         }
     }
     @media screen and (max-width:1024px) {
-        grid-template-columns: 1fr 1fr 1fr; 
-        grid-template-rows: 200px 200px 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr; 
+        grid-template-rows: 200px 200px 1fr 1fr 1fr 1fr;
         grid-template-areas: 
-        "me me themeColor"
-        "projects projects darkMode" 
-        "game game game";
+        "me me me me"
+        "projects projects projects projects" 
+        "game game game themeColor"
+        "game game game darkMode"
+        "game game game github"
+        "game game game linkedin";
     }
 
     @media screen and (max-width:700px) {
         grid-template-columns: 1fr 1fr; 
-        grid-template-rows: 200px 200px 200px 1fr;
+        grid-template-rows: 200px 200px 200px 200px 1fr;
         grid-template-areas: 
         "me me"
         "projects projects" 
         "themeColor darkMode"
+        "github linkedin"
         "game game";
     }
 
