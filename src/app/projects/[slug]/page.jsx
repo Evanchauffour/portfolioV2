@@ -224,11 +224,10 @@ const deviceAnim = {
                     initial={{ opacity: 0 }}
                     animate={'open'}
                     transition={{ duration: .2 }}
-                    className="relative h-[230px] w-[350px] sm:h-[500px] sm:w-[750px] lg:h-[550px] xl:h-[616px] lg:w-[900px] xl:w-[1000px] overflow-hidden" 
+                    className="relative w-[350px] sm:w-[750px] lg:w-[900px] xl:w-[1000px] overflow-hidden" 
                     style={{border: 'solid 2px grey', borderRadius: '20px'}}
                   >
                     <div className="size-full overflow-hidden relative" style={{border: 'solid 5px black', borderRadius: '18px'}}>
-                      {/* <Image src={project.images.desktop[0]} alt="projectImageDesktop" width={1000} height={600} className="size-full"/> */}
                       <Image 
                       src="/projectsImg/lucile.png" 
                       alt="projectImageDesktop"      
@@ -239,7 +238,6 @@ const deviceAnim = {
                       width={1000}
                       height={600}
                       />
-                      {/* <img src="/projectsImg/lucile.png" alt="" className="w-full"/> */}
                     </div>
                   </motion.div>
                   ) : (
