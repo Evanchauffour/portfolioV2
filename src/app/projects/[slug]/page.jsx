@@ -228,7 +228,18 @@ const deviceAnim = {
                     style={{border: 'solid 2px grey', borderRadius: '20px'}}
                   >
                     <div className="size-full overflow-hidden relative" style={{border: 'solid 5px black', borderRadius: '18px'}}>
-                      <Image src={project.images.desktop[0]} alt="projectImageDesktop" width={1000} height={600} className="size-full"/>
+                      {/* <Image src={project.images.desktop[0]} alt="projectImageDesktop" width={1000} height={600} className="size-full"/> */}
+                      <Image 
+                      src="/projectsImg/lucile.png" 
+                      alt="projectImageDesktop"      
+                      style={{
+                        width: '100%',
+                        height: 'auto',
+                      }}
+                      width={1000}
+                      height={600}
+                      />
+                      {/* <img src="/projectsImg/lucile.png" alt="" className="w-full"/> */}
                     </div>
                   </motion.div>
                   ) : (
