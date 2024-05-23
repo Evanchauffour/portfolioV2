@@ -8,8 +8,9 @@
   box-sizing: border-box;
 }
 
-body{
+body, html{
   background-color: #FAFEFA;
+  overflow: hidden;
 }
 
 .scrollInfoIcon{

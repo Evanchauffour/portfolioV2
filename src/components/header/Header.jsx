@@ -13,15 +13,15 @@ export default function Header() {
   const [menuVisible, setMenuVisible] = useState(false);
   const [mounted, setMounted] = useState(false)
 
-  useEffect(() => {
-    setMounted(true);
+  // useEffect(() => {
+  //   setMounted(true);
 
-    if(menuVisible){
-      document.documentElement.style.overflowY = 'hidden';
-    } else {
-      document.documentElement.style.overflowY = 'auto';
-    }
-  }, [menuVisible])
+  //   if(menuVisible){
+  //     document.documentElement.style.overflowY = 'hidden';
+  //   } else {
+  //     document.documentElement.style.overflowY = 'auto';
+  //   }
+  // }, [menuVisible])
 
   if (!mounted) {
     return null
