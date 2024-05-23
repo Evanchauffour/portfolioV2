@@ -242,7 +242,7 @@ const deviceAnim = {
                     style={{border: 'solid 4px grey', borderRadius: '48px'}}
                   >
                     <div className="size-full overflow-hidden relative" style={{border: 'solid 8px black', borderRadius: '40px'}}>
-                      <Image src={project.images.mobile[0]} alt="project" width={1000} height={600} className="size-full"/>
+                      <Image src={project.images.mobile[0]} alt="project" layout="fill" objectFit="cover"/>
                     </div>
                   </motion.div>
                   )}
