@@ -229,7 +229,7 @@ const deviceAnim = {
                   >
                     <div className="size-full overflow-hidden relative" style={{border: 'solid 5px black', borderRadius: '18px'}}>
                       <Image 
-                      src="/projectsImg/lucile.png" 
+                      src={project.images.desktop[0]}
                       alt="projectImageDesktop"      
                       style={{
                         width: '100%',
@@ -247,11 +247,20 @@ const deviceAnim = {
                     initial={{ opacity: 0 }}
                     animate={'open'}
                     transition={{ duration: .2 }}
-                    className="relative w-[250px] h-[500px] md:h-[616px] md:w-[300px] overflow-hidden" 
+                    className="relative w-[250px] md:w-[300px] overflow-hidden" 
                     style={{border: 'solid 4px grey', borderRadius: '48px'}}
                   >
                     <div className="size-full overflow-hidden relative" style={{border: 'solid 8px black', borderRadius: '40px'}}>
-                      <Image src={project.images.mobile[0]} alt="project" layout="fill" objectFit="cover"/>
+                      <Image 
+                      src={project.images.mobile[0]} 
+                      alt="project" 
+                      style={{
+                        width: '100%',
+                        height: 'auto',
+                      }}
+                      width={1000}
+                      height={600}
+                      />
                     </div>
                   </motion.div>
                   )}

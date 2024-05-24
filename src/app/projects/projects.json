@@ -7,8 +7,7 @@
         "website_link": "https://evanchauffour.github.io/Concours-Product-page/",
         "images": {
           "desktop": [
-            "/projectsImg/productLight.svg",
-            "/projectsImg/productPageDark.svg"
+            "/projectsImg/product.png"
           ],
           "mobile": [
           ]
@@ -35,14 +34,10 @@
         "website_link": "https://patriciarevollat.fr/",
         "images": {
           "desktop": [
-            "/projectsImg/patricia1.svg",
-            "/projectsImg/patricia2.svg",
-            "path/project2-image3-desktop.jpg"
+            "/projectsImg/patricia.png"
           ],
           "mobile": [
-            "/projectsImg/patriciaMobile1.svg",
-            "/projectsImg/patriciaMobile2.svg",
-            "/projectsImg/patriciaMobile3.svg"
+            "/projectsImg/patriciaMobile.png"
           ]
         },
         "technologies": [
@@ -59,14 +54,10 @@
         "website_link": "https://lucilemarjollet.com/",
         "images": {
           "desktop": [
-            "/projectsImg/lucile1.svg",
-            "/projectsImg/lucile2.svg",
-            "path/project2-image3-desktop.jpg"
+            "/projectsImg/lucile.png"
           ],
           "mobile": [
-            "/projectsImg/lucileMobile1.svg",
-            "/projectsImg/lucileMobile2.svg",
-            "/projectsImg/lucileMobile3.svg"
+            "/projectsImg/lucileMobile.png"
           ]
         },
         "technologies": [
@@ -84,10 +75,7 @@
           "desktop": [
           ],
           "mobile": [
-            "/projectsImg/sharespend1.svg",
-            "/projectsImg/sharespend2.svg",
-            "/projectsImg/sharespend3.svg",
-            "/projectsImg/sharespend4.svg"
+            "/projectsImg/sharespendMobile.png"
           ]
         },
         "technologies": [
