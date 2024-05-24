@@ -106,10 +106,6 @@ export default function Home() {
     },
   }
 
-  useEffect(() => {
-    console.log(theme);
-  }, [])
-
   const handleClick = () => {
     setIsOpen(false)
   }

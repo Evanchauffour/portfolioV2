@@ -9,6 +9,7 @@ import Header from "@/components/header/Header";
 import Tags from "@/components/tags/tags";
 import { useTheme } from "next-themes";
 import { useRouter } from 'next/navigation'
+import { notFound } from 'next/navigation'
 
 export default function Project( {params} ) {
   const [project, setProject] = useState();
@@ -21,6 +22,9 @@ export default function Project( {params} ) {
   const previousButton = useRef(null);
 
   useEffect(() => {
+    if(!projects.portfolio.find((project) => project.id === params.slug)) {
+      notFound();
+    }
     window.scrollTo(0, 0);
     const project = projects.portfolio.find((project) => project.id === params.slug);
     setNextProjectId(parseInt(params.slug));

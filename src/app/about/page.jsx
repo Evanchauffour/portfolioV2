@@ -14,7 +14,7 @@ export default function About() {
   return (
     <>
       <Header color='secondary'/>
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: .5, delay: .5 }} className='flex w-full md:mt-28 mt-12 flex-row items-center justify-center overflow-hidden'>
+        <motion.div className='flex w-full md:mt-28 mt-12 flex-row items-center justify-center overflow-hidden'>
           <Title title='À propos' color='secondary'/>
         </motion.div>
         <div className='flex my-10 flex-row items-center justify-center'>

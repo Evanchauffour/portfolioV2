@@ -7,7 +7,7 @@ import Tags from './tags/tags'
 export default function ProjectsListItems({project, index}) {
   const [isHovering, setIshovering] = useState(false)
   return (
-    <div key={index} onMouseEnter={() => setIshovering(true)} onMouseLeave={() => setIshovering(false)}>
+    <div onMouseEnter={() => setIshovering(true)} onMouseLeave={() => setIshovering(false)}>
     <Link 
       href={`/projects/${project.id}`} key={index}         
     >
@@ -33,9 +33,9 @@ export default function ProjectsListItems({project, index}) {
             <Tags technoImg={techno.img} index={index} label={techno.label} key={index} animationDelay={0.2}/>
           ))}
         </ul>
-      </motion.div>
-  </Link>
-  </div>
+        </motion.div>
+      </Link>
+      </div>
   )
 }
 
