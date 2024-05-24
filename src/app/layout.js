@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import "./globals.css";
 import { Sora } from "next/font/google";
 import { ThemeProvider } from "next-themes"
@@ -11,7 +11,6 @@ const sora = Sora({
 });
 
 export default function RootLayout({ children }) {
-
   const themeColor = [
     {
       color: 'from-darkPrimary to-lightAccent',
@@ -37,7 +36,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="fr">
-      <ThemeProvider attribute="class">
+      <ThemeProvider attribute="class" enableSystem={false}>
         <body className={`overflow-x-hidden light:bg-lightBackground darkTheme:bg-darkBackground ${sora.className}`}>
             <div className='flex flex-col' style={{ minHeight: 'calc(100vh)' }}>
               {children}

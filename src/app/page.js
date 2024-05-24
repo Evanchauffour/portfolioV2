@@ -106,6 +106,10 @@ export default function Home() {
     },
   }
 
+  useEffect(() => {
+    console.log(theme);
+  }, [])
+
   const handleClick = () => {
     setIsOpen(false)
   }
@@ -189,7 +193,6 @@ export default function Home() {
           <ThemeSelector customClass="size-20"/>
         </Widget>
         <Widget gridArea='darkMode' delay={2.2} y={-40}>
-          {theme && (
             <button className='relative size-20 rounded-full' onClick={() => handleTheme()}>
             {theme === 'light' ? (
               <Image src='https://img.icons8.com/ios-filled/100/crescent-moon.png' alt='moon' width={80} height={80} />
@@ -197,7 +200,6 @@ export default function Home() {
               <Image src='https://img.icons8.com/ios/100/FFFFFF/sun--v1.png' alt='sun' width={80} height={80} />
             )}
             </button>
-          )}
         </Widget>
         <Widget gridArea='github' delay={2.3} x={40}>
           <a href='https://github.com/Evanchauffour' target='_blank' className='size-full flex items-center justify-center z-10'>

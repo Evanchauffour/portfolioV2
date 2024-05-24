@@ -258,7 +258,7 @@ const deviceAnim = {
                         width: '100%',
                         height: 'auto',
                       }}
-                      width={1000}
+                      width={280}
                       height={600}
                       />
                     </div>
