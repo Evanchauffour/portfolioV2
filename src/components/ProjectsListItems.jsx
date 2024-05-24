@@ -12,7 +12,7 @@ export default function ProjectsListItems({project, index}) {
       href={`/projects/${project.id}`} key={index}         
     >
       <motion.div 
-        className={`${styles.linkItem} linkItem mb-5 rounded-lg flex lg:flex-row flex-col justify-between p-4 md:p-5 light:text-lightText light:hover:text-lightText darkTheme:text-darkText darkTheme:hover:text-darkText light:bg-lightBackground transition-shadow duration-500 ease-in-out darkTheme:bg-darkBackground shadow-md md:shadow-none md:hover:shadow-lg darkTheme:shadow-black light:shadow-black`}
+        className={`${styles.linkItem} mb-5 rounded-lg flex lg:flex-row flex-col justify-between p-4 md:p-5 light:text-lightText light:hover:text-lightText darkTheme:text-darkText darkTheme:hover:text-darkText light:bg-lightBackground transition-shadow duration-500 ease-in-out darkTheme:bg-darkBackground shadow-md md:shadow-none md:hover:shadow-lg darkTheme:shadow-black light:shadow-text-neutral-700`}
         whileHover="visible"
       >
         <h2 
