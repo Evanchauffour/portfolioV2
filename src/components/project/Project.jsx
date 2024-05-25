@@ -234,7 +234,7 @@ const deviceAnim = {
                       width={1000}
                       height={600}
                       /> */}
-                      <video src="/video.mov" autoPlay loop muted preload="" className="w-full h-auto"></video>
+                      <video src="/video.mov" autoPlay loop playsinline muted preload="" className="w-full h-auto"></video>
                     </div>
                   </motion.div>
                   ) : (
@@ -248,7 +248,7 @@ const deviceAnim = {
                     style={{border: 'solid 4px grey', borderRadius: '48px'}}
                   >
                     <div className="size-full overflow-hidden relative" style={{border: 'solid 8px black', borderRadius: '40px'}}>
-                      <Image 
+                      {/* <Image 
                       src={project.images.mobile[0]} 
                       alt="project" 
                       priority
@@ -258,7 +258,8 @@ const deviceAnim = {
                       }}
                       width={280}
                       height={600}
-                      />
+                      /> */}
+                        <video src="/videoMobile.mov" autoPlay loop playsinline muted preload="" className="w-full h-auto"></video>
                     </div>
                   </motion.div>
                   )}
