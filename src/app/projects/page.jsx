@@ -17,7 +17,7 @@ export default async function Projects() {
           </div>
           <div className='mx-4'>
             {projects.portfolio.map((project, index) => (
-              <ProjectsListItems project={project} index={index} />
+              <ProjectsListItems project={project} index={index} key={index}/>
             ))}
           </div>
           <Footer />
