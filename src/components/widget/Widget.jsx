@@ -25,7 +25,7 @@ export default function Widget({ children, gridArea, delay, x = 0, y = 0}) {
 
   return (
     <motion.div 
-      className='relative overflow-hidden rounded-lg p-px light:bg-lightBackground darkTheme:bg-darkBackground shadow-lg darkTheme:shadow-black'
+      className='relative overflow-hidden rounded-lg p-px light:bg-lightBackground darkTheme:bg-darkBackground shadow-lg light:shadow-text-neutral-700 darkTheme:shadow-black'
       style={{ 
         gridArea: gridArea,
       }}      
