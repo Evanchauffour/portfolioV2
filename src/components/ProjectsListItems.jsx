@@ -30,7 +30,7 @@ export default function ProjectsListItems({project, index}) {
           ))}
         </ul>
         )}
-        <ul className="md:hidden flex-row gap-2 self-start lg:self-end flex">
+        <ul className="md:hidden flex-row flex-wrap gap-2 self-start lg:self-end flex">
           {project.technologies.map((techno, index) => (
             <Tags technoImg={techno.img} index={index} label={techno.label} key={index} animationDelay={0.2}/>
           ))}

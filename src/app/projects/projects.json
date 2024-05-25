@@ -8,8 +8,6 @@
         "images": {
           "desktop": [
             "/projectsImg/product.png"
-          ],
-          "mobile": [
           ]
         },
         "technologies": [
@@ -72,8 +70,6 @@
         "name": "ShareSpend",
         "description": "ShareSpend est une application mobile que je développe actuellement en utilisant React Native pendant mon temps libre. Elle simplifie le suivi et la gestion des dépenses partagées entre amis, familles ou collègues. Avec une interface conviviale, ShareSpend rend la gestion financière facile et efficace. Une fois terminée, elle sera peut-être disponible sur les plateformes de téléchargement, concrétisant ainsi mon projet de A à Z.",
         "images": {
-          "desktop": [
-          ],
           "mobile": [
             "/projectsImg/sharespendMobile.png"
           ]
@@ -84,12 +80,48 @@
             "img":"/reactNative.svg"
           },
           {
+            "label": "Tailwind",
+            "img":"/tailwind.svg"
+          },
+          {
             "label": "NodeJs",
             "img":"/nodejs.svg"
           },
           {
+            "label": "Express",
+            "img":"/express.svg"
+          },
+          {
             "label": "MongoDb",
             "img":"/mongodb.svg"
+          }
+        ]
+      },
+      {
+        "id": "5",
+        "name": "Serre connectée",
+        "description": "La serre connectée est un projet réalisé dans le cadre de mes études. Le but était de concevoir une serre connectée via Arduino, pouvant être pilotée à distance. Dans ce projet, j'ai développé l'application de contrôle de la serre. Pour récupérer les données de la serre, j'ai utilisé un serveur Node.js dans lequel j'ai intégré la bibliothèque Socket.io afin d'envoyer les données en temps réel au frontend de l'application grâce aux WebSockets. Pour l'interface, j'ai utilisé Next.js ainsi que la bibliothèque Socket.io pour récupérer les données de la serre.",
+        "images": {
+          "desktop": [
+            "/projectsImg/serre.png"
+          ]
+        },
+        "technologies": [
+          {
+            "label": "NextJs",
+            "img":"/nextjs.svg"
+          },
+          {
+            "label": "Tailwind",
+            "img":"/tailwind.svg"
+          },
+          {
+            "label": "NodeJs",
+            "img":"/nodejs.svg"
+          },
+          {
+            "label": "Socket.io",
+            "img":"/socketio.svg"
           }
         ]
       }

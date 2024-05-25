@@ -10,7 +10,7 @@ import { useTheme } from "next-themes";
 import { useRouter } from 'next/navigation'
 
 export default function Project( {project, projects} ) {
-  const [device, setDevice] = useState('desktop');
+  const [device, setDevice] = useState(null);
   const [nextProjectId, setNextProjectId] = useState(0);
   const [previousProjectId, setPreviousProjectId] = useState(0);
   const { theme } = useTheme();
@@ -22,8 +22,10 @@ export default function Project( {project, projects} ) {
     window.scrollTo(0, 0);
     setNextProjectId(parseInt(project.id));
     setPreviousProjectId(parseInt(project.id));
-    if(project.images.desktop.length === 0) {
+    if(!project.images.desktop) {
       setDevice('mobile');
+    } else {
+      setDevice('desktop');
     }
   }, []);
 
@@ -114,7 +116,7 @@ const deviceAnim = {
   return (
     <>
       <Header />
-      {project && project.images && (
+      {device && (
         <div className="my-20">
             <div className="xl:mx-32 sm:mx-10 mx-5 flex flex-1 flex-col items-center">
               <div className="flex items-center gap-5 mb-5">
@@ -194,12 +196,12 @@ const deviceAnim = {
               >
                 <div className="relative">
                   {
-                    project.images.desktop.length > 0 && (
+                    project.images.desktop && (
                       <button className={`relative rounded-lg p-3 ${device === 'desktop' ? 'bg-gradient-to-r from-darkSecondary to-darkPrimary p-3 theme2:to-theme2-accent theme3:from-theme3-primary theme3:to-theme3-accent text-darkText' : 'light:text-lightText darkTheme:text-darkText'}`} onClick={() => setDevice('desktop')}>Desktop</button>
                     )
                   }
                   {
-                    project.images.mobile.length > 0 && (
+                    project.images.mobile && (
                       <button className={`relative rounded-lg p-3 ${device === 'mobile' ? 'bg-gradient-to-r from-darkSecondary to-darkPrimary theme2:to-theme2-accent theme3:from-theme3-primary theme3:to-theme3-accent p-3 text-darkText' : 'light:text-lightText darkTheme:text-darkText'}`} onClick={() => setDevice('mobile')}>Mobile</button>
                     )
                   }                
