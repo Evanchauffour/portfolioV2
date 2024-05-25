@@ -156,10 +156,10 @@ const deviceAnim = {
               >
                 {project.description}
               </motion.p>
-              <div className="flex flex-row items-center gap-5 -z-10">
+              <div className="flex flex-row items-center gap-5">
                 {project.website_link && (
                 <motion.a                 
-                  className={`relative z-10 flex w-fit shrink-0 cursor-pointer flex-row items-center gap-2 rounded-lg border p-3 transition-all duration-100 hover:gap-4 hover:border-darkPrimary light:border-darkBackground light:text-lightText darkTheme:border-lightBackground darkTheme:text-darkText`}
+                  className={`relative flex w-fit shrink-0 cursor-pointer flex-row items-center gap-2 rounded-lg border p-3 transition-all duration-100 hover:gap-4 hover:border-darkPrimary light:border-darkBackground light:text-lightText darkTheme:border-lightBackground darkTheme:text-darkText`}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: .5, delay: .9}} href={project.website_link} target="_blank" rel="noopener noreferrer"
@@ -172,7 +172,7 @@ const deviceAnim = {
                 )}
                 {project.github_link && (
                 <motion.a                 
-                  className={`relative z-10 flex w-fit shrink-0 cursor-pointer flex-row items-center gap-2 rounded-lg border p-3 transition-all duration-100 hover:gap-4 hover:border-darkPrimary light:border-darkBackground light:text-lightText darkTheme:border-lightBackground darkTheme:text-darkText`}
+                  className={`relative flex w-fit shrink-0 cursor-pointer flex-row items-center gap-2 rounded-lg border p-3 transition-all duration-100 hover:gap-4 hover:border-darkPrimary light:border-darkBackground light:text-lightText darkTheme:border-lightBackground darkTheme:text-darkText`}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: .5, delay: .9}} href={project.website_link} target="_blank" rel="noopener noreferrer"
@@ -185,22 +185,22 @@ const deviceAnim = {
                 )}
               </div>
             </div>
-            <div className="mt-5 flex flex-1 flex-col items-center -z-10">
+            <div className="mt-5 flex flex-1 flex-col items-center">
               <motion.div 
                 className="relative mb-5 mt-10 flex flex-row items-center gap-8 rounded-lg"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: .5, delay: .9}}
               >
-                <div className="relative -z-10">
+                <div className="relative">
                   {
                     project.images.desktop.length > 0 && (
-                      <button className={`relative z-10 rounded-lg p-3 ${device === 'desktop' ? 'bg-gradient-to-r from-darkSecondary to-darkPrimary p-3 theme2:to-theme2-accent theme3:from-theme3-primary theme3:to-theme3-accent text-darkText' : 'light:text-lightText darkTheme:text-darkText'}`} onClick={() => setDevice('desktop')}>Desktop</button>
+                      <button className={`relative rounded-lg p-3 ${device === 'desktop' ? 'bg-gradient-to-r from-darkSecondary to-darkPrimary p-3 theme2:to-theme2-accent theme3:from-theme3-primary theme3:to-theme3-accent text-darkText' : 'light:text-lightText darkTheme:text-darkText'}`} onClick={() => setDevice('desktop')}>Desktop</button>
                     )
                   }
                   {
                     project.images.mobile.length > 0 && (
-                      <button className={`relative z-10 rounded-lg p-3 ${device === 'mobile' ? 'bg-gradient-to-r from-darkSecondary to-darkPrimary theme2:to-theme2-accent theme3:from-theme3-primary theme3:to-theme3-accent p-3 text-darkText' : 'light:text-lightText darkTheme:text-darkText'}`} onClick={() => setDevice('mobile')}>Mobile</button>
+                      <button className={`relative rounded-lg p-3 ${device === 'mobile' ? 'bg-gradient-to-r from-darkSecondary to-darkPrimary theme2:to-theme2-accent theme3:from-theme3-primary theme3:to-theme3-accent p-3 text-darkText' : 'light:text-lightText darkTheme:text-darkText'}`} onClick={() => setDevice('mobile')}>Mobile</button>
                     )
                   }                
                   </div>
