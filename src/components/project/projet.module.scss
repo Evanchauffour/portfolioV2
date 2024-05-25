@@ -1,0 +1,12 @@
+.navButton{
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+    &:hover{
+        border-radius: 2rem;
+        font-weight: bold;
+    }
+}
+
+.projectName{
+    font-variation-settings: 'wght' 800; 
+}
