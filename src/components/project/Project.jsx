@@ -225,18 +225,7 @@ const deviceAnim = {
                     style={{border: 'solid 2px grey', borderRadius: '20px'}}
                   >
                     <div className="size-full overflow-hidden relative" style={{border: 'solid 5px black', borderRadius: '18px'}}>
-                      {/* <Image 
-                      src={project.images.desktop[0]}
-                      alt="projectImageDesktop"      
-                      style={{
-                        width: '100%',
-                        height: 'auto',
-                      }}
-                      priority
-                      width={1000}
-                      height={600}
-                      /> */}
-                      <video src={project.images.desktop[0]} autoPlay loop muted playsinline controls="w-full h-auto"></video>
+                      <video src={project.images.desktop[0]} autoPlay loop muted playsinline="w-full h-auto"></video>
                     </div>
                   </motion.div>
                   ) : (
@@ -250,18 +239,8 @@ const deviceAnim = {
                     style={{border: 'solid 4px grey', borderRadius: '48px'}}
                   >
                     <div className="size-full overflow-hidden relative" style={{border: 'solid 8px black', borderRadius: '40px'}}>
-                      {/* <Image 
-                      src={project.images.mobile[0]} 
-                      alt="project" 
-                      priority
-                      style={{
-                        width: '100%',
-                        height: 'auto',
-                      }}
-                      width={280}
-                      height={600}
-                      /> */}
-                      <video src={project.images.mobile[0]} autoPlay loop muted playsinline controls className="w-full h-auto"></video>
+  
+                      <video src={project.images.mobile[0]} autoPlay loop muted playsinline className="w-full h-auto"></video>
                     </div>
                   </motion.div>
                   )}
