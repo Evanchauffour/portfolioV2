@@ -169,7 +169,8 @@ useEffect(() => {
                     {endGameSkills.map((skill, index) => (
                         <li className='relative size-10 sm:size-16 rounded-lg bg-white' key={index} onMouseEnter={() => setIsSkillHovered(index)} onMouseLeave={() => setIsSkillHovered(null)}>
                             <div className={`${isSkillHovered === index ? 'flex' : 'hidden'} absolute left-1/2 -translate-x-1/2 -translate-y-full flex-col items-center`}>
-                                <span className='z-10 text-nowrap rounded-lg theme1:bg-darkPrimary theme2:bg-theme2-accent theme3:bg-theme3-primary p-2 light:text-lightText darkTheme:text-darkText'>{skill.name}</span>
+                                <span className='z-10 text-nowrap rounded-lg theme1:bg-darkPrimary theme2:bg-theme2-accent theme3:bg-theme3-primary p-2 
+                                text-darkText'>{skill.name}</span>
                                 <div className='size-4 -translate-y-1/2 rotate-45 theme1:bg-darkPrimary theme2:bg-theme2-accent theme3:bg-theme3-primary'></div>
                             </div>
                             <Image src={skill.linkImg} layout='fill' alt='Logo' className='p-2'/>

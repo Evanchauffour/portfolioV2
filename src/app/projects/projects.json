@@ -7,7 +7,7 @@
         "website_link": "https://evanchauffour.github.io/Concours-Product-page/",
         "images": {
           "desktop": [
-            "/projectsImg/product.png"
+            "/pageProduct.webm"
           ]
         },
         "technologies": [
@@ -32,10 +32,10 @@
         "website_link": "https://patriciarevollat.fr/",
         "images": {
           "desktop": [
-            "/projectsImg/patricia.png"
+            "/patricia.webm"
           ],
           "mobile": [
-            "/projectsImg/patriciaMobile.png"
+            "/patriciaMobile.webm"
           ]
         },
         "technologies": [
@@ -52,10 +52,10 @@
         "website_link": "https://lucilemarjollet.com/",
         "images": {
           "desktop": [
-            "/projectsImg/lucile.png"
+            "/lucile.webm"
           ],
           "mobile": [
-            "/projectsImg/lucileMobile.png"
+            "/lucileMobile.webm"
           ]
         },
         "technologies": [
@@ -71,7 +71,7 @@
         "description": "ShareSpend est une application mobile que je développe actuellement en utilisant React Native pendant mon temps libre. Elle simplifie le suivi et la gestion des dépenses partagées entre amis, familles ou collègues. Avec une interface conviviale, ShareSpend rend la gestion financière facile et efficace. Une fois terminée, elle sera peut-être disponible sur les plateformes de téléchargement, concrétisant ainsi mon projet de A à Z.",
         "images": {
           "mobile": [
-            "/projectsImg/sharespendMobile.png"
+            "/sharespendCompressed.webm"
           ]
         },
         "technologies": [
@@ -103,7 +103,7 @@
         "description": "La serre connectée est un projet réalisé dans le cadre de mes études. Le but était de concevoir une serre connectée via Arduino, pouvant être pilotée à distance. Dans ce projet, j'ai développé l'application de contrôle de la serre. Pour récupérer les données de la serre, j'ai utilisé un serveur Node.js dans lequel j'ai intégré la bibliothèque Socket.io afin d'envoyer les données en temps réel au frontend de l'application grâce aux WebSockets. Pour l'interface, j'ai utilisé Next.js ainsi que la bibliothèque Socket.io pour récupérer les données de la serre.",
         "images": {
           "desktop": [
-            "/projectsImg/serre.png"
+            "/serre.webm"
           ]
         },
         "technologies": [
