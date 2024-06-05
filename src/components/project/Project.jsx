@@ -236,7 +236,7 @@ const deviceAnim = {
                       width={1000}
                       height={600}
                       /> */}
-                      <video src={project.images.desktop[0]} autoPlay loop muted className="w-full h-auto"></video>
+                      <video src={project.images.desktop[0]} autoPlay loop muted playsinline controls="w-full h-auto"></video>
                     </div>
                   </motion.div>
                   ) : (
@@ -261,7 +261,7 @@ const deviceAnim = {
                       width={280}
                       height={600}
                       /> */}
-                      <video src={project.images.mobile[0]} autoPlay loop muted className="w-full h-auto"></video>
+                      <video src={project.images.mobile[0]} autoPlay loop muted playsinline controls className="w-full h-auto"></video>
                     </div>
                   </motion.div>
                   )}
