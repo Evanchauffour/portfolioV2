@@ -5,6 +5,7 @@ import "./globals.css";
 import { Sora } from "next/font/google";
 import { ThemeProvider } from "next-themes"
 import Transition from './transition';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const sora = Sora({ 
   subsets: ["latin"] ,
@@ -42,6 +43,7 @@ export default function RootLayout({ children }) {
             <div className='flex flex-col' style={{ minHeight: 'calc(100vh)' }}>
               <Transition>{children}</Transition>
             </div>
+            <SpeedInsights />
         </body>
       </ThemeProvider>
     </html>
