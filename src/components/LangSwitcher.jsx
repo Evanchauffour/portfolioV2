@@ -3,7 +3,6 @@
 import { useParams } from 'next/navigation';
 import { useRouter, usePathname } from '../navigation';
 import {useLocale} from 'next-intl';
-import {  } from 'next/router';
 
 export default function LocaleSwitcherSelect() {
   const router = useRouter();

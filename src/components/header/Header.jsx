@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { useTheme } from "next-themes";
 import ThemeSelector from '../themeSelector';
 import { useEffect, useState } from 'react';
-import LocaleSwitcherSelect from '../langSwitcher';
+import LocaleSwitcherSelect from '../LangSwitcher';
 
 export default function Header() {
 
