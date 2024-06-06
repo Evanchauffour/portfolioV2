@@ -1,11 +1,11 @@
 'use client'
 
-import { React, useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import styles from '../home.module.scss'
 import 'swiper/swiper-bundle.css';
 import SliderProjectsHome from '../../components/sliderProjectsHome/sliderProjectsHome';
-import MyPresnetation from '../../components/myPresentation/myPresnetation';
-import Game from '../../components/memorieGame/game';
+import MyPresentation from '../../components/myPresentation/myPresentation';
+import Game from '../../components/memoriesGame/game';
 import { AnimatePresence, motion } from 'framer-motion';
 import GrowLetters from '../../components/growLetterAnim/GrowLetters';
 import Widget from '../../components/widget/Widget';
@@ -23,89 +23,36 @@ export default function Home() {
   const [isOpen, setIsOpen] = useState(true)
   const { theme, setTheme } = useTheme();
 
-  const h1Anim = {
-    open: { opacity: 1, y: 0,
-      transition: {
-        duration: 0.5,
-        delay: 1,
-        ease: "easeInOut",
-      },
-    },
-    closed: { opacity: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeInOut",
-      },
-    },
-  }  
+  const h1Anim = useMemo(() => ({
+    open: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 1, ease: 'easeInOut' } },
+    closed: { opacity: 0, transition: { duration: 0.5, ease: 'easeInOut' } },
+  }), []);
 
-  const h2Anim = {
-    open: { opacity: 1, y: 0,
-      transition: {
-        duration: 0.5,
-        delay: 1,
-        ease: "easeInOut",
-      },
-    },
-    closed: { opacity: 0, y: -20, 
-      transition: {
-        delay: .2,
-        duration: 0.5,
-        ease: "easeInOut",
-      },
-    },
-  }  
+  const h2Anim = useMemo(() => ({
+    open: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 1, ease: 'easeInOut' } },
+    closed: { opacity: 0, y: -20, transition: { delay: 0.2, duration: 0.5, ease: 'easeInOut' } },
+  }), []);
 
-  const cursorAnim = {
-    open: { opacity: 1,
-      transition: {
-        duration: 0.5,
-        delay: 1.6,
-        ease: "easeInOut",
-      },
-    },
-    closed: { opacity: 0, 
-      transition: {
-        delay: .2,
-        duration: .5,
-        ease: "easeInOut",
-      },
-    },
-  } 
+  const cursorAnim = useMemo(() => ({
+    open: { opacity: 1, transition: { duration: 0.5, delay: 1.6, ease: 'easeInOut' } },
+    closed: { opacity: 0, transition: { delay: 0.2, duration: 0.5, ease: 'easeInOut' } },
+  }), []);
 
-  const variantsSlide = {
-    open: { scaleX: 1.5, scaleY: 1.5,
-      transition: {
-        duration: 1,
-        delay: .2,
-        ease: "easeInOut",
-      },
-    },
-    closed: { scaleX: 0, scaleY: 0,
-      transition: {
-        delay: .7,
-        duration: 1,
-        ease: "easeInOut",
-      },
-    },
-  }
+  const variantsSlide = useMemo(() => ({
+    open: { scaleX: 1.5, scaleY: 1.5, transition: { duration: 1, delay: 0.2, ease: 'easeInOut' } },
+    closed: { scaleX: 0, scaleY: 0, transition: { delay: 0.7, duration: 1, ease: 'easeInOut' } },
+  }), []);
 
-  const variantsSlide2 = {
-    open: { scaleX: 1.5, scaleY: 1.5,
-      transition: {
-        duration: 1,
-        delay: .4,
-        ease: "easeInOut",
-      },
-    },
-    closed: { scaleX: 0, scaleY: 0,
-      transition: {
-        delay: .5,
-        duration: 1,
-        ease: "easeInOut",
-      },
-    },
-  }
+  const variantsSlide2 = useMemo(() => ({
+    open: { scaleX: 1.5, scaleY: 1.5, transition: { duration: 1, delay: 0.4, ease: 'easeInOut' } },
+    closed: { scaleX: 0, scaleY: 0, transition: { delay: 0.5, duration: 1, ease: 'easeInOut' } },
+  }), []);
+
+  const themeColor = useMemo(() => ([
+    { color: 'from-darkPrimary to-lightAccent', theme: 'theme1' },
+    { color: 'from-red-500 to-lightAccent', theme: 'theme2' },
+    { color: 'from-theme3-primary to-theme3-accent', theme: 'theme3' },
+  ]), []);
 
   const handleClick = () => {
     setIsOpen(false)
@@ -116,21 +63,6 @@ export default function Home() {
   };
 
   const t = useTranslations('home');
-
-  const themeColor = [
-    {
-      color: 'from-darkPrimary to-lightAccent',
-      theme: 'theme1'
-    },
-    {
-      color: 'from-red-500 to-lightAccent',
-      theme: 'theme2'
-    },
-    {
-      color: 'from-theme3-primary to-theme3-accent',
-      theme: 'theme3'
-    }
-  ];
 
   useEffect(() => {
     if (typeof localStorage !== 'undefined') {
@@ -158,7 +90,7 @@ export default function Home() {
           </GrowLetters>
           <GrowLetters text={t('job')} delay={1.8} isAnimated={true} weightEnd='100'>
             <motion.h2 
-              className={`z-10 sm:text-[3vw] text-[4vw] font-extrabold uppercase light:text-lightText darkTheme:text-darkText`}
+              className={`z-10 text-[4vw] font-extrabold uppercase light:text-lightText darkTheme:text-darkText sm:text-[3vw]`}
               variants={h2Anim}
               initial={"closed"}
               animate={ "open" }
@@ -167,7 +99,7 @@ export default function Home() {
               </motion.h2>
           </GrowLetters>
           <motion.div 
-            className='relative size-20 sm:size-40 z-50'
+            className='relative z-50 size-20 sm:size-40'
             variants={cursorAnim}
             initial={"closed"}
             animate={ "open" }
@@ -178,7 +110,7 @@ export default function Home() {
         </div>
         <div className='flex size-full flex-row items-center justify-center'>
           <motion.div 
-            className={`absolute -z-10 size-[100vh] sm:size-[100vw] flex-1 rounded-full light:bg-darkBackground darkTheme:bg-lightBackground`}
+            className={`absolute -z-10 size-[100vh] flex-1 rounded-full light:bg-darkBackground darkTheme:bg-lightBackground sm:size-[100vw]`}
             variants={variantsSlide}
             initial={{ scaleX: 0, scaleY: 0, opacity: 1 }}
             animate={ "open"}
@@ -186,7 +118,7 @@ export default function Home() {
           >
           </motion.div>
           <motion.div 
-            className={`absolute -z-10 size-[100vh] sm:size-[100vw] flex-1 rounded-full light:bg-lightBackground darkTheme:bg-darkBackground`}
+            className={`absolute -z-10 size-[100vh] flex-1 rounded-full light:bg-lightBackground darkTheme:bg-darkBackground sm:size-[100vw]`}
             variants={variantsSlide2}
             initial={{ scaleX: 0, scaleY: 0, opacity: 1 }}
             animate={ "open"}
@@ -203,7 +135,7 @@ export default function Home() {
       className={`grid ${styles.homeContainer}`} 
       >
         <Widget gridArea='me' delay={1.5} x={-40}>
-          <MyPresnetation />
+          <MyPresentation />
         </Widget>
         <Widget gridArea='projects' delay={1.7} y={40}>
           <SliderProjectsHome />
@@ -224,12 +156,12 @@ export default function Home() {
             </button>
         </Widget>
         <Widget gridArea='github' delay={2.3} x={40}>
-          <a href='https://github.com/Evanchauffour' target='_blank' className='size-full flex items-center justify-center z-10'>
+          <a href='https://github.com/Evanchauffour' target='_blank' className='z-10 flex size-full items-center justify-center'>
             <Icon src='/github.svg' width={80} height={80} />
           </a>
         </Widget>
         <Widget gridArea='linkedin' delay={2.3} x={40}>
-          <a href='https://www.linkedin.com/in/evan-chauffour/' target='_blank' className='size-full flex items-center justify-center z-10'>
+          <a href='https://www.linkedin.com/in/evan-chauffour/' target='_blank' className='z-10 flex size-full items-center justify-center'>
             <Icon src='/linkedin.svg' width={80} height={80} />
           </a>
         </Widget>

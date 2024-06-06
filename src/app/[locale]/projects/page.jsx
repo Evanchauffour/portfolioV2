@@ -14,12 +14,12 @@ export default async function Projects() {
       {projects && projects.portfolio.length > 0 && (
         <>
           <Header />
-          <div className='flex w-full md:mt-28 my-8 flex-row items-center justify-center overflow-hidden'>
+          <div className='my-8 flex w-full flex-row items-center justify-center overflow-hidden md:mt-28'>
             <Title title={t('title')} />
           </div>
           <div className='mx-4'>
             {projects.portfolio.map((project, index) => (
-              <ProjectsListItems project={project} index={index} key={index}/>
+              <ProjectsListItems project={project} index={index} key={project.id}/>
             ))}
           </div>
           <Footer />

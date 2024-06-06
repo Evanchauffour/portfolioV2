@@ -45,7 +45,7 @@ export default function LocaleSwitcherSelect() {
 
   return (
     <select
-      className="p-2 rounded-lg border dark:bg-darkBackground light:bg-lightBackground dark:border-lightBackground light:border-darkBackground dark:text-darkText light:text-lightText z-20"
+      className="p-2 rounded-lg border darkTheme:bg-darkBackground light:bg-lightBackground darkTheme:border-lightBackground light:border-darkBackground darkTheme:text-darkText light:text-lightText z-20"
       defaultValue={locale}
       onChange={onSelectChange}
     >

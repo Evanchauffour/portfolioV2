@@ -9,6 +9,11 @@ const sora = Sora({
   subsets: ["latin"] ,
   variable: '--sora'
 });
+
+export const metadata = {
+  title: 'Evan Chauffour',
+  description: "Portfolio de Chauffour Evan, développeur full stack passionné par la création de sites web dynamiques et d'applications mobile. Explorez mes travaux en front-end et back-end dans mon portfolio.",
+}
  
 export default async function LocaleLayout({
   children,
