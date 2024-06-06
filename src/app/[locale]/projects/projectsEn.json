@@ -1,0 +1,129 @@
+{
+  "portfolio": [
+    {
+      "id": "1",
+      "name": "Product Page",
+      "description": "This website is a product page concept I created as part of a competition organized by a YouTuber. I designed this page by drawing inspiration from an existing design and added a burger menu and a dark mode. This page is built with HTML, CSS, and Vanilla JS.",
+      "website_link": "https://evanchauffour.github.io/Concours-Product-page/",
+      "images": {
+        "desktop": [
+          "/pageProduct.webm"
+        ]
+      },
+      "technologies": [
+        {
+          "img": "https://img.icons8.com/color/48/html-5--v1.png",
+          "label": "HTML"
+        },
+        {
+          "img": "https://img.icons8.com/color/48/css3.png",
+          "label": "CSS"
+        },
+        {
+          "img": "https://img.icons8.com/color/48/javascript--v1.png",
+          "label": "JavaScript"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Patricia Revollat",
+      "description": "I had the opportunity to design a personal website for a kinesiologist and magnetizer. This project was created using WordPress to build an attractive and informative online showcase. The site includes essential informational sections, including a detailed presentation of the kinesiologist and magnetizer, her approach, methods, and the services offered. To enhance the user experience, I integrated subtle animations using JavaScript. These animations add a touch of interactivity to the site while maintaining a professional ambiance. Finally, a customized contact form was included to facilitate communication between the kinesiologist and the site's visitors. This allows potential clients to ask questions, request additional information, or make appointments directly.",
+      "website_link": "https://patriciarevollat.fr/",
+      "images": {
+        "desktop": [
+          "/patricia.webm"
+        ],
+        "mobile": [
+          "/patriciaMobile.webm"
+        ]
+      },
+      "technologies": [
+        {
+          "label": "WordPress",
+          "img": "/wordpress.svg"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Lucile Marjollet",
+      "description": "I created a showcase site using WordPress for a relational psychopractitioner, a personal project aimed at presenting her activity in a professional and attractive manner. The site is based on WordPress for its ease of use and content management, allowing the psychopractitioner to update the content herself. I integrated JavaScript animations to bring the site to life, enhancing its visual appeal while maintaining a calm and professional environment. This project allowed for the creation of an engaging and professional online presence for the psychopractitioner, highlighting her expertise while capturing the attention of visitors with subtle animations.",
+      "website_link": "https://lucilemarjollet.com/",
+      "images": {
+        "desktop": [
+          "/lucile.webm"
+        ],
+        "mobile": [
+          "/lucileMobile.webm"
+        ]
+      },
+      "technologies": [
+        {
+          "label": "WordPress",
+          "img": "/wordpress.svg"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "ShareSpend",
+      "description": "ShareSpend is a mobile application I am currently developing using React Native during my free time. It simplifies tracking and managing shared expenses among friends, families, or colleagues. With a user-friendly interface, ShareSpend makes financial management easy and efficient. Once completed, it may be available on download platforms, thus realizing my project from A to Z.",
+      "images": {
+        "mobile": [
+          "/sharespendCompressed.webm"
+        ]
+      },
+      "technologies": [
+        {
+          "label": "React Native",
+          "img": "/reactNative.svg"
+        },
+        {
+          "label": "Tailwind",
+          "img": "/tailwind.svg"
+        },
+        {
+          "label": "NodeJs",
+          "img": "/nodejs.svg"
+        },
+        {
+          "label": "Express",
+          "img": "/express.svg"
+        },
+        {
+          "label": "MongoDb",
+          "img": "/mongodb.svg"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Greenhouse",
+      "description": "The connected greenhouse is a project carried out as part of my studies. The goal was to design a greenhouse connected via Arduino, which can be controlled remotely. In this project, I developed the greenhouse control application. To retrieve the greenhouse data, I used a Node.js server in which I integrated the Socket.io library to send the data in real time to the application's frontend using WebSockets. For the interface, I used Next.js and the Socket.io library to retrieve the greenhouse data.",
+      "images": {
+        "desktop": [
+          "/serre.webm"
+        ]
+      },
+      "technologies": [
+        {
+          "label": "NextJs",
+          "img": "/nextjs.svg"
+        },
+        {
+          "label": "Tailwind",
+          "img": "/tailwind.svg"
+        },
+        {
+          "label": "NodeJs",
+          "img": "/nodejs.svg"
+        },
+        {
+          "label": "Socket.io",
+          "img": "/socketio.svg"
+        }
+      ]
+    }
+  ]
+}

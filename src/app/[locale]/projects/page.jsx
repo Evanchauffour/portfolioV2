@@ -6,8 +6,8 @@ import { getProjects } from "../../../lib/data";
 import {getTranslations} from 'next-intl/server';
 
 export default async function Projects() {
-  const projects = await getProjects();
   const t = await getTranslations('projects');
+  const projects = await getProjects();
 
   return (
     <>
