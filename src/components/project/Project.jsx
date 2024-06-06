@@ -1,13 +1,13 @@
 'use client';
 
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion"
 import styles from './projet.module.scss'
-import Header from "@/components/header/Header";
-import Tags from "@/components/tags/tags";
+import Header from "../header/Header";
+import Tags from "../tags/tags";
 import { useTheme } from "next-themes";
 import { useRouter } from 'next/navigation'
+import {useTranslations} from 'next-intl';
 
 export default function Project( {project, projects} ) {
   const [device, setDevice] = useState(null);
@@ -113,6 +113,8 @@ const deviceAnim = {
   },
 }  
 
+const t = useTranslations('projects');
+
   return (
     <>
       <Header />
@@ -126,7 +128,7 @@ const deviceAnim = {
                   transition={{ duration: .5, delay: 1}} 
                   className="sm:p-4 p-3 rounded-lg dark:text-darkText light:text-lightText dark:border-lightBackground underline sm:text-base text-sm" 
                   onClick={() => changeProject(false, true)}>
-                  <span ref={previousButton} className="md:inline hidden text-bold py-2 px-3 mr-3 rounded-lg underline light:border-darkBackground dark:border-lightBackground border dark:text-darkText light:text-lightText">P</span>Projet précédent
+                  <span ref={previousButton} className="md:inline hidden text-bold py-2 px-3 mr-3 rounded-lg underline light:border-darkBackground dark:border-lightBackground border dark:text-darkText light:text-lightText">P</span>{t('previousProject')}
                 </motion.button>
                 <motion.button                   
                   initial={{ opacity: 0, x: -20 }}
@@ -134,7 +136,7 @@ const deviceAnim = {
                   transition={{ duration: .5, delay: 1.1}} 
                   className="sm:p-4 p-3 rounded-lg dark:text-darkText light:text-lightText dark:border-lightBackground light:border-darkBackground underline sm:text-base text-sm" 
                   onClick={() => changeProject(true, false)}> 
-                  <span ref={nextButton} className="md:inline hidden text-bold py-2 px-3 mr-3 rounded-lg underline light:border-darkBackground dark:border-lightBackground border dark:text-darkText light:text-lightText">S</span>Projet suivant
+                  <span ref={nextButton} className="md:inline hidden text-bold py-2 px-3 mr-3 rounded-lg underline light:border-darkBackground dark:border-lightBackground border dark:text-darkText light:text-lightText">S</span>{t('nextProject')}
                   </motion.button>
               </div>
               <motion.h1 
@@ -166,7 +168,7 @@ const deviceAnim = {
                   animate={{ opacity: 1 }}
                   transition={{ duration: .5, delay: .9}} href={project.website_link} target="_blank" rel="noopener noreferrer"
                 >
-                  Visiter le site
+                  {t('visitWebsite')}
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke={`${theme === 'dark' ? 'white' : 'black'}`} className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                   </svg>

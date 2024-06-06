@@ -1,21 +1,22 @@
 'use client'
 
 import { React, useEffect, useState } from 'react';
-import styles from '@/app/home.module.scss'
+import styles from '../home.module.scss'
 import 'swiper/swiper-bundle.css';
-import SliderProjectsHome from '@/components/sliderProjectsHome/sliderProjectsHome';
-import MyPresnetation from '@/components/myPresentation/myPresnetation';
-import Game from '@/components/memorieGame/game';
+import SliderProjectsHome from '../../components/sliderProjectsHome/sliderProjectsHome';
+import MyPresnetation from '../../components/myPresentation/myPresnetation';
+import Game from '../../components/memorieGame/game';
 import { AnimatePresence, motion } from 'framer-motion';
-import GrowLetters from '@/components/growLetterAnim/GrowLetters';
-import Widget from '@/components/widget/Widget';
+import GrowLetters from '../../components/growLetterAnim/GrowLetters';
+import Widget from '../../components/widget/Widget';
 import Image from 'next/image';
 import { useTheme } from "next-themes";
-import ThemeSelector from '@/components/themeSelector';
+import ThemeSelector from '../../components/themeSelector';
 import Lottie from "lottie-react";
-import clickEffectWhite from "../../public/lottie/clickEffectWhite.json";
-import clickEffectBlack from "../../public/lottie/clickEffectDark.json";
-import Icon from '@/components/icon';
+import clickEffectWhite from "../../../public/lottie/clickEffectWhite.json";
+import clickEffectBlack from "../../../public/lottie/clickEffectDark.json";
+import Icon from '../../components/icon';
+import {useTranslations} from 'next-intl';
 
 export default function Home() {
 
@@ -114,6 +115,31 @@ export default function Home() {
     setTheme(theme === 'dark' ? 'light' : 'dark')
   };
 
+  const t = useTranslations('home');
+
+  const themeColor = [
+    {
+      color: 'from-darkPrimary to-lightAccent',
+      theme: 'theme1'
+    },
+    {
+      color: 'from-red-500 to-lightAccent',
+      theme: 'theme2'
+    },
+    {
+      color: 'from-theme3-primary to-theme3-accent',
+      theme: 'theme3'
+    }
+  ];
+
+  useEffect(() => {
+    if (typeof localStorage !== 'undefined') {
+      localStorage.getItem('themeColor')
+      document.documentElement.classList.remove('theme1', 'theme2', 'theme3');
+      document.documentElement.classList.add(themeColor[localStorage.getItem('themeColor') ? localStorage.getItem('themeColor') : 0].theme); 
+    }
+  }, []);
+
   return (
     <>
       <AnimatePresence>
@@ -130,7 +156,7 @@ export default function Home() {
             >
             </motion.h1>
           </GrowLetters>
-          <GrowLetters text='Developpeur full stack' delay={1.8} isAnimated={true} weightEnd='100'>
+          <GrowLetters text={t('job')} delay={1.8} isAnimated={true} weightEnd='100'>
             <motion.h2 
               className={`z-10 sm:text-[3vw] text-[4vw] font-extrabold uppercase light:text-lightText darkTheme:text-darkText`}
               variants={h2Anim}

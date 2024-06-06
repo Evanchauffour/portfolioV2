@@ -11,7 +11,7 @@ export default function GrowLetters({ children, text, delay, isAnimated = false,
     const formattedText = text.split('').map((letter, index) => (
       <motion.span 
         key={index}
-        initial={isAnimated ? { fontVariationSettings: `"wght" 100`, color: theme === 'dark' ? '#010403' : '#DDF9EF'} : null}
+        initial={isAnimated ? { fontVariationSettings: `"wght" 100`, color: theme === 'dark' ? '#1E1E1E' : '#DDF9EF'} : null}
         animate={{ fontVariationSettings: `"wght" ${weightEnd}`, color: isAnimated ? theme === 'dark' ? '#DDF9EF' : '#010403' : null}}
         transition={{ duration: hover ? .3 : 1, delay: hover ? 0 : index * 0.05 + delay }}
         whileHover={{ fontVariationSettings: `"wght" 400`, transition: { duration: 0.3}}}

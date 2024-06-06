@@ -1,4 +1,7 @@
+import {useTranslations} from 'next-intl';
+
 export default function Footer() {
+  const t = useTranslations('footer');
   return (
     <footer className='w-full border-t md:p-8 p-4 light:border-darkBackground darkTheme:border-lightBackground'>
         <div className="flex md:flex-row flex-col md:gap-20 sm:gap-10 gap-4 flex-wrap">
@@ -6,7 +9,7 @@ export default function Footer() {
                 <h3 
                   className="md:text-7xl sm:text-2xl text-3xl font-thin text-left light:text-lightText darkTheme:text-darkText text-nowrap"
                 >
-                  Chauffour Evan<br/>Développeur web
+                  Chauffour Evan<br/>{t('job')}
                   </h3>
             </div>
             <div className="flex-1 sm:border-b sm:pb-8 pb-0 border-none light:border-darkBackground darkTheme:border-lightBackground">
@@ -34,7 +37,7 @@ export default function Footer() {
                     <li 
                       className="flex flex-col gap-2 sm:text-2xl text-xl font-normal light:text-lightText darkTheme:text-darkText"
                       >
-                      Email
+                      {t('email')}
                       <a 
                         href="mailto:evanchauffour@gmail.com"
                         className="text-base font-extralight underline light:text-lightText darkTheme:text-darkText"
@@ -45,7 +48,7 @@ export default function Footer() {
                     <li
                       className="flex flex-col gap-2 sm:text-2xl text-xl font-normal light:text-lightText darkTheme:text-darkText"
                     >
-                      Téléphone
+                      {t('phone')}
                       <a 
                         href="tel:0633471017"
                         className="text-base font-extralight underline light:text-lightText darkTheme:text-darkText"

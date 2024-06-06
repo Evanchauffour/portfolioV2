@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import styles from '@/components/memorieGame/game.module.scss'
+import styles from './game.module.scss'
 import Card from './card/card'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useTheme } from "next-themes";
+import {useTranslations} from 'next-intl';
 
 export default function Game() {
 
@@ -21,6 +22,8 @@ export default function Game() {
   useEffect(() => {
     setIsClient(true)
   }, [])
+
+  const t = useTranslations('home.widget.game');
 
   const [skills, setSkills] = useState([
     {name: 'React', id: 4, linkImg:'/react.svg', status: ''},
@@ -131,14 +134,14 @@ useEffect(() => {
     <div className={`relative flex size-full flex-col overflow-hidden rounded-lg min-h-[400px]`}>
         {!loadGame && !endGame && (
             <div className='flex w-full flex-1 flex-col items-center justify-center sm:gap-8 gap-4'>
-                <h3 className='text-center text-2xl light:text-lightText darkTheme:text-darkText'>{isClient ? 'Découvrez mes compétences !' : ''}</h3>
-                <p className='text-center mx-5 sm:mx-20 opacity-50 text-xs sm:text-base'>Mes compétences sont cachées derrière des cartes. Essayez de retourner toutes les paires le plus rapidement possible afin de découvrir l'ensemble de mes compétences.</p>
-                <button className='rounded-lg p-3 sm:text-2xl text-base light:text-lightText darkTheme:text-darkText border theme1:border-darkPrimary theme2:border-theme2-accent theme3:border-theme3-primary transition-all duration-200' onClick={handleStart}>Jouer !</button>
+                <h3 className='text-center text-2xl light:text-lightText darkTheme:text-darkText'>{isClient ? t('title') : ''}</h3>
+                <p className='text-center mx-5 sm:mx-20 opacity-50 text-xs sm:text-base'>{t('content')}</p>
+                <button className='rounded-lg p-3 sm:text-2xl text-base light:text-lightText darkTheme:text-darkText border theme1:border-darkPrimary theme2:border-theme2-accent theme3:border-theme3-primary transition-all duration-200' onClick={handleStart}>{t('start')}</button>
             </div>
         )} 
         {loadGame && !startGame && (
             <div className='absolute z-10 flex size-full flex-col items-center justify-center gap-8' style={{background: `${theme === 'dark' ? 'rgba(1,4,3,0.6)' : 'rgba(255,255,255,0.6)'}`}}>
-                <h3 className='text-2xl light:text-lightText darkTheme:text-darkText'>Préparez-vous !</h3>
+                <h3 className='text-2xl light:text-lightText darkTheme:text-darkText'>{t('ready')}</h3>
                 <p className='text-2xl light:text-lightText darkTheme:text-darkText'>{timerToStartGame}s</p>
             </div>
         )}
@@ -163,8 +166,8 @@ useEffect(() => {
         {endGame && (
             <div className='flex w-full flex-1 flex-col items-center justify-center gap-5'>
                 <div className='flex flex-1 flex-col items-center justify-center'>
-                    <h3 className='mb-6 text-center text-3xl theme1:text-darkPrimary theme2:text-theme2-accent theme3:text-theme3-primary'>Bravo !</h3>
-                    <p className='mb-6 text-center text-xs sm:text-base light:text-lightText darkTheme:text-darkText'>Vous avez découvert toutes mes compétences en {timer}s</p>
+                    <h3 className='mb-6 text-center text-3xl theme1:text-darkPrimary theme2:text-theme2-accent theme3:text-theme3-primary'>{t('congratulationsTitle')}</h3>
+                    <p className='mb-6 text-center text-xs sm:text-base light:text-lightText darkTheme:text-darkText'>{t('congratulationsContent', {timer: timer})}</p>
                     <ul className='mx-4 flex flex-row flex-wrap justify-center gap-2 self-end'>
                     {endGameSkills.map((skill, index) => (
                         <li className='relative size-10 sm:size-16 rounded-lg bg-white' key={index} onMouseEnter={() => setIsSkillHovered(index)} onMouseLeave={() => setIsSkillHovered(null)}>
@@ -178,7 +181,7 @@ useEffect(() => {
                     ))}
                     </ul>
                 </div>
-                <button className='mb-4 sm:text-2xl p-3 text-base rounded-lg light:text-lightText darkTheme:text-darkText border theme1:border-darkPrimary theme2:border-theme2-accent theme3:border-theme3-primary' onClick={handleRestart}>Rejouer</button>
+                <button className='mb-4 sm:text-2xl p-3 text-base rounded-lg light:text-lightText darkTheme:text-darkText border theme1:border-darkPrimary theme2:border-theme2-accent theme3:border-theme3-primary' onClick={handleRestart}>{t('restart')}</button>
             </div>
         )}
     </div>

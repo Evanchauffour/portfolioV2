@@ -1,4 +1,4 @@
-import projects from '@/app/projects/projects.json'
+import projects from '../app/[locale]/projects/projects.json'
 
 export const getProjects = async () => {
     return projects;

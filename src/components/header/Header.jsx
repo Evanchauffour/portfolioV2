@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { useTheme } from "next-themes";
 import ThemeSelector from '../themeSelector';
 import { useEffect, useState } from 'react';
+import LocaleSwitcherSelect from '../langSwitcher';
 
 export default function Header() {
 
@@ -35,7 +36,8 @@ export default function Header() {
             <Link href="/projects" className={`${styles.navItem} navItem font-normal light:text-lightText darkTheme:text-darkText`} onClick={() => setMenuVisible(false)}>Projets</Link>
         </nav>
         <button className='md:hidden ml-4 border dark:border-lightBackground light:border-darkBackground dark:text-darkText light:text-lightText px-4 py-2 rounded-lg z-20' onClick={() => setMenuVisible(!menuVisible)}>Menu</button>
-        <div className='flex flex-row gap-4 -z-10'>
+        <div className='flex flex-row gap-4 -z-10 items-center'>
+          <LocaleSwitcherSelect/>
           <ThemeSelector customClass='size-10'/>
           {theme && (
             <button className='relative rounded-full md:mr-8 mr-4' onClick={() => theme == "dark" ? setTheme('light') : setTheme("dark")}>

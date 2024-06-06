@@ -1,16 +1,6 @@
 'use client'
 
-import React, { useEffect } from 'react';
-import "./globals.css";
-import { Sora } from "next/font/google";
-import { ThemeProvider } from "next-themes"
-import Transition from './transition';
-import { SpeedInsights } from "@vercel/speed-insights/next"
-
-const sora = Sora({ 
-  subsets: ["latin"] ,
-  variable: '--sora'
-});
+import { useEffect } from 'react';
 
 export default function RootLayout({ children }) {
   const themeColor = [
@@ -36,17 +26,5 @@ export default function RootLayout({ children }) {
     }
   }, []);
 
-  return (
-    <html lang="fr">
-      <ThemeProvider attribute="class" enableSystem={false}>
-        <body className={`overflow-x-hidden light:bg-lightBackground darkTheme:bg-darkBackground ${sora.className}`}>
-            <div className='flex flex-col' style={{ minHeight: 'calc(100vh)' }}>
-              <Transition>{children}</Transition>
-            </div>
-            <SpeedInsights />
-        </body>
-      </ThemeProvider>
-    </html>
-    
-  );
+  return children;
 }

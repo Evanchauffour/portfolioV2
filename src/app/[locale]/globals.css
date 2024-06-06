@@ -58,3 +58,9 @@ body{
 .theme3 .navItem::before{
   background-color: #1BB4EE;
 }
+
+select {
+  &:focus {
+    outline: none;
+  }
+}

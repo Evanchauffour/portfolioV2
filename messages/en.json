@@ -1,0 +1,51 @@
+
+{
+  "home": {
+  "job": "Full Stack Developer",
+  "widget": {
+  "about": {
+  "title": "About",
+  "content": "Discover my journey and who I am."
+  },
+  "projects": {
+  "title": "My Projects",
+  "content": "Explore all my projects completed in a professional or personal setting."
+  },
+  "game": {
+  "title": "Discover my Skills!",
+  "content": "My skills are hidden behind cards. Try to flip all the pairs as quickly as possible to uncover all of my skills.",
+  "start": "Play!",
+  "ready": "Get Ready!",
+  "congratulationsTitle": "Congratulations!",
+  "congratulationsContent": "You have uncovered all my skills in {timer}s",
+  "restart": "Play Again"
+  }
+  }
+  },
+  "about": {
+  "title": "About me",
+  "me": "I'm Evan Chauffour",
+  "jobAndAge": "a 21-year-old web developer",
+  "content": "I have been passionate about web development for two years now. My professional journey has led me to specialize primarily in front-end, where I have developed a strong skill in creating attractive and functional user interfaces. However, my projects have also led me to actively explore the backend domain. In addition to web development, I am passionate about sports, especially basketball, and cinema. This occupies a significant portion of my time outside of web development. Currently, I am in an apprenticeship at"
+  },
+  "projects": {
+  "title": "My Projects",
+  "nextProject": "Next Project",
+  "previousProject": "Previous Project",
+  "visitWebsite": "Visit Website"
+  },
+  "footer": {
+  "email": "Email",
+  "phone": "Phone",
+  "job": "Web Developer"
+  },
+  "header": {
+  "home": "Home",
+  "about": "About",
+  "projects": "Projects"
+  }
+  }
+  
+  
+  
+  

@@ -1,0 +1,46 @@
+{
+  "home": {
+    "job": "Développeur full stack",
+    "widget": {
+      "about": {
+        "title": "A propos",
+        "content": "Découvrez mon parcours et qui je suis."
+      },
+      "projects": {
+        "title": "Mes projets",
+        "content": "Découvrez tous mes projets réalisés dans un cadre professionnel ou personnel."
+      },
+      "game": {
+        "title": "Découvrez mes compétences !",
+        "content": "Mes compétences sont cachées derrière des cartes. Essayez de retourner toutes les paires le plus rapidement possible afin de découvrir l'ensemble de mes compétences.",
+        "start": "Jouer !",
+        "ready": "Préparez-vous !",
+        "congratulationsTitle": "Bravo !",
+        "congratulationsContent": "Vous avez découvert toutes mes compétences en {timer}s",
+        "restart": "Rejouer"
+      }
+    }
+  },
+  "about": {
+    "title": "A propos",
+    "me": "Je suis Evan Chauffour",
+    "jobAndAge": "un développeur web de 21 ans",
+    "content": "Je suis passionné de développement web depuis maintenant deux ans. Mon parcours professionnel m'a conduit à me spécialiser principalement dans le front-end, où j'ai développé une forte compétence dans la création d'interfaces utilisateur attrayantes et fonctionnelles. Cependant, mes projets m'ont également amené à explorer activement le domaine du back-end. En plus du développement web, je suis passionné de sport, en particulier du basket-ball et de cinéma. Cela occupe une grande partie de mon temps en dehors du développement web. Actuellement, je suis en alternance chez"
+  },
+  "projects": {
+    "title": "Mes projets",
+    "nextProject": "Projet suivant",
+    "previousProject": "Projet précédent",
+    "visitWebsite": "Visiter le site"
+  },
+  "footer": {
+    "email": "Email",
+    "phone": "Téléphone",
+    "job": "Développeur web"
+  },
+  "header": {
+    "home": "Accueil",
+    "about": "A propos",
+    "projects": "Projets"
+  }
+}
