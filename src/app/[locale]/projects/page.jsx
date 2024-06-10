@@ -4,7 +4,6 @@ import Header from "../../../components/header/Header";
 import ProjectsListItems from "../../../components/ProjectsListItems";
 import { getProjects } from "../../../lib/data";
 import {getTranslations} from 'next-intl/server';
-import Transition from '../../../components/Transition';
 
 export default async function Projects() {
   const t = await getTranslations('projects');
