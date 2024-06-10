@@ -43,25 +43,25 @@ export default function About() {
   return (
     <>
       <Header color='secondary'/>
-      <motion.div className='mt-12 flex w-full flex-row items-center justify-center overflow-hidden md:mt-28'>
-        <Title title={t('title')} color='secondary'/>
-      </motion.div>
-      <div className='min-[500px]: my-10 flex flex-row items-center justify-center'>
-        <div className='relative flex h-full flex-col lg:flex-row'>
-          <div className='hidden h-80 w-full translate-x-0 rounded-lg lg:flex lg:size-[500px] lg:translate-x-12'>
-            <Image 
-              src={pp} alt='Ma photo'
-              className='size-full object-cover'
-            />
-          </div>
-          <div className='block w-full translate-x-0 self-center bg-gradient-to-r p-1 theme1:from-darkSecondary theme1:to-darkPrimary theme2:from-theme2-primary theme2:to-theme2-accent theme3:from-theme3-primary theme3:to-theme3-accent sm:w-[500px] lg:-translate-x-12'>
-            <div className="p-7 light:bg-lightBackground darkTheme:bg-darkBackground">
-              <h2 className='mb-5 text-2xl light:text-lightText darkTheme:text-lightBackground'>Hey ! <br/>{t('me')}<br/>{t('jobAndAge')}</h2>
-              <p className='font-sora font-thin leading-5 light:text-lightText darkTheme:text-lightBackground'>{t('content')} <a href='https://www.weprode.com/' rel='noopener noreferrer' target='_blank' className='underline'>WeProde</a></p>
+        <motion.div className='mt-12 flex w-full flex-row items-center justify-center overflow-hidden md:mt-28'>
+          <Title title={t('title')} color='secondary'/>
+        </motion.div>
+        <div className='min-[500px]: my-10 flex flex-row items-center justify-center'>
+          <div className='relative flex h-full flex-col lg:flex-row'>
+            <div className='hidden h-80 w-full translate-x-0 rounded-lg lg:flex lg:size-[500px] lg:translate-x-12'>
+              <Image 
+                src={pp} alt='Ma photo'
+                className='size-full object-cover'
+              />
+            </div>
+            <div className='block w-full translate-x-0 self-center bg-gradient-to-r p-1 theme1:from-darkSecondary theme1:to-darkPrimary theme2:from-theme2-primary theme2:to-theme2-accent theme3:from-theme3-primary theme3:to-theme3-accent sm:w-[500px] lg:-translate-x-12'>
+              <div className="p-7 light:bg-lightBackground darkTheme:bg-darkBackground">
+                <h2 className='mb-5 text-2xl light:text-lightText darkTheme:text-lightBackground'>Hey ! <br/>{t('me')}<br/>{t('jobAndAge')}</h2>
+                <p className='font-sora font-thin leading-5 light:text-lightText darkTheme:text-lightBackground'>{t('content')} <a href='https://www.weprode.com/' rel='noopener noreferrer' target='_blank' className='underline'>WeProde</a></p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
       <Footer />
     </>
   );

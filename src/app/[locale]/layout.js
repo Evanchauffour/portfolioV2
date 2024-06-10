@@ -4,6 +4,8 @@ import { Sora } from "next/font/google";
 import { ThemeProvider } from "next-themes"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import "./globals.css";
+import Transition from '../../components/transition';
+import CircleTransition from '../../components/circleTransition';
 
 const sora = Sora({ 
   subsets: ["latin"] ,
@@ -26,10 +28,13 @@ export default async function LocaleLayout({
         <ThemeProvider attribute="class" enableSystem={false}>
             <body className={`overflow-x-hidden light:bg-lightBackground darkTheme:bg-darkBackground ${sora.className}`}>
                 <NextIntlClientProvider messages={messages}>
+                <CircleTransition />
+                <Transition>
                     <div className='flex flex-col' style={{ minHeight: 'calc(100vh)' }}>
                       {children}
                     </div>
                     <SpeedInsights />
+                </Transition>
                 </NextIntlClientProvider>
             </body>
         </ThemeProvider>
