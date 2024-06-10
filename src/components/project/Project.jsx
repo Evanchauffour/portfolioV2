@@ -120,30 +120,30 @@ const t = useTranslations('projects');
       <Header />
       {device && (
         <div className="my-20">
-            <div className="xl:mx-32 sm:mx-10 mx-5 flex flex-1 flex-col items-center">
-              <div className="flex items-center gap-5 mb-5">
+            <div className="mx-5 flex flex-1 flex-col items-center sm:mx-10 xl:mx-32">
+              <div className="mb-5 flex items-center gap-5">
                 <motion.button               
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: .5, delay: 1}} 
-                  className="sm:p-4 p-3 rounded-lg dark:text-darkText light:text-lightText dark:border-lightBackground underline sm:text-base text-sm" 
+                  className="rounded-lg p-3 text-sm underline light:text-lightText sm:p-4 sm:text-base dark:border-lightBackground dark:text-darkText" 
                   onClick={() => changeProject(false, true)}>
-                  <span ref={previousButton} className="md:inline hidden text-bold py-2 px-3 mr-3 rounded-lg underline light:border-darkBackground dark:border-lightBackground border dark:text-darkText light:text-lightText">P</span>{t('previousProject')}
+                  <span ref={previousButton} className="text-bold mr-3 hidden rounded-lg border px-3 py-2 underline light:border-darkBackground light:text-lightText md:inline dark:border-lightBackground dark:text-darkText">P</span>{t('previousProject')}
                 </motion.button>
                 <motion.button                   
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: .5, delay: 1.1}} 
-                  className="sm:p-4 p-3 rounded-lg dark:text-darkText light:text-lightText dark:border-lightBackground light:border-darkBackground underline sm:text-base text-sm" 
+                  className="rounded-lg p-3 text-sm underline light:border-darkBackground light:text-lightText sm:p-4 sm:text-base dark:border-lightBackground dark:text-darkText" 
                   onClick={() => changeProject(true, false)}> 
-                  <span ref={nextButton} className="md:inline hidden text-bold py-2 px-3 mr-3 rounded-lg underline light:border-darkBackground dark:border-lightBackground border dark:text-darkText light:text-lightText">S</span>{t('nextProject')}
+                  <span ref={nextButton} className="text-bold mr-3 hidden rounded-lg border px-3 py-2 underline light:border-darkBackground light:text-lightText md:inline dark:border-lightBackground dark:text-darkText">S</span>{t('nextProject')}
                   </motion.button>
               </div>
               <motion.h1 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: .5, delay: .5}}
-                className={`xl:text-9xl lg:text-8xl md:text-7xl sm:text-6xl text-4xl text-nowrap font-extrabold  bg-gradient-to-r from-darkPrimary to-darkAccent bg-clip-text text-transparent theme2:from-theme2-primary theme2:to-theme2-accent theme3:from-theme3-primary theme3:to-theme3-accent ${styles.projectName}`}
+                className={`text-nowrap bg-gradient-to-r from-darkPrimary to-darkAccent bg-clip-text text-4xl font-extrabold  text-transparent theme2:from-theme2-primary theme2:to-theme2-accent theme3:from-theme3-primary theme3:to-theme3-accent sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl ${styles.projectName}`}
               >
                 {project.name}
               </motion.h1>
@@ -153,7 +153,7 @@ const t = useTranslations('projects');
                 ))}
               </ul>
               <motion.p 
-                className="mb-5 w-full 2xl:w-3/4 text-sm xl:text-base text-justify font-normal light:text-lightText darkTheme:text-darkText"
+                className="mb-5 w-full text-justify text-sm font-normal light:text-lightText darkTheme:text-darkText xl:text-base 2xl:w-3/4"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: .5, delay: .7}}
@@ -169,7 +169,7 @@ const t = useTranslations('projects');
                   transition={{ duration: .5, delay: .9}} href={project.website_link} target="_blank" rel="noopener noreferrer"
                 >
                   {t('visitWebsite')}
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke={`${theme === 'dark' ? 'white' : 'black'}`} className="w-6 h-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke={`${theme === 'dark' ? 'white' : 'black'}`} className="size-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                   </svg>
                 </motion.a>
@@ -182,7 +182,7 @@ const t = useTranslations('projects');
                   transition={{ duration: .5, delay: .9}} href={project.website_link} target="_blank" rel="noopener noreferrer"
                 >
                 Github
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                   </svg>
                 </motion.a>
@@ -199,12 +199,12 @@ const t = useTranslations('projects');
                 <div className="relative">
                   {
                     project.images.desktop && (
-                      <button className={`relative rounded-lg p-3 ${device === 'desktop' ? 'bg-gradient-to-r from-darkSecondary to-darkPrimary p-3 theme2:to-theme2-accent theme3:from-theme3-primary theme3:to-theme3-accent text-darkText' : 'light:text-lightText darkTheme:text-darkText'}`} onClick={() => setDevice('desktop')}>Desktop</button>
+                      <button className={`relative rounded-lg p-3 ${device === 'desktop' ? 'bg-gradient-to-r from-darkSecondary to-darkPrimary p-3 text-darkText theme2:to-theme2-accent theme3:from-theme3-primary theme3:to-theme3-accent' : 'light:text-lightText darkTheme:text-darkText'}`} onClick={() => setDevice('desktop')}>Desktop</button>
                     )
                   }
                   {
                     project.images.mobile && (
-                      <button className={`relative rounded-lg p-3 ${device === 'mobile' ? 'bg-gradient-to-r from-darkSecondary to-darkPrimary theme2:to-theme2-accent theme3:from-theme3-primary theme3:to-theme3-accent p-3 text-darkText' : 'light:text-lightText darkTheme:text-darkText'}`} onClick={() => setDevice('mobile')}>Mobile</button>
+                      <button className={`relative rounded-lg p-3 ${device === 'mobile' ? 'bg-gradient-to-r from-darkSecondary to-darkPrimary p-3 text-darkText theme2:to-theme2-accent theme3:from-theme3-primary theme3:to-theme3-accent' : 'light:text-lightText darkTheme:text-darkText'}`} onClick={() => setDevice('mobile')}>Mobile</button>
                     )
                   }                
                   </div>
@@ -223,10 +223,10 @@ const t = useTranslations('projects');
                     initial={{ opacity: 0 }}
                     animate={'open'}
                     transition={{ duration: .2 }}
-                    className="relative w-[350px] sm:w-[750px] lg:w-[900px] xl:w-[1000px] overflow-hidden" 
+                    className="relative w-[350px] overflow-hidden sm:w-[750px] lg:w-[900px] xl:w-[1000px]" 
                     style={{border: 'solid 2px grey', borderRadius: '20px'}}
                   >
-                    <div className="size-full overflow-hidden relative" style={{border: 'solid 5px black', borderRadius: '18px'}}>
+                    <div className="relative size-full overflow-hidden" style={{border: 'solid 5px black', borderRadius: '18px'}}>
                       <video src={project.images.desktop[0]} autoPlay loop muted playsinline="w-full h-auto"></video>
                     </div>
                   </motion.div>
@@ -237,12 +237,12 @@ const t = useTranslations('projects');
                     initial={{ opacity: 0 }}
                     animate={'open'}
                     transition={{ duration: .2 }}
-                    className="relative w-[250px] md:w-[300px] overflow-hidden" 
+                    className="relative w-[250px] overflow-hidden md:w-[300px]" 
                     style={{border: 'solid 4px grey', borderRadius: '48px'}}
                   >
-                    <div className="size-full overflow-hidden relative" style={{border: 'solid 8px black', borderRadius: '40px'}}>
+                    <div className="relative size-full overflow-hidden" style={{border: 'solid 8px black', borderRadius: '40px'}}>
   
-                      <video src={project.images.mobile[0]} autoPlay loop muted playsinline className="w-full h-auto"></video>
+                      <video src={project.images.mobile[0]} autoPlay loop muted playsinline className="h-auto w-full"></video>
                     </div>
                   </motion.div>
                   )}
