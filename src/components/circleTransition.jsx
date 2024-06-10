@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 import { useMemo } from 'react';
 
-export default function transition() {
+export default function CircleTransition() {
   const pathname = usePathname()
 
   const variantsSlide = useMemo(() => ({
