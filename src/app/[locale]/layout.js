@@ -4,8 +4,8 @@ import { Sora } from "next/font/google";
 import { ThemeProvider } from "next-themes"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import "./globals.css";
-import Transition from '../../components/Transition';
-import CircleTransition from '../../components/CircleTransition';
+import Transition from '../../components/transition';
+import CircleTransition from '../../components/circleTransition';
 
 const sora = Sora({ 
   subsets: ["latin"] ,
