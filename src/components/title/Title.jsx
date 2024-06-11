@@ -4,7 +4,7 @@ import styles from './title.module.scss';
 import { useEffect, useState } from 'react';
 import { useScroll, useMotionValueEvent, motion } from 'framer-motion';
 
-export default function Title({ title, otherStyle = '', multiplier = 1.6, isLoaded }) {
+export default function Title({ title, otherStyle = '', multiplier = 1.6, isLoaded = null }) {
   const [lettersHead, setLettersHead] = useState([]);
   const [scroll, setScroll] = useState(null);
   const [size, setSize] = useState(null);
