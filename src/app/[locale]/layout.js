@@ -26,7 +26,9 @@ export default async function LocaleLayout({
         <ThemeProvider attribute="class" enableSystem={false}>
             <body className={`overflow-x-hidden light:bg-lightBackground darkTheme:bg-darkBackground ${sora.className}`}>
                 <NextIntlClientProvider messages={messages}>
-                  {children}
+                    <div className='flex flex-col' style={{ minHeight: 'calc(100vh)' }}>
+                      {children}
+                    </div>
                 </NextIntlClientProvider>
                 <SpeedInsights />
             </body>
