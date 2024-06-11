@@ -3,32 +3,33 @@
     {
       "id": "1",
       "name": "Product Page",
-      "description": "This website is a product page concept I created as part of a competition organized by a YouTuber. I designed this page by drawing inspiration from an existing design and added a burger menu and a dark mode. This page is built with HTML, CSS, and Vanilla JS.",
+      "description": "This website is a product page concept I created as part of a contest organized by a YouTuber. I created this page inspired by an existing design to which I added a burger menu and a dark mode. This page is made with HTML, CSS, and Vanilla JS.",
       "website_link": "https://evanchauffour.github.io/Concours-Product-page/",
+      "github_link": "https://github.com/Evanchauffour/Concours-Product-page",
       "images": {
         "desktop": [
           "/pageProduct.webm"
         ]
       },
       "technologies": [
-        {
-          "img": "https://img.icons8.com/color/48/html-5--v1.png",
-          "label": "HTML"
-        },
-        {
-          "img": "https://img.icons8.com/color/48/css3.png",
-          "label": "CSS"
-        },
-        {
-          "img": "https://img.icons8.com/color/48/javascript--v1.png",
-          "label": "JavaScript"
-        }
+          {
+            "img": "https://img.icons8.com/color/48/html-5--v1.png",
+            "label": "HTML"
+          },
+          {
+            "img": "https://img.icons8.com/color/48/css3.png",
+            "label": "CSS"
+          },
+          {
+            "img": "https://img.icons8.com/color/48/javascript--v1.png",
+            "label": "JavaScript"
+          }
       ]
     },
     {
       "id": "2",
       "name": "Patricia Revollat",
-      "description": "I had the opportunity to design a personal website for a kinesiologist and magnetizer. This project was created using WordPress to build an attractive and informative online showcase. The site includes essential informational sections, including a detailed presentation of the kinesiologist and magnetizer, her approach, methods, and the services offered. To enhance the user experience, I integrated subtle animations using JavaScript. These animations add a touch of interactivity to the site while maintaining a professional ambiance. Finally, a customized contact form was included to facilitate communication between the kinesiologist and the site's visitors. This allows potential clients to ask questions, request additional information, or make appointments directly.",
+      "description": "I had the opportunity to design a personal website for a kinesiologist and magnetizer. This project was created using WordPress to build an attractive and informative online showcase. The site includes essential informative sections, including a detailed presentation of the kinesiologist and magnetizer, her approach, methods, and services offered. To enhance the user experience, I integrated subtle animations using JavaScript. These animations add a touch of interactivity to the site while maintaining a professional atmosphere. Finally, a custom contact form was included to facilitate communication between the kinesiologist and visitors, allowing potential clients to ask questions, request additional information, or schedule appointments directly.",
       "website_link": "https://patriciarevollat.fr/",
       "images": {
         "desktop": [
@@ -41,14 +42,22 @@
       "technologies": [
         {
           "label": "WordPress",
-          "img": "/wordpress.svg"
+          "img":"/wordpress.svg"
+        },
+        {
+          "img": "https://img.icons8.com/color/48/css3.png",
+          "label": "CSS"
+        },
+        {
+          "img": "https://img.icons8.com/color/48/javascript--v1.png",
+          "label": "JavaScript"
         }
       ]
     },
     {
       "id": "3",
       "name": "Lucile Marjollet",
-      "description": "I created a showcase site using WordPress for a relational psychopractitioner, a personal project aimed at presenting her activity in a professional and attractive manner. The site is based on WordPress for its ease of use and content management, allowing the psychopractitioner to update the content herself. I integrated JavaScript animations to bring the site to life, enhancing its visual appeal while maintaining a calm and professional environment. This project allowed for the creation of an engaging and professional online presence for the psychopractitioner, highlighting her expertise while capturing the attention of visitors with subtle animations.",
+      "description": "I created a showcase website using WordPress for a relational psychopractitioner, a personal project aimed at presenting her activity in a professional and attractive manner. The site is based on WordPress for its ease of use and content management, allowing the psychopractitioner to update the content herself. I integrated JavaScript animations to bring the site to life, enhancing its visual appeal while maintaining a calm and professional environment. This project allowed for the creation of an engaging and professional online presence for the psychopractitioner, highlighting her expertise while captivating visitors' attention with subtle animations.",
       "website_link": "https://lucilemarjollet.com/",
       "images": {
         "desktop": [
@@ -61,67 +70,174 @@
       "technologies": [
         {
           "label": "WordPress",
-          "img": "/wordpress.svg"
+          "img":"/wordpress.svg"
+        },
+        {
+          "img": "https://img.icons8.com/color/48/css3.png",
+          "label": "CSS"
+        },
+        {
+          "img": "https://img.icons8.com/color/48/javascript--v1.png",
+          "label": "JavaScript"
         }
       ]
     },
     {
       "id": "4",
       "name": "ShareSpend",
-      "description": "ShareSpend is a mobile application I am currently developing using React Native during my free time. It simplifies tracking and managing shared expenses among friends, families, or colleagues. With a user-friendly interface, ShareSpend makes financial management easy and efficient. Once completed, it may be available on download platforms, thus realizing my project from A to Z.",
+      "description": "ShareSpend is a mobile application I am currently developing using React Native in my spare time. It simplifies the tracking and management of shared expenses among friends, family, or colleagues. With a user-friendly interface, ShareSpend makes financial management easy and efficient. Once completed, it may be available on download platforms, realizing my project from A to Z.",
       "images": {
         "mobile": [
           "/sharespendCompressed.webm"
         ]
       },
+      "github_link": "https://github.com/Evanchauffour/front-ShareSpend",
       "technologies": [
         {
           "label": "React Native",
-          "img": "/reactNative.svg"
+          "img":"/reactNative.svg"
         },
         {
           "label": "Tailwind",
-          "img": "/tailwind.svg"
+          "img":"/tailwind.svg"
         },
         {
           "label": "NodeJs",
-          "img": "/nodejs.svg"
+          "img":"/nodejs.svg"
         },
         {
           "label": "Express",
-          "img": "/express.svg"
+          "img":"/express.svg"
         },
         {
           "label": "MongoDb",
-          "img": "/mongodb.svg"
+          "img":"/mongodb.svg"
         }
       ]
     },
     {
       "id": "5",
       "name": "Greenhouse",
-      "description": "The connected greenhouse is a project carried out as part of my studies. The goal was to design a greenhouse connected via Arduino, which can be controlled remotely. In this project, I developed the greenhouse control application. To retrieve the greenhouse data, I used a Node.js server in which I integrated the Socket.io library to send the data in real time to the application's frontend using WebSockets. For the interface, I used Next.js and the Socket.io library to retrieve the greenhouse data.",
+      "description": "The connected greenhouse is a project carried out as part of my studies. The goal was to design a greenhouse connected via Arduino that can be controlled remotely. In this project, I developed the control application for the greenhouse. To retrieve the greenhouse data, I used a Node.js server in which I integrated the Socket.io library to send real-time data to the application's frontend using WebSockets. For the interface, I used Next.js along with the Socket.io library to retrieve the greenhouse data.",
       "images": {
         "desktop": [
           "/serre.webm"
         ]
       },
+      "github_link": "https://github.com/Evanchauffour/Serre",
       "technologies": [
         {
           "label": "NextJs",
-          "img": "/nextjs.svg"
+          "img":"/nextjs.svg"
         },
         {
           "label": "Tailwind",
-          "img": "/tailwind.svg"
+          "img":"/tailwind.svg"
         },
         {
           "label": "NodeJs",
-          "img": "/nodejs.svg"
+          "img":"/nodejs.svg"
         },
         {
           "label": "Socket.io",
-          "img": "/socketio.svg"
+          "img":"/socketio.svg"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Le Clos Montagny",
+      "description": "I had the opportunity to work on a school project titled 'Le Clos Montagny', carried out over two weeks: one week of design and one week of development, which I handled. Our client wanted a website that reflected her personality to present her three lodgings. We used WordPress for this project to allow our client to modify her content as she wishes and to evolve the site. The site includes a detailed presentation of the three lodgings, highlighting their unique features and services offered. We also integrated attractive images and detailed descriptions for each lodging to provide visitors with all the necessary information to make an informed choice. To enhance the user experience, we included subtle animations using JavaScript, adding a touch of interactivity while maintaining a friendly and professional atmosphere. Finally, a custom contact form was added to facilitate communication between our client and site visitors, allowing potential clients to ask questions, request additional information, or book a stay directly.",
+      "images": {
+        "desktop": [
+          "/clos.webm"
+        ],
+        "mobile": [
+          "/closMobile.webm"
+        ]
+      },
+      "website_link": "https://leclosmontagny.fr/",
+      "github_link": "https://github.com/Evanchauffour/leclosmontagny",
+      "technologies": [
+        {
+          "label": "WordPress",
+          "img":"/wordpress.svg"
+        },
+        {
+          "img": "https://img.icons8.com/color/48/css3.png",
+          "label": "CSS"
+        },
+        {
+          "img": "https://img.icons8.com/color/48/javascript--v1.png",
+          "label": "JavaScript"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "User Profile",
+      "description": "I had the opportunity to work on a user profile project for ENT Facile Éducation as part of my internship at WeProde. This project was carried out in two distinct phases: frontend development and end-to-end (E2E) testing. For the frontend development, I used Vue.js to create an interactive and responsive user interface. This interface allows for viewing user information. For example, for a teacher, the user profile displays contact information, courses taught, classes overseen, and the current session's course. During this phase, I regularly interacted with the backend, developed in Java, using REST APIs to retrieve and send the necessary data. Then, I performed end-to-end tests with Cypress. These tests ensured that all functionalities of the user profile worked correctly and provided a smooth, error-free user experience. E2E tests are crucial for identifying and resolving potential issues before production, ensuring the application's reliability and robustness. This project allowed me to develop my frontend development skills with Vue.js and automated testing with Cypress, while giving me the opportunity to work on an application that directly impacts the educational community.",
+      "images": {
+        "desktop": [
+          "/userCard.webm"
+        ]
+      },
+      "technologies": [
+        {
+          "label": "VueJs",
+          "img":"/vuejs.svg"
+        },
+        {
+          "img": "/cypress.svg",
+          "label": "Cypress"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Logbook",
+      "description": "I had the opportunity to work on a logbook project for ENT Facile Éducation as part of my internship at WeProde. This project allows the school to write notes in students' logbooks or manage exit permissions, for example, to get parental signatures. The project was carried out in two distinct phases: frontend development and end-to-end (E2E) testing. For the frontend development, I used Vue.js to create a user-friendly and intuitive interface. This interface allows teachers and administrative staff to easily add and view notes in students' logbooks. Parents can also access this information and provide the necessary signatures for exit permissions. During this phase, I regularly interacted with the backend, developed in Java, using REST APIs. I sometimes had to modify some backend methods to adapt to the specific frontend development requirements. Then, I performed end-to-end tests with Cypress. These tests ensured that all functionalities of the logbook worked correctly and provided a smooth, error-free user experience. E2E tests are essential for identifying and resolving potential issues before production, ensuring the application's reliability and robustness.",
+      "images": {
+        "desktop": [
+          "/logbook.webm"
+        ]
+      },
+      "technologies": [
+        {
+          "label": "VueJs",
+          "img":"/vuejs.svg"
+        },
+        {
+          "img": "/cypress.svg",
+          "label": "Cypress"
+        },
+        {
+          "label": "Java",
+          "img":"https://img.icons8.com/color/48/java-coffee-cup-logo--v1.png"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "name": "School Life",
+      "description": "I had the opportunity to work on a school life service project for ENT Facile Éducation as part of my internship at WeProde. This project gathers all the information about a student, such as tardiness and absences, to facilitate school life management within the institution. Parents can also use this service to justify their children's absences. The project was carried out in two distinct phases: frontend development and end-to-end (E2E) testing. For the frontend development, I used Vue.js to create an intuitive and easy-to-use user interface. This interface allows school life staff to view and manage information related to students' tardiness and absences. Parents can also access this interface to justify their children's absences. During this phase, I regularly interacted with the backend, developed in Java, using REST APIs. I sometimes had to modify some backend methods to adapt to the specific frontend development requirements. Then, I performed end-to-end tests with Cypress. These tests ensured that all functionalities of the school life service worked correctly and provided a smooth, error-free user experience. E2E tests are essential for identifying and resolving potential issues before production, ensuring the application's reliability and robustness.",
+      "images": {
+        "desktop": [
+          "/schoolLife.webm"
+        ]
+      },
+      "technologies": [
+        {
+          "label": "VueJs",
+          "img":"/vuejs.svg"
+        },
+        {
+          "img": "/cypress.svg",
+          "label": "Cypress"
+        },
+        {
+          "label": "Java",
+          "img":"https://img.icons8.com/color/48/java-coffee-cup-logo--v1.png"
         }
       ]
     }

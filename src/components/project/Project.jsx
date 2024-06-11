@@ -128,7 +128,7 @@ const t = useTranslations('projects');
                   transition={{ duration: .5, delay: 1}} 
                   className="rounded-lg p-3 text-sm underline light:text-lightText sm:p-4 sm:text-base dark:border-lightBackground dark:text-darkText" 
                   onClick={() => changeProject(false, true)}>
-                  <span ref={previousButton} className="text-bold mr-3 hidden rounded-lg border px-3 py-2 underline light:border-darkBackground light:text-lightText md:inline dark:border-lightBackground dark:text-darkText">P</span>{t('previousProject')}
+                  <span ref={previousButton} className="mr-3 hidden rounded-lg border px-3 py-2 font-bold underline light:border-darkBackground light:text-lightText md:inline dark:border-lightBackground dark:text-darkText">P</span>{t('previousProject')}
                 </motion.button>
                 <motion.button                   
                   initial={{ opacity: 0, x: -20 }}
@@ -136,7 +136,7 @@ const t = useTranslations('projects');
                   transition={{ duration: .5, delay: 1.1}} 
                   className="rounded-lg p-3 text-sm underline light:border-darkBackground light:text-lightText sm:p-4 sm:text-base dark:border-lightBackground dark:text-darkText" 
                   onClick={() => changeProject(true, false)}> 
-                  <span ref={nextButton} className="text-bold mr-3 hidden rounded-lg border px-3 py-2 underline light:border-darkBackground light:text-lightText md:inline dark:border-lightBackground dark:text-darkText">S</span>{t('nextProject')}
+                  <span ref={nextButton} className="mr-3 hidden rounded-lg border px-3 py-2 font-bold underline light:border-darkBackground light:text-lightText md:inline dark:border-lightBackground dark:text-darkText">S</span>{t('nextProject')}
                   </motion.button>
               </div>
               <motion.h1 
@@ -179,7 +179,7 @@ const t = useTranslations('projects');
                   className={`relative flex w-fit shrink-0 cursor-pointer flex-row items-center gap-2 rounded-lg border p-3 transition-all duration-100 hover:gap-4 hover:border-darkPrimary light:border-darkBackground light:text-lightText darkTheme:border-lightBackground darkTheme:text-darkText`}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ duration: .5, delay: .9}} href={project.website_link} target="_blank" rel="noopener noreferrer"
+                  transition={{ duration: .5, delay: .9}} href={project.github_link} target="_blank" rel="noopener noreferrer"
                 >
                 Github
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
@@ -227,7 +227,7 @@ const t = useTranslations('projects');
                     style={{border: 'solid 2px grey', borderRadius: '20px'}}
                   >
                     <div className="relative size-full overflow-hidden" style={{border: 'solid 5px black', borderRadius: '18px'}}>
-                      <video src={project.images.desktop[0]} autoPlay loop muted playsinline="w-full h-auto"></video>
+                      <video src={project.images.desktop[0]} autoPlay loop muted playsinline className="h-auto w-full"></video>
                     </div>
                   </motion.div>
                   ) : (

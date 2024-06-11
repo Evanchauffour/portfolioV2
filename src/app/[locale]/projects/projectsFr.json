@@ -5,6 +5,7 @@
         "name": "Page produit",
         "description": "Ce site web est un concept de page produit que j'ai réalisé dans le cadre d'un concours organisé par un youtuber. J'ai donc créé cette page en m'inspirant d'un design déjà existant auquel j'ai ajouté un menu burger ainsi qu'un mode sombre. Cette page est réalisée en HTML, Css et Vanilla js.",
         "website_link": "https://evanchauffour.github.io/Concours-Product-page/",
+        "github_link": "https://github.com/Evanchauffour/Concours-Product-page",
         "images": {
           "desktop": [
             "/pageProduct.webm"
@@ -42,6 +43,14 @@
           {
             "label": "WordPress",
             "img":"/wordpress.svg"
+          },
+          {
+            "img": "https://img.icons8.com/color/48/css3.png",
+            "label": "CSS"
+          },
+          {
+            "img": "https://img.icons8.com/color/48/javascript--v1.png",
+            "label": "JavaScript"
           }
         ]
       },
@@ -62,6 +71,14 @@
           {
             "label": "WordPress",
             "img":"/wordpress.svg"
+          },
+          {
+            "img": "https://img.icons8.com/color/48/css3.png",
+            "label": "CSS"
+          },
+          {
+            "img": "https://img.icons8.com/color/48/javascript--v1.png",
+            "label": "JavaScript"
           }
         ]
       },
@@ -74,6 +91,7 @@
             "/sharespendCompressed.webm"
           ]
         },
+        "github_link": "https://github.com/Evanchauffour/front-ShareSpend",
         "technologies": [
           {
             "label": "React Native",
@@ -106,6 +124,7 @@
             "/serre.webm"
           ]
         },
+        "github_link": "https://github.com/Evanchauffour/Serre",
         "technologies": [
           {
             "label": "NextJs",
@@ -122,6 +141,103 @@
           {
             "label": "Socket.io",
             "img":"/socketio.svg"
+          }
+        ]
+      },
+      {
+        "id": "6",
+        "name": "le clos montagny",
+        "description": "J'ai eu l'opportunité de travailler sur un projet scolaire intitulé 'Le Clos Montagny', réalisé sur deux semaines : une semaine de design et une semaine de développement, dont je me suis chargé. Notre cliente souhaitait un site web qui lui ressemble pour présenter ses trois gîtes. Nous avons utilisé WordPress pour ce projet afin de permettre à notre cliente de modifier son contenu comme elle le souhaite et de faire évoluer le site. Le site comprend une présentation détaillée des trois gîtes, mettant en avant leurs caractéristiques uniques et les services offerts. Nous avons également intégré des images attrayantes et des descriptions détaillées pour chaque gîte, afin de fournir aux visiteurs toutes les informations nécessaires pour faire un choix éclairé. Pour améliorer l'expérience utilisateur, nous avons inclus des animations subtiles à l'aide de JavaScript, ajoutant une touche d'interactivité tout en maintenant une ambiance conviviale et professionnelle. Enfin, un formulaire de contact personnalisé a été ajouté pour faciliter la communication entre notre cliente et les visiteurs du site, permettant aux clients potentiels de poser des questions, de demander des informations complémentaires ou de réserver un séjour directement.",
+        "images": {
+          "desktop": [
+            "/clos.webm"
+          ],
+          "mobile": [
+            "/closMobile.webm"
+          ]
+        },
+        "website_link": "https://leclosmontagny.fr/",
+        "github_link": "https://github.com/Evanchauffour/leclosmontagny",
+        "technologies": [
+          {
+            "label": "WordPress",
+            "img":"/wordpress.svg"
+          },
+          {
+            "img": "https://img.icons8.com/color/48/css3.png",
+            "label": "CSS"
+          },
+          {
+            "img": "https://img.icons8.com/color/48/javascript--v1.png",
+            "label": "JavaScript"
+          }
+        ]
+      },
+      {
+        "id": "7",
+        "name": "Fiche utilisateur",
+        "description": "J'ai eu l'opportunité de travailler sur un projet de fiche utilisateur pour l'ENT Facile Éducation dans le cadre de mon alternance chez WeProde. Ce projet a été réalisé en deux étapes distinctes : le développement du frontend et les tests end-to-end (E2E). Pour le développement du frontend, j'ai utilisé Vue.js pour créer une interface utilisateur interactive et réactive. Cette interface permet de consulter les informations d'un utilisateur. Par exemple, pour un enseignant, la fiche utilisateur affiche ses informations de contact, les cours qu'il dispense, les classes qu'il encadre, et le cours actuellement en session. Pendant cette phase, j'ai régulièrement interagi avec le backend, développé en Java, en utilisant des API REST pour récupérer et envoyer les données nécessaires. Ensuite, j'ai effectué des tests end-to-end avec Cypress. Ces tests ont permis de s'assurer que toutes les fonctionnalités de la fiche utilisateur fonctionnaient correctement et offraient une expérience utilisateur fluide et sans erreurs. Les tests E2E sont cruciaux pour identifier et résoudre les problèmes potentiels avant la mise en production, garantissant ainsi la fiabilité et la robustesse de l'application. Ce projet m'a permis de développer mes compétences en développement frontend avec Vue.js et en tests automatisés avec Cypress, tout en me donnant l'occasion de travailler sur une application ayant un impact direct sur la communauté éducative.",
+        "images": {
+          "desktop": [
+            "/userCard.webm"
+          ]
+        },
+        "technologies": [
+          {
+            "label": "VueJs",
+            "img":"/vuejs.svg"
+          },
+          {
+            "img": "/cypress.svg",
+            "label": "Cypress"
+          }
+        ]
+      },
+      {
+        "id": "8",
+        "name": "Carnet de liaison",
+        "description": "J'ai eu l'opportunité de travailler sur un projet de carnet de liaison pour l'ENT Facile Éducation dans le cadre de mon alternance chez WeProde. Ce projet permet à l'établissement scolaire d'écrire des mots dans le carnet des élèves ou de gérer des autorisations de sortie, par exemple, afin de faire signer les parents. Le projet a été réalisé en deux étapes distinctes : le développement du frontend et les tests end-to-end (E2E). Pour le développement du frontend, j'ai utilisé Vue.js pour créer une interface utilisateur conviviale et intuitive. Cette interface permet aux enseignants et au personnel administratif de facilement ajouter et consulter des notes dans le carnet de liaison des élèves. Les parents peuvent également accéder à ces informations et fournir les signatures nécessaires pour les autorisations de sortie. Pendant cette phase, j'ai régulièrement interagi avec le backend, développé en Java, en utilisant des API REST. J'ai parfois dû modifier certaines méthodes backend pour m'adapter aux exigences spécifiques du développement frontend. Ensuite, j'ai effectué des tests end-to-end avec Cypress. Ces tests ont permis de s'assurer que toutes les fonctionnalités du carnet de liaison fonctionnaient correctement et offraient une expérience utilisateur fluide et sans erreurs. Les tests E2E sont essentiels pour identifier et résoudre les problèmes potentiels avant la mise en production, garantissant ainsi la fiabilité et la robustesse de l'application.",
+        "images": {
+          "desktop": [
+            "/logbook.webm"
+          ]
+        },
+        "technologies": [
+          {
+            "label": "VueJs",
+            "img":"/vuejs.svg"
+          },
+          {
+            "img": "/cypress.svg",
+            "label": "Cypress"
+          },
+          {
+            "label": "Java",
+            "img":"https://img.icons8.com/color/48/java-coffee-cup-logo--v1.png"
+          }
+        ]
+      },
+      {
+        "id": "9",
+        "name": "Vie scolaire",
+        "description": "J'ai eu l'opportunité de travailler sur un projet de service de vie scolaire pour l'ENT Facile Éducation dans le cadre de mon alternance chez WeProde. Ce projet permet de regrouper l'ensemble des informations concernant un élève, telles que les retards et les absences, afin de faciliter la gestion de la vie scolaire au sein de l'établissement. Les parents peuvent également utiliser ce service pour justifier les absences de leurs enfants. Le projet a été réalisé en deux étapes distinctes : le développement du frontend et les tests end-to-end (E2E). Pour le développement du frontend, j'ai utilisé Vue.js pour créer une interface utilisateur intuitive et facile à utiliser. Cette interface permet au personnel de la vie scolaire de consulter et de gérer les informations relatives aux retards et aux absences des élèves. Les parents peuvent également accéder à cette interface pour justifier les absences de leurs enfants. Pendant cette phase, j'ai régulièrement interagi avec le backend, développé en Java, en utilisant des API REST. J'ai parfois dû modifier certaines méthodes backend pour m'adapter aux exigences spécifiques du développement frontend. Ensuite, j'ai effectué des tests end-to-end avec Cypress. Ces tests ont permis de s'assurer que toutes les fonctionnalités du service de vie scolaire fonctionnaient correctement et offraient une expérience utilisateur fluide et sans erreurs. Les tests E2E sont essentiels pour identifier et résoudre les problèmes potentiels avant la mise en production, garantissant ainsi la fiabilité et la robustesse de l'application.",
+        "images": {
+          "desktop": [
+            "/schoolLife.webm"
+          ]
+        },
+        "technologies": [
+          {
+            "label": "VueJs",
+            "img":"/vuejs.svg"
+          },
+          {
+            "img": "/cypress.svg",
+            "label": "Cypress"
+          },
+          {
+            "label": "Java",
+            "img":"https://img.icons8.com/color/48/java-coffee-cup-logo--v1.png"
           }
         ]
       }
